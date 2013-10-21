@@ -1,0 +1,93 @@
+/************ Voici les résultats des tests réalisés avec le main.ml situé dans "../Source/analex" ************/
+
+
+/****** tests positifs ******/
+
+/*** teste le si alors sinon ainsi que les opérateurs < et = ***/
+let test_sialorssinon1 = test "si a < b alors z = b2 sinon z = a fsi";;
+
+#       val test_sialorssinon1 : arbre_abstrait =
+  Node_SIALORSSINON (Node_INF (Ident "a", Ident "b"),
+   Node_EQUAL (Ident "z", Ident "b2"), Node_EQUAL (Ident "z", Ident "a"))
+
+/*** teste deux si alors sinon imbriqués, ainsi que les paranthèses dans ceux-ci + les opérateurs <>, >= et > ***/
+let test_sialorssinon2 = test "si (a <> b ou b = c) alors si c >= d alors e = f sinon t > r fsi sinon t = z et x <> f fsi";;
+
+#   val test_sialorssinon2 : arbre_abstrait =
+  Node_SIALORSSINON
+   (Node_OR (Node_DIFF (Ident "a", Ident "b"),
+     Node_EQUAL (Ident "b", Ident "c")),
+   Node_SIALORSSINON (Node_SUPEG (Ident "c", Ident "d"),
+    Node_EQUAL (Ident "e", Ident "f"), Node_SUP (Ident "t", Ident "r")),
+   Node_AND (Node_EQUAL (Ident "t", Ident "z"),
+    Node_DIFF (Ident "x", Ident "f")))
+
+/*** divers test sur l'enchainement de et/ou ainsi que l'influences des paranthèses sur ceux-ci + l'opérateurs <= ***/
+let test_par0  = test "a < b ou b > c et d = c ou d <= e";;
+
+#   val test_par0 : arbre_abstrait =
+  Node_OR (Node_INF (Ident "a", Ident "b"),
+   Node_OR
+    (Node_AND (Node_SUP (Ident "b", Ident "c"),
+      Node_EQUAL (Ident "d", Ident "c")),
+    Node_INFEG (Ident "d", Ident "e")))
+
+let test_par1 = test "(a < b ou b > c) et (d = c ou d <= e)";;
+
+#   val test_par1 : arbre_abstrait =
+  Node_AND
+   (Node_OR (Node_INF (Ident "a", Ident "b"),
+     Node_SUP (Ident "b", Ident "c")),
+   Node_OR (Node_EQUAL (Ident "d", Ident "c"),
+    Node_INFEG (Ident "d", Ident "e")))
+
+let test_par2 = test "(a < b ou (b > c et d = c)) ou d <= e";;
+
+#   val test_par2 : arbre_abstrait =
+  Node_OR
+   (Node_OR (Node_INF (Ident "a", Ident "b"),
+     Node_AND (Node_SUP (Ident "b", Ident "c"),
+      Node_EQUAL (Ident "d", Ident "c"))),
+   Node_INFEG (Ident "d", Ident "e"))
+
+
+/****** test négatifs ******/
+
+/*** teste un ident tout seul ***/
+let test_ident = test "a";;
+
+Exception: Failure "Erreur a US_OP : UL_EQUAL, UL_DIFF, UL_INF, UL_SUP, UL_SUPEG ou UL_INFEG attendu.".
+
+/*** teste l'absence du fsi ***/
+let test_sialorssinon3 = test "si a < b alors z = b2 sinon z = a";;
+
+Exception: Failure "Erreur d'analyse".
+
+/*** teste l'absence du sinon ***/
+let test_sialorssinon4 = test "si a < b alors z = b2 fsi";;
+
+Exception: Failure "Erreur d'analyse".
+
+/*** teste une expression vide entourée de paranthèses ***/
+let test_par3 = test "()";;
+
+Exception: Failure "Erreur a US_EXPR : UL_IDENT, UL_PAROPEN ou UL_SI attendu.".
+
+/*** teste une paranthèse non fermée ***/
+let test_par4 = test "(a < b ou (b > c et d = c) ou d <= e";;
+
+Exception: Failure "Erreur d'analyse".
+
+/*** teste un ou avec une mauvaise expression à droite (le ou attend une relation à gauche et à droite) ***/
+let test_ou1 = test "(a < b ou c) et (d = c ou d <= e)";;
+
+Exception: Failure "Erreur a US_OP : UL_EQUAL, UL_DIFF, UL_INF, UL_SUP, UL_SUPEG ou UL_INFEG attendu.".
+
+/*** teste un opérateur ayant les paramètres (un opérateur doit avoir un ident à gauche et à droite ***/
+let test_op1 = test "a < (b < c)";;
+
+Exception: Failure "Erreur d'analyse".
+
+
+
+

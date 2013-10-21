@@ -1,0 +1,185 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{mathtools}
+%% \usepackage{pst-tree}
+%% \usepackage{pdftricks}
+%% \begin{psinputs}
+%%    \usepackage{pstricks}
+%%    \usepackage{multido}
+%% \end{psinputs}
+\usepackage{qtree}
+ 
+\lstset{
+mathescape=true,
+breaklines=true
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{
+  Damien \textsc{Crémilleux}, Tom \textsc{Demulier--Chevret} \\ \\
+  INSA de Rennes \\
+  4INFO, LSR-B
+}
+
+\title{TP2 Compilation \\ Analyse syntaxique descendante}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Compte-rendu}
+
+\subsection{Grammaire}
+
+\subsubsection{Nouvelle grammaire utilisée}
+
+La grammaire 1.2 a été réécrite sous une forme équivalente qui ne comporte plus d'expression  régulière.
+
+\begin{lstlisting}[frame=single]
+ 1. <Expr>          --> <Termb> <SuiteExpr>
+ 2. <SuiteExpr>     --> ``ou'' <Expr> | $\epsilon$
+ 3. <Termb>         --> <Facteurb> <SuiteTermb>
+ 4. <SuiteTermb>    --> ``et'' <Termb> | $\epsilon$
+ 5. <Facteurb>      --> <Relation> | ``(`` <Expr> ``)'' |
+                      ``si'' <Expr> ``alors'' <Expr> ``sinon'' <Expr> ``fsi''
+ 6. <Relation>      --> <Ident> <Op> <Ident>
+ 7. <Op>            --> ``='' | ``<>'' | ``<'' |
+                      ``>'' | ``>='' | '<=''
+ 8. <Ident>         --> <Lettre> <SuiteIdentEt>
+ 9. <SuiteIndentEt> --> <SuiteIndent> <SuiteIndentEt> | $\epsilon$
+ 10.<SuiteIdent>    --> <Lettre> | <Chiffre>
+\end{lstlisting}
+
+\subsubsection{Preuve de la propriété LL(1)}
+
+Les règles 1, 3, 6 et 8 de la grammaire de comporte pas de ou, il n'y a donc pas de vérification à faire les concernant.
+
+Ce n'est pas le cas des règles 2, 4, 5, 7. Ident est considéré comme un terminal, il n'y a donc pas de vérification à effectuer pour les règles 9 et 10.
+
+\paragraph{Vérification de la règle 2}
+~
+\begin{lstlisting}
+premier(``ou'' <Expr>) $\cap$ premier($\epsilon$) = {``ou''} $\cap$ {$\epsilon$} = $\emptyset$
+
+null(<SuiteExpr>) = null (``ou'' <Expr>) $\vee$ null($\epsilon$) = vrai
+premier(<SuiteExpr>) = premier(``ou'' <Expr>) $\cup$ premier($\epsilon$) = {``ou''}
+suivant(<SuiteExpr>) =  suivant(<Expr>)
+suivant(<Expr>) = suivant(<SuiteExpr>)
+\end{lstlisting}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | l |}
+      \hline
+      suiv\_Expr & \{\} & $\emptyset$ & $\emptyset$ \\ \hline
+      suiv\_SuiteExpr & \{\} & $\emptyset$ & $\emptyset$ \\
+      \hline
+    \end{tabular}
+\end{center}
+
+Par Kleene, premier(<SuiteExpr>) $\cap$ suivant(<SuiteExpr>) = $\emptyset$
+
+\begin{lstlisting}
+null( ``ou'' <Expr>) = faux
+null($\epsilon$) = vrai
+\end{lstlisting}
+
+La règle 2 vérifie donc bien les propriétés d'une grammaire LL(1).
+
+\paragraph{Vérification de la règle 4}
+~
+\begin{lstlisting}
+premier(``et'' <Termb>) $\cap$ premier($\epsilon$) = {``et''} $\cap$ {$\epsilon$} = $\emptyset$
+
+null(<SuiteTermb>) = null (``et'' <Termb>) $\vee$ null($\epsilon$) = vrai
+premier(<SuiteTermb) = premier(``et'' <Termb>) $\cup$ premier($\epsilon$) = {``et''}
+suivant(<SuiteTermb>) =  suivant(<Termb>)
+suivant(<Termb>) = suivant(<SuiteTermb>)
+\end{lstlisting}
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | l |}
+      \hline
+      suiv\_Termb & \{\} & $\emptyset$ & $\emptyset$ \\ \hline
+      suiv\_SuiteTermb & \{\} & $\emptyset$ & $\emptyset$ \\
+      \hline
+    \end{tabular}
+\end{center}
+
+Par Kleene, premier(<SuiteTermb>) $\cap$ suivant(<SuiteTermb>) = $\emptyset$
+
+\begin{lstlisting}
+null( ``et'' <Termb>) = faux
+null($\epsilon$) = vrai
+\end{lstlisting}
+
+La règle 4 vérifie donc bien les propriétés d'une grammaire LL(1).
+
+\paragraph{Vérification de la règle 5}
+~
+\begin{lstlisting}
+premier(<Relation>) = premier(<Ident>) = {``ident''}
+premier(``(`` <Expr> ``)'') = {``(``}
+premier(``si'' <Expr> ``alors'' <Expr> ``sinon'' <Expr> ``fsi'') = {``si''}
+{``ident''} $\cap$ {``(``} $\cap$ {``si''} = $\emptyset$
+
+null(<Facteurb>) = faux
+\end{lstlisting}
+La règle 5 vérifie donc bien les propriétés d'une grammaire LL(1).
+
+\paragraph{Vérification de la règle 7}
+~
+\begin{lstlisting}
+premier(``='') $\cap$ premier(``<>'') $\cap$ premier(``<'') $\cap$ premier(``>'') $\cap$ premier(``<'') $\cap$ premier(``>='') $\cap$ premier(``<='') = $\emptyset$
+
+null(<Op>) = faux
+\end{lstlisting}
+La règle 7 vérifie donc bien les propriétés d'une grammaire LL(1).
+
+%% \subsubsection{Arbre concret}
+
+%% \Tree [ .t~>~y~et~(x~=~y) [.<Termb> <Facteurb> <>] <SuiteExpr> ]
+
+
+%% \Tree [ .Game~of~Throne House~Stark House~Baratheon House~Lannister House~Targaryen House~Arryn ]
+
+
+%% \section{Arbre plus complexe}
+%% \Tree [ .Game~of~Throne [ .House~Stark [ .Eddard~Stark [ .Jon~Snow ] ] [ .Catelyn~Stark [ .Robb~Stark ] [ .Sansa~Stark ] [ .Arya~Stark ] [ .Bran~Stark ] [ .Rickon~Stark ] ] ] [ .House~Baratheon [ .King~Robert~Baratheon Renly~Baratheon ][ .Queen~Cersei~Baratheon Myrcella~Baratheon Joffrey~Baratheon Tommen~Baratheon ] ][ .House~Lannister [ .Tywin~Lannister [ .Tyrion~Lannister ] [ .Jaime~Lannister ] ] ] [ .House~Targaryen [ .Daenerys~Targaryen ] [ .Viserys~Targaryen ] ] [ .House~Arryn [ .Lysa~Arryn ] [ .Jon~Arryn [ .Robin~Arryn ] ] ] ]
+
+
+
+
+\subsection{Questions de compréhension du TP}
+
+\paragraph{Question 2.1}
+Les commentaires sont éliminés lors de l'analyse lexicale, ils n'ont donc pas besoin d'être inclus dans la grammaire définissant les constructeurs du langage.
+
+\paragraph{Question 2.2}
+L'implémentation réalisée repose sur la construction d'un arbre. Cette structure de donnée permet de mémoriser les éléments à compter, à l'image d'un automate à pile.
+
+\paragraph{Question 2.3}
+L'intérêt d'utiliser une grammaire LL(1) est de pouvoir effectuer une analyse descendante complètement déterministe. En effet la pré-lecture de la prochaine unité lexicale suffit à garantir l'unicité de la règle de dérivation.
+
+\paragraph{Question 2.4}
+L'intérêt d'utiliser un arbre abstrait réside dans le fait de manipuler un objet beaucoup plus léger, qui ne contient plus que la structure profonde indispensable.
+
+\section{Sources}
+Les sources OCaml sont disponibles dans le dossier Sources. Le fichier \textit{ulex.ml} contient la déclaration de type des unités lexicales, tandis que \textit{lexer.mll} décrit l'analyseur lexical.
+L'analyse syntaxique descendante est réalisée dans le fichier \textit{anasynt.ml}.
+
+\section{Tests}
+
+\end{document}

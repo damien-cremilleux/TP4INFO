@@ -1,0 +1,1769 @@
+"anasynt.ml" 64 1064 1068 "anasynt.ml" 64 1064 1078
+type(
+  vn * Ulex.token -> v list
+)
+ident(
+  def derivation "anasynt.ml" 89 2290 2290 --
+)
+"anasynt.ml" 64 1064 1080 "anasynt.ml" 64 1064 1082
+type(
+  vn
+)
+ident(
+  def vn "anasynt.ml" 64 1064 1090 "anasynt.ml" 85 2245 2278
+)
+"anasynt.ml" 64 1064 1084 "anasynt.ml" 64 1064 1086
+type(
+  Ulex.token
+)
+ident(
+  def ul "anasynt.ml" 64 1064 1090 "anasynt.ml" 85 2245 2278
+)
+"anasynt.ml" 64 1064 1079 "anasynt.ml" 64 1064 1087
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 64 1064 1096 "anasynt.ml" 64 1064 1098
+type(
+  vn
+)
+ident(
+  int_ref vn "anasynt.ml" 64 1064 1080 "anasynt.ml" 64 1064 1082
+)
+"anasynt.ml" 64 1064 1100 "anasynt.ml" 64 1064 1102
+type(
+  Ulex.token
+)
+ident(
+  int_ref ul "anasynt.ml" 64 1064 1084 "anasynt.ml" 64 1064 1086
+)
+"anasynt.ml" 64 1064 1096 "anasynt.ml" 64 1064 1102
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 65 1108 1112 "anasynt.ml" 65 1108 1119
+type(
+  vn
+)
+"anasynt.ml" 65 1108 1130 "anasynt.ml" 65 1108 1135
+type(
+  string
+)
+ident(
+  def ident "anasynt.ml" 65 1108 1139 "anasynt.ml" 65 1108 1169
+)
+"anasynt.ml" 65 1108 1121 "anasynt.ml" 65 1108 1135
+type(
+  Ulex.token
+)
+"anasynt.ml" 65 1108 1112 "anasynt.ml" 65 1108 1135
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 65 1108 1143 "anasynt.ml" 65 1108 1151
+type(
+  vn
+)
+"anasynt.ml" 65 1108 1140 "anasynt.ml" 65 1108 1151
+type(
+  v
+)
+"anasynt.ml" 65 1108 1156 "anasynt.ml" 65 1108 1168
+type(
+  vn
+)
+"anasynt.ml" 65 1108 1153 "anasynt.ml" 65 1108 1168
+type(
+  v
+)
+"anasynt.ml" 65 1108 1139 "anasynt.ml" 65 1108 1169
+type(
+  v list
+)
+"anasynt.ml" 66 1170 1174 "anasynt.ml" 66 1170 1181
+type(
+  vn
+)
+"anasynt.ml" 66 1170 1183 "anasynt.ml" 66 1170 1193
+type(
+  Ulex.token
+)
+"anasynt.ml" 66 1170 1174 "anasynt.ml" 66 1170 1193
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 66 1170 1201 "anasynt.ml" 66 1170 1209
+type(
+  vn
+)
+"anasynt.ml" 66 1170 1198 "anasynt.ml" 66 1170 1209
+type(
+  v
+)
+"anasynt.ml" 66 1170 1214 "anasynt.ml" 66 1170 1226
+type(
+  vn
+)
+"anasynt.ml" 66 1170 1211 "anasynt.ml" 66 1170 1226
+type(
+  v
+)
+"anasynt.ml" 66 1170 1197 "anasynt.ml" 66 1170 1227
+type(
+  v list
+)
+"anasynt.ml" 67 1228 1232 "anasynt.ml" 67 1228 1239
+type(
+  vn
+)
+"anasynt.ml" 67 1228 1241 "anasynt.ml" 67 1228 1246
+type(
+  Ulex.token
+)
+"anasynt.ml" 67 1228 1232 "anasynt.ml" 67 1228 1246
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 67 1228 1254 "anasynt.ml" 67 1228 1262
+type(
+  vn
+)
+"anasynt.ml" 67 1228 1251 "anasynt.ml" 67 1228 1262
+type(
+  v
+)
+"anasynt.ml" 67 1228 1267 "anasynt.ml" 67 1228 1279
+type(
+  vn
+)
+"anasynt.ml" 67 1228 1264 "anasynt.ml" 67 1228 1279
+type(
+  v
+)
+"anasynt.ml" 67 1228 1250 "anasynt.ml" 67 1228 1280
+type(
+  v list
+)
+"anasynt.ml" 68 1281 1285 "anasynt.ml" 68 1281 1297
+type(
+  vn
+)
+"anasynt.ml" 68 1281 1299 "anasynt.ml" 68 1281 1304
+type(
+  Ulex.token
+)
+"anasynt.ml" 68 1281 1285 "anasynt.ml" 68 1281 1304
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 68 1281 1312 "anasynt.ml" 68 1281 1317
+type(
+  vt
+)
+"anasynt.ml" 68 1281 1309 "anasynt.ml" 68 1281 1317
+type(
+  v
+)
+"anasynt.ml" 68 1281 1322 "anasynt.ml" 68 1281 1329
+type(
+  vn
+)
+"anasynt.ml" 68 1281 1319 "anasynt.ml" 68 1281 1329
+type(
+  v
+)
+"anasynt.ml" 68 1281 1308 "anasynt.ml" 68 1281 1330
+type(
+  v list
+)
+"anasynt.ml" 69 1331 1335 "anasynt.ml" 69 1331 1347
+type(
+  vn
+)
+"anasynt.ml" 69 1331 1349 "anasynt.ml" 69 1331 1350
+type(
+  Ulex.token
+)
+"anasynt.ml" 69 1331 1335 "anasynt.ml" 69 1331 1350
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 69 1331 1354 "anasynt.ml" 69 1331 1356
+type(
+  v list
+)
+"anasynt.ml" 70 1357 1361 "anasynt.ml" 70 1357 1369
+type(
+  vn
+)
+"anasynt.ml" 70 1357 1380 "anasynt.ml" 70 1357 1385
+type(
+  string
+)
+ident(
+  def ident "anasynt.ml" 70 1357 1389 "anasynt.ml" 70 1357 1422
+)
+"anasynt.ml" 70 1357 1371 "anasynt.ml" 70 1357 1385
+type(
+  Ulex.token
+)
+"anasynt.ml" 70 1357 1361 "anasynt.ml" 70 1357 1385
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 70 1357 1393 "anasynt.ml" 70 1357 1404
+type(
+  vn
+)
+"anasynt.ml" 70 1357 1390 "anasynt.ml" 70 1357 1404
+type(
+  v
+)
+"anasynt.ml" 70 1357 1409 "anasynt.ml" 70 1357 1421
+type(
+  vn
+)
+"anasynt.ml" 70 1357 1406 "anasynt.ml" 70 1357 1421
+type(
+  v
+)
+"anasynt.ml" 70 1357 1389 "anasynt.ml" 70 1357 1422
+type(
+  v list
+)
+"anasynt.ml" 71 1423 1427 "anasynt.ml" 71 1423 1435
+type(
+  vn
+)
+"anasynt.ml" 71 1423 1437 "anasynt.ml" 71 1423 1447
+type(
+  Ulex.token
+)
+"anasynt.ml" 71 1423 1427 "anasynt.ml" 71 1423 1447
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 71 1423 1455 "anasynt.ml" 71 1423 1466
+type(
+  vn
+)
+"anasynt.ml" 71 1423 1452 "anasynt.ml" 71 1423 1466
+type(
+  v
+)
+"anasynt.ml" 71 1423 1471 "anasynt.ml" 71 1423 1483
+type(
+  vn
+)
+"anasynt.ml" 71 1423 1468 "anasynt.ml" 71 1423 1483
+type(
+  v
+)
+"anasynt.ml" 71 1423 1451 "anasynt.ml" 71 1423 1484
+type(
+  v list
+)
+"anasynt.ml" 72 1485 1489 "anasynt.ml" 72 1485 1497
+type(
+  vn
+)
+"anasynt.ml" 72 1485 1499 "anasynt.ml" 72 1485 1504
+type(
+  Ulex.token
+)
+"anasynt.ml" 72 1485 1489 "anasynt.ml" 72 1485 1504
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 72 1485 1512 "anasynt.ml" 72 1485 1523
+type(
+  vn
+)
+"anasynt.ml" 72 1485 1509 "anasynt.ml" 72 1485 1523
+type(
+  v
+)
+"anasynt.ml" 72 1485 1528 "anasynt.ml" 72 1485 1540
+type(
+  vn
+)
+"anasynt.ml" 72 1485 1525 "anasynt.ml" 72 1485 1540
+type(
+  v
+)
+"anasynt.ml" 72 1485 1508 "anasynt.ml" 72 1485 1541
+type(
+  v list
+)
+"anasynt.ml" 73 1542 1546 "anasynt.ml" 73 1542 1559
+type(
+  vn
+)
+"anasynt.ml" 73 1542 1561 "anasynt.ml" 73 1542 1567
+type(
+  Ulex.token
+)
+"anasynt.ml" 73 1542 1546 "anasynt.ml" 73 1542 1567
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 73 1542 1575 "anasynt.ml" 73 1542 1581
+type(
+  vt
+)
+"anasynt.ml" 73 1542 1572 "anasynt.ml" 73 1542 1581
+type(
+  v
+)
+"anasynt.ml" 73 1542 1586 "anasynt.ml" 73 1542 1594
+type(
+  vn
+)
+"anasynt.ml" 73 1542 1583 "anasynt.ml" 73 1542 1594
+type(
+  v
+)
+"anasynt.ml" 73 1542 1571 "anasynt.ml" 73 1542 1595
+type(
+  v list
+)
+"anasynt.ml" 74 1596 1600 "anasynt.ml" 74 1596 1613
+type(
+  vn
+)
+"anasynt.ml" 74 1596 1615 "anasynt.ml" 74 1596 1616
+type(
+  Ulex.token
+)
+"anasynt.ml" 74 1596 1600 "anasynt.ml" 74 1596 1616
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 74 1596 1620 "anasynt.ml" 74 1596 1622
+type(
+  v list
+)
+"anasynt.ml" 75 1623 1627 "anasynt.ml" 75 1623 1638
+type(
+  vn
+)
+"anasynt.ml" 75 1623 1649 "anasynt.ml" 75 1623 1654
+type(
+  string
+)
+ident(
+  def ident "anasynt.ml" 75 1623 1658 "anasynt.ml" 75 1623 1674
+)
+"anasynt.ml" 75 1623 1640 "anasynt.ml" 75 1623 1654
+type(
+  Ulex.token
+)
+"anasynt.ml" 75 1623 1627 "anasynt.ml" 75 1623 1654
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 75 1623 1662 "anasynt.ml" 75 1623 1673
+type(
+  vn
+)
+"anasynt.ml" 75 1623 1659 "anasynt.ml" 75 1623 1673
+type(
+  v
+)
+"anasynt.ml" 75 1623 1658 "anasynt.ml" 75 1623 1674
+type(
+  v list
+)
+"anasynt.ml" 76 1675 1679 "anasynt.ml" 76 1675 1690
+type(
+  vn
+)
+"anasynt.ml" 76 1675 1692 "anasynt.ml" 76 1675 1702
+type(
+  Ulex.token
+)
+"anasynt.ml" 76 1675 1679 "anasynt.ml" 76 1675 1702
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 76 1675 1710 "anasynt.ml" 76 1675 1720
+type(
+  vt
+)
+"anasynt.ml" 76 1675 1707 "anasynt.ml" 76 1675 1720
+type(
+  v
+)
+"anasynt.ml" 76 1675 1725 "anasynt.ml" 76 1675 1732
+type(
+  vn
+)
+"anasynt.ml" 76 1675 1722 "anasynt.ml" 76 1675 1732
+type(
+  v
+)
+"anasynt.ml" 76 1675 1737 "anasynt.ml" 76 1675 1748
+type(
+  vt
+)
+"anasynt.ml" 76 1675 1734 "anasynt.ml" 76 1675 1748
+type(
+  v
+)
+"anasynt.ml" 76 1675 1706 "anasynt.ml" 76 1675 1749
+type(
+  v list
+)
+"anasynt.ml" 77 1750 1754 "anasynt.ml" 77 1750 1765
+type(
+  vn
+)
+"anasynt.ml" 77 1750 1767 "anasynt.ml" 77 1750 1772
+type(
+  Ulex.token
+)
+"anasynt.ml" 77 1750 1754 "anasynt.ml" 77 1750 1772
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 77 1750 1780 "anasynt.ml" 77 1750 1785
+type(
+  vt
+)
+"anasynt.ml" 77 1750 1777 "anasynt.ml" 77 1750 1785
+type(
+  v
+)
+"anasynt.ml" 77 1750 1790 "anasynt.ml" 77 1750 1797
+type(
+  vn
+)
+"anasynt.ml" 77 1750 1787 "anasynt.ml" 77 1750 1797
+type(
+  v
+)
+"anasynt.ml" 77 1750 1802 "anasynt.ml" 77 1750 1810
+type(
+  vt
+)
+"anasynt.ml" 77 1750 1799 "anasynt.ml" 77 1750 1810
+type(
+  v
+)
+"anasynt.ml" 77 1750 1815 "anasynt.ml" 77 1750 1822
+type(
+  vn
+)
+"anasynt.ml" 77 1750 1812 "anasynt.ml" 77 1750 1822
+type(
+  v
+)
+"anasynt.ml" 77 1750 1827 "anasynt.ml" 77 1750 1835
+type(
+  vt
+)
+"anasynt.ml" 77 1750 1824 "anasynt.ml" 77 1750 1835
+type(
+  v
+)
+"anasynt.ml" 77 1750 1840 "anasynt.ml" 77 1750 1847
+type(
+  vn
+)
+"anasynt.ml" 77 1750 1837 "anasynt.ml" 77 1750 1847
+type(
+  v
+)
+"anasynt.ml" 77 1750 1852 "anasynt.ml" 77 1750 1858
+type(
+  vt
+)
+"anasynt.ml" 77 1750 1849 "anasynt.ml" 77 1750 1858
+type(
+  v
+)
+"anasynt.ml" 77 1750 1776 "anasynt.ml" 77 1750 1859
+type(
+  v list
+)
+"anasynt.ml" 78 1860 1864 "anasynt.ml" 78 1860 1875
+type(
+  vn
+)
+"anasynt.ml" 78 1860 1886 "anasynt.ml" 78 1860 1891
+type(
+  string
+)
+ident(
+  def ident "anasynt.ml" 78 1860 1895 "anasynt.ml" 78 1860 1941
+)
+"anasynt.ml" 78 1860 1877 "anasynt.ml" 78 1860 1891
+type(
+  Ulex.token
+)
+"anasynt.ml" 78 1860 1864 "anasynt.ml" 78 1860 1891
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 78 1860 1909 "anasynt.ml" 78 1860 1911
+type(
+  string
+)
+"anasynt.ml" 78 1860 1899 "anasynt.ml" 78 1860 1912
+type(
+  vt
+)
+"anasynt.ml" 78 1860 1896 "anasynt.ml" 78 1860 1912
+type(
+  v
+)
+"anasynt.ml" 78 1860 1917 "anasynt.ml" 78 1860 1922
+type(
+  vn
+)
+"anasynt.ml" 78 1860 1914 "anasynt.ml" 78 1860 1922
+type(
+  v
+)
+"anasynt.ml" 78 1860 1937 "anasynt.ml" 78 1860 1939
+type(
+  string
+)
+"anasynt.ml" 78 1860 1927 "anasynt.ml" 78 1860 1940
+type(
+  vt
+)
+"anasynt.ml" 78 1860 1924 "anasynt.ml" 78 1860 1940
+type(
+  v
+)
+"anasynt.ml" 78 1860 1895 "anasynt.ml" 78 1860 1941
+type(
+  v list
+)
+"anasynt.ml" 79 2033 2037 "anasynt.ml" 79 2033 2042
+type(
+  vn
+)
+"anasynt.ml" 79 2033 2044 "anasynt.ml" 79 2033 2052
+type(
+  Ulex.token
+)
+"anasynt.ml" 79 2033 2037 "anasynt.ml" 79 2033 2052
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 79 2033 2060 "anasynt.ml" 79 2033 2068
+type(
+  vt
+)
+"anasynt.ml" 79 2033 2057 "anasynt.ml" 79 2033 2068
+type(
+  v
+)
+"anasynt.ml" 79 2033 2056 "anasynt.ml" 79 2033 2069
+type(
+  v list
+)
+"anasynt.ml" 80 2070 2074 "anasynt.ml" 80 2070 2079
+type(
+  vn
+)
+"anasynt.ml" 80 2070 2081 "anasynt.ml" 80 2070 2088
+type(
+  Ulex.token
+)
+"anasynt.ml" 80 2070 2074 "anasynt.ml" 80 2070 2088
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 80 2070 2096 "anasynt.ml" 80 2070 2103
+type(
+  vt
+)
+"anasynt.ml" 80 2070 2093 "anasynt.ml" 80 2070 2103
+type(
+  v
+)
+"anasynt.ml" 80 2070 2092 "anasynt.ml" 80 2070 2104
+type(
+  v list
+)
+"anasynt.ml" 81 2105 2109 "anasynt.ml" 81 2105 2114
+type(
+  vn
+)
+"anasynt.ml" 81 2105 2116 "anasynt.ml" 81 2105 2122
+type(
+  Ulex.token
+)
+"anasynt.ml" 81 2105 2109 "anasynt.ml" 81 2105 2122
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 81 2105 2130 "anasynt.ml" 81 2105 2136
+type(
+  vt
+)
+"anasynt.ml" 81 2105 2127 "anasynt.ml" 81 2105 2136
+type(
+  v
+)
+"anasynt.ml" 81 2105 2126 "anasynt.ml" 81 2105 2137
+type(
+  v list
+)
+"anasynt.ml" 82 2138 2142 "anasynt.ml" 82 2138 2147
+type(
+  vn
+)
+"anasynt.ml" 82 2138 2149 "anasynt.ml" 82 2138 2155
+type(
+  Ulex.token
+)
+"anasynt.ml" 82 2138 2142 "anasynt.ml" 82 2138 2155
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 82 2138 2163 "anasynt.ml" 82 2138 2169
+type(
+  vt
+)
+"anasynt.ml" 82 2138 2160 "anasynt.ml" 82 2138 2169
+type(
+  v
+)
+"anasynt.ml" 82 2138 2159 "anasynt.ml" 82 2138 2170
+type(
+  v list
+)
+"anasynt.ml" 83 2171 2175 "anasynt.ml" 83 2171 2180
+type(
+  vn
+)
+"anasynt.ml" 83 2171 2182 "anasynt.ml" 83 2171 2190
+type(
+  Ulex.token
+)
+"anasynt.ml" 83 2171 2175 "anasynt.ml" 83 2171 2190
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 83 2171 2198 "anasynt.ml" 83 2171 2206
+type(
+  vt
+)
+"anasynt.ml" 83 2171 2195 "anasynt.ml" 83 2171 2206
+type(
+  v
+)
+"anasynt.ml" 83 2171 2194 "anasynt.ml" 83 2171 2207
+type(
+  v list
+)
+"anasynt.ml" 84 2208 2212 "anasynt.ml" 84 2208 2217
+type(
+  vn
+)
+"anasynt.ml" 84 2208 2219 "anasynt.ml" 84 2208 2227
+type(
+  Ulex.token
+)
+"anasynt.ml" 84 2208 2212 "anasynt.ml" 84 2208 2227
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 84 2208 2235 "anasynt.ml" 84 2208 2243
+type(
+  vt
+)
+"anasynt.ml" 84 2208 2232 "anasynt.ml" 84 2208 2243
+type(
+  v
+)
+"anasynt.ml" 84 2208 2231 "anasynt.ml" 84 2208 2244
+type(
+  v list
+)
+"anasynt.ml" 85 2245 2249 "anasynt.ml" 85 2245 2250
+type(
+  vn
+)
+ident(
+  def x "anasynt.ml" 85 2245 2256 "anasynt.ml" 85 2245 2278
+)
+"anasynt.ml" 85 2245 2251 "anasynt.ml" 85 2245 2252
+type(
+  Ulex.token
+)
+ident(
+  def y "anasynt.ml" 85 2245 2256 "anasynt.ml" 85 2245 2278
+)
+"anasynt.ml" 85 2245 2249 "anasynt.ml" 85 2245 2252
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 85 2245 2256 "anasynt.ml" 85 2245 2264
+type(
+  string -> v list
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"anasynt.ml" 85 2245 2265 "anasynt.ml" 85 2245 2278
+type(
+  string
+)
+"anasynt.ml" 85 2245 2256 "anasynt.ml" 85 2245 2278
+call(
+  tail
+)
+type(
+  v list
+)
+"anasynt.ml" 64 1064 1090 "anasynt.ml" 85 2245 2278
+type(
+  v list
+)
+"anasynt.ml" 89 2290 2294 "anasynt.ml" 89 2290 2304
+type(
+  vt * Ulex.token -> arbre_concret
+)
+ident(
+  def analyse_vt "anasynt.ml" 108 2959 2959 --
+)
+"anasynt.ml" 89 2290 2306 "anasynt.ml" 89 2290 2308
+type(
+  vt
+)
+ident(
+  def vt "anasynt.ml" 90 2316 2318 "anasynt.ml" 106 2922 2955
+)
+"anasynt.ml" 89 2290 2310 "anasynt.ml" 89 2290 2312
+type(
+  Ulex.token
+)
+ident(
+  def ul "anasynt.ml" 90 2316 2318 "anasynt.ml" 106 2922 2955
+)
+"anasynt.ml" 89 2290 2305 "anasynt.ml" 89 2290 2313
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 90 2316 2324 "anasynt.ml" 90 2316 2326
+type(
+  vt
+)
+ident(
+  int_ref vt "anasynt.ml" 89 2290 2306 "anasynt.ml" 89 2290 2308
+)
+"anasynt.ml" 90 2316 2328 "anasynt.ml" 90 2316 2330
+type(
+  Ulex.token
+)
+ident(
+  int_ref ul "anasynt.ml" 89 2290 2310 "anasynt.ml" 89 2290 2312
+)
+"anasynt.ml" 90 2316 2324 "anasynt.ml" 90 2316 2330
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 91 2336 2340 "anasynt.ml" 91 2336 2345
+type(
+  vt
+)
+"anasynt.ml" 91 2336 2347 "anasynt.ml" 91 2336 2352
+type(
+  Ulex.token
+)
+"anasynt.ml" 91 2336 2340 "anasynt.ml" 91 2336 2352
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 91 2336 2361 "anasynt.ml" 91 2336 2366
+type(
+  vt
+)
+"anasynt.ml" 91 2336 2356 "anasynt.ml" 91 2336 2366
+type(
+  arbre_concret
+)
+"anasynt.ml" 92 2367 2371 "anasynt.ml" 92 2367 2377
+type(
+  vt
+)
+"anasynt.ml" 92 2367 2379 "anasynt.ml" 92 2367 2385
+type(
+  Ulex.token
+)
+"anasynt.ml" 92 2367 2371 "anasynt.ml" 92 2367 2385
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 92 2367 2394 "anasynt.ml" 92 2367 2400
+type(
+  vt
+)
+"anasynt.ml" 92 2367 2389 "anasynt.ml" 92 2367 2400
+type(
+  arbre_concret
+)
+"anasynt.ml" 93 2401 2405 "anasynt.ml" 93 2401 2410
+type(
+  vt
+)
+"anasynt.ml" 93 2401 2412 "anasynt.ml" 93 2401 2417
+type(
+  Ulex.token
+)
+"anasynt.ml" 93 2401 2405 "anasynt.ml" 93 2401 2417
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 93 2401 2426 "anasynt.ml" 93 2401 2431
+type(
+  vt
+)
+"anasynt.ml" 93 2401 2421 "anasynt.ml" 93 2401 2431
+type(
+  arbre_concret
+)
+"anasynt.ml" 94 2432 2436 "anasynt.ml" 94 2432 2444
+type(
+  vt
+)
+"anasynt.ml" 94 2432 2446 "anasynt.ml" 94 2432 2454
+type(
+  Ulex.token
+)
+"anasynt.ml" 94 2432 2436 "anasynt.ml" 94 2432 2454
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 94 2432 2463 "anasynt.ml" 94 2432 2471
+type(
+  vt
+)
+"anasynt.ml" 94 2432 2458 "anasynt.ml" 94 2432 2471
+type(
+  arbre_concret
+)
+"anasynt.ml" 95 2472 2476 "anasynt.ml" 95 2472 2484
+type(
+  vt
+)
+"anasynt.ml" 95 2472 2486 "anasynt.ml" 95 2472 2494
+type(
+  Ulex.token
+)
+"anasynt.ml" 95 2472 2476 "anasynt.ml" 95 2472 2494
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 95 2472 2503 "anasynt.ml" 95 2472 2511
+type(
+  vt
+)
+"anasynt.ml" 95 2472 2498 "anasynt.ml" 95 2472 2511
+type(
+  arbre_concret
+)
+"anasynt.ml" 96 2512 2516 "anasynt.ml" 96 2512 2522
+type(
+  vt
+)
+"anasynt.ml" 96 2512 2524 "anasynt.ml" 96 2512 2530
+type(
+  Ulex.token
+)
+"anasynt.ml" 96 2512 2516 "anasynt.ml" 96 2512 2530
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 96 2512 2539 "anasynt.ml" 96 2512 2545
+type(
+  vt
+)
+"anasynt.ml" 96 2512 2534 "anasynt.ml" 96 2512 2545
+type(
+  arbre_concret
+)
+"anasynt.ml" 97 2546 2550 "anasynt.ml" 97 2546 2558
+type(
+  vt
+)
+"anasynt.ml" 97 2546 2560 "anasynt.ml" 97 2546 2568
+type(
+  Ulex.token
+)
+"anasynt.ml" 97 2546 2550 "anasynt.ml" 97 2546 2568
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 97 2546 2577 "anasynt.ml" 97 2546 2585
+type(
+  vt
+)
+"anasynt.ml" 97 2546 2572 "anasynt.ml" 97 2546 2585
+type(
+  arbre_concret
+)
+"anasynt.ml" 98 2586 2590 "anasynt.ml" 98 2586 2597
+type(
+  vt
+)
+"anasynt.ml" 98 2586 2599 "anasynt.ml" 98 2586 2606
+type(
+  Ulex.token
+)
+"anasynt.ml" 98 2586 2590 "anasynt.ml" 98 2586 2606
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 98 2586 2615 "anasynt.ml" 98 2586 2622
+type(
+  vt
+)
+"anasynt.ml" 98 2586 2610 "anasynt.ml" 98 2586 2622
+type(
+  arbre_concret
+)
+"anasynt.ml" 99 2623 2627 "anasynt.ml" 99 2623 2633
+type(
+  vt
+)
+"anasynt.ml" 99 2623 2635 "anasynt.ml" 99 2623 2641
+type(
+  Ulex.token
+)
+"anasynt.ml" 99 2623 2627 "anasynt.ml" 99 2623 2641
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 99 2623 2650 "anasynt.ml" 99 2623 2656
+type(
+  vt
+)
+"anasynt.ml" 99 2623 2645 "anasynt.ml" 99 2623 2656
+type(
+  arbre_concret
+)
+"anasynt.ml" 100 2657 2661 "anasynt.ml" 100 2657 2667
+type(
+  vt
+)
+"anasynt.ml" 100 2657 2669 "anasynt.ml" 100 2657 2675
+type(
+  Ulex.token
+)
+"anasynt.ml" 100 2657 2661 "anasynt.ml" 100 2657 2675
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 100 2657 2684 "anasynt.ml" 100 2657 2690
+type(
+  vt
+)
+"anasynt.ml" 100 2657 2679 "anasynt.ml" 100 2657 2690
+type(
+  arbre_concret
+)
+"anasynt.ml" 101 2691 2695 "anasynt.ml" 101 2691 2703
+type(
+  vt
+)
+"anasynt.ml" 101 2691 2705 "anasynt.ml" 101 2691 2713
+type(
+  Ulex.token
+)
+"anasynt.ml" 101 2691 2695 "anasynt.ml" 101 2691 2713
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 101 2691 2722 "anasynt.ml" 101 2691 2730
+type(
+  vt
+)
+"anasynt.ml" 101 2691 2717 "anasynt.ml" 101 2691 2730
+type(
+  arbre_concret
+)
+"anasynt.ml" 102 2731 2735 "anasynt.ml" 102 2731 2743
+type(
+  vt
+)
+"anasynt.ml" 102 2731 2745 "anasynt.ml" 102 2731 2753
+type(
+  Ulex.token
+)
+"anasynt.ml" 102 2731 2735 "anasynt.ml" 102 2731 2753
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 102 2731 2762 "anasynt.ml" 102 2731 2770
+type(
+  vt
+)
+"anasynt.ml" 102 2731 2757 "anasynt.ml" 102 2731 2770
+type(
+  arbre_concret
+)
+"anasynt.ml" 103 2771 2775 "anasynt.ml" 103 2771 2785
+type(
+  vt
+)
+"anasynt.ml" 103 2771 2787 "anasynt.ml" 103 2771 2797
+type(
+  Ulex.token
+)
+"anasynt.ml" 103 2771 2775 "anasynt.ml" 103 2771 2797
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 103 2771 2806 "anasynt.ml" 103 2771 2816
+type(
+  vt
+)
+"anasynt.ml" 103 2771 2801 "anasynt.ml" 103 2771 2816
+type(
+  arbre_concret
+)
+"anasynt.ml" 104 2817 2821 "anasynt.ml" 104 2817 2832
+type(
+  vt
+)
+"anasynt.ml" 104 2817 2834 "anasynt.ml" 104 2817 2845
+type(
+  Ulex.token
+)
+"anasynt.ml" 104 2817 2821 "anasynt.ml" 104 2817 2845
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 104 2817 2854 "anasynt.ml" 104 2817 2865
+type(
+  vt
+)
+"anasynt.ml" 104 2817 2849 "anasynt.ml" 104 2817 2865
+type(
+  arbre_concret
+)
+"anasynt.ml" 105 2866 2879 "anasynt.ml" 105 2866 2880
+type(
+  string
+)
+"anasynt.ml" 105 2866 2870 "anasynt.ml" 105 2866 2880
+type(
+  vt
+)
+"anasynt.ml" 105 2866 2891 "anasynt.ml" 105 2866 2896
+type(
+  string
+)
+ident(
+  def ident "anasynt.ml" 105 2866 2900 "anasynt.ml" 105 2866 2921
+)
+"anasynt.ml" 105 2866 2882 "anasynt.ml" 105 2866 2896
+type(
+  Ulex.token
+)
+"anasynt.ml" 105 2866 2870 "anasynt.ml" 105 2866 2896
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 105 2866 2915 "anasynt.ml" 105 2866 2920
+type(
+  string
+)
+ident(
+  int_ref ident "anasynt.ml" 105 2866 2891 "anasynt.ml" 105 2866 2896
+)
+"anasynt.ml" 105 2866 2905 "anasynt.ml" 105 2866 2921
+type(
+  vt
+)
+"anasynt.ml" 105 2866 2900 "anasynt.ml" 105 2866 2921
+type(
+  arbre_concret
+)
+"anasynt.ml" 106 2922 2926 "anasynt.ml" 106 2922 2927
+type(
+  vt
+)
+ident(
+  def x "anasynt.ml" 106 2922 2933 "anasynt.ml" 106 2922 2955
+)
+"anasynt.ml" 106 2922 2928 "anasynt.ml" 106 2922 2929
+type(
+  Ulex.token
+)
+ident(
+  def y "anasynt.ml" 106 2922 2933 "anasynt.ml" 106 2922 2955
+)
+"anasynt.ml" 106 2922 2926 "anasynt.ml" 106 2922 2929
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 106 2922 2933 "anasynt.ml" 106 2922 2941
+type(
+  string -> arbre_concret
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"anasynt.ml" 106 2922 2942 "anasynt.ml" 106 2922 2955
+type(
+  string
+)
+"anasynt.ml" 106 2922 2933 "anasynt.ml" 106 2922 2955
+call(
+  tail
+)
+type(
+  arbre_concret
+)
+"anasynt.ml" 90 2316 2318 "anasynt.ml" 106 2922 2955
+type(
+  arbre_concret
+)
+"anasynt.ml" 108 2959 2967 "anasynt.ml" 108 2959 2984
+type(
+  v * Ulex.token list -> arbre_concret * Ulex.token list
+)
+ident(
+  def analyse_caractere "anasynt.ml" 108 2959 2959 --
+)
+"anasynt.ml" 108 2959 2986 "anasynt.ml" 108 2959 2987
+type(
+  v
+)
+ident(
+  def v "anasynt.ml" 109 3002 3004 "anasynt.ml" 112 3215 3263
+)
+"anasynt.ml" 108 2959 2989 "anasynt.ml" 108 2959 2998
+type(
+  Ulex.token list
+)
+ident(
+  def liste_ul1 "anasynt.ml" 109 3002 3004 "anasynt.ml" 112 3215 3263
+)
+"anasynt.ml" 108 2959 2985 "anasynt.ml" 108 2959 2999
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 109 3002 3010 "anasynt.ml" 109 3002 3011
+type(
+  v
+)
+ident(
+  int_ref v "anasynt.ml" 108 2959 2986 "anasynt.ml" 108 2959 2987
+)
+"anasynt.ml" 109 3002 3013 "anasynt.ml" 109 3002 3022
+type(
+  Ulex.token list
+)
+ident(
+  int_ref liste_ul1 "anasynt.ml" 108 2959 2989 "anasynt.ml" 108 2959 2998
+)
+"anasynt.ml" 109 3002 3010 "anasynt.ml" 109 3002 3022
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 110 3028 3035 "anasynt.ml" 110 3028 3037
+type(
+  vt
+)
+ident(
+  def vt "anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3078
+)
+"anasynt.ml" 110 3028 3032 "anasynt.ml" 110 3028 3037
+type(
+  v
+)
+"anasynt.ml" 110 3028 3039 "anasynt.ml" 110 3028 3041
+type(
+  Ulex.token
+)
+ident(
+  def ul "anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3078
+)
+"anasynt.ml" 110 3028 3043 "anasynt.ml" 110 3028 3048
+type(
+  Ulex.token list
+)
+ident(
+  def reste "anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3078
+)
+"anasynt.ml" 110 3028 3039 "anasynt.ml" 110 3028 3048
+type(
+  Ulex.token list
+)
+"anasynt.ml" 110 3028 3032 "anasynt.ml" 110 3028 3048
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3062
+type(
+  vt * Ulex.token -> arbre_concret
+)
+ident(
+  int_ref analyse_vt "anasynt.ml" 89 2290 2294 "anasynt.ml" 89 2290 2304
+)
+"anasynt.ml" 110 3028 3064 "anasynt.ml" 110 3028 3066
+type(
+  vt
+)
+ident(
+  int_ref vt "anasynt.ml" 110 3028 3035 "anasynt.ml" 110 3028 3037
+)
+"anasynt.ml" 110 3028 3068 "anasynt.ml" 110 3028 3070
+type(
+  Ulex.token
+)
+ident(
+  int_ref ul "anasynt.ml" 110 3028 3039 "anasynt.ml" 110 3028 3041
+)
+"anasynt.ml" 110 3028 3063 "anasynt.ml" 110 3028 3071
+type(
+  vt * Ulex.token
+)
+"anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3071
+call(
+  stack
+)
+type(
+  arbre_concret
+)
+"anasynt.ml" 110 3028 3073 "anasynt.ml" 110 3028 3078
+type(
+  Ulex.token list
+)
+ident(
+  int_ref reste "anasynt.ml" 110 3028 3043 "anasynt.ml" 110 3028 3048
+)
+"anasynt.ml" 110 3028 3052 "anasynt.ml" 110 3028 3078
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 111 3079 3086 "anasynt.ml" 111 3079 3088
+type(
+  vn
+)
+ident(
+  def vn "anasynt.ml" 111 3079 3104 "anasynt.ml" 111 3079 3214
+)
+"anasynt.ml" 111 3079 3083 "anasynt.ml" 111 3079 3088
+type(
+  v
+)
+"anasynt.ml" 111 3079 3091 "anasynt.ml" 111 3079 3093
+type(
+  Ulex.token
+)
+ident(
+  def ul "anasynt.ml" 111 3079 3104 "anasynt.ml" 111 3079 3214
+)
+"anasynt.ml" 111 3079 3095 "anasynt.ml" 111 3079 3100
+type(
+  Ulex.token list
+)
+ident(
+  def reste "anasynt.ml" 111 3079 3104 "anasynt.ml" 111 3079 3214
+)
+"anasynt.ml" 111 3079 3091 "anasynt.ml" 111 3079 3100
+type(
+  Ulex.token list
+)
+"anasynt.ml" 111 3079 3083 "anasynt.ml" 111 3079 3100
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 111 3079 3108 "anasynt.ml" 111 3079 3119
+type(
+  arbre_concret list
+)
+"anasynt.ml" 111 3079 3121 "anasynt.ml" 111 3079 3130
+type(
+  Ulex.token list
+)
+"anasynt.ml" 111 3079 3108 "anasynt.ml" 111 3079 3130
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 111 3079 3133 "anasynt.ml" 111 3079 3144
+type(
+  v list * Ulex.token list -> arbre_concret list * Ulex.token list
+)
+ident(
+  int_ref analyse_mot "anasynt.ml" 114 3268 3272 "anasynt.ml" 114 3268 3283
+)
+"anasynt.ml" 111 3079 3146 "anasynt.ml" 111 3079 3156
+type(
+  vn * Ulex.token -> v list
+)
+ident(
+  int_ref derivation "anasynt.ml" 64 1064 1068 "anasynt.ml" 64 1064 1078
+)
+"anasynt.ml" 111 3079 3158 "anasynt.ml" 111 3079 3160
+type(
+  vn
+)
+ident(
+  int_ref vn "anasynt.ml" 111 3079 3086 "anasynt.ml" 111 3079 3088
+)
+"anasynt.ml" 111 3079 3162 "anasynt.ml" 111 3079 3164
+type(
+  Ulex.token
+)
+ident(
+  int_ref ul "anasynt.ml" 111 3079 3091 "anasynt.ml" 111 3079 3093
+)
+"anasynt.ml" 111 3079 3157 "anasynt.ml" 111 3079 3165
+type(
+  vn * Ulex.token
+)
+"anasynt.ml" 111 3079 3146 "anasynt.ml" 111 3079 3165
+call(
+  stack
+)
+type(
+  v list
+)
+"anasynt.ml" 111 3079 3167 "anasynt.ml" 111 3079 3169
+type(
+  Ulex.token
+)
+ident(
+  int_ref ul "anasynt.ml" 111 3079 3091 "anasynt.ml" 111 3079 3093
+)
+"anasynt.ml" 111 3079 3171 "anasynt.ml" 111 3079 3176
+type(
+  Ulex.token list
+)
+ident(
+  int_ref reste "anasynt.ml" 111 3079 3095 "anasynt.ml" 111 3079 3100
+)
+"anasynt.ml" 111 3079 3167 "anasynt.ml" 111 3079 3176
+type(
+  Ulex.token list
+)
+"anasynt.ml" 111 3079 3145 "anasynt.ml" 111 3079 3177
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 111 3079 3133 "anasynt.ml" 111 3079 3177
+call(
+  stack
+)
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 111 3079 3187 "anasynt.ml" 111 3079 3189
+type(
+  vn
+)
+ident(
+  int_ref vn "anasynt.ml" 111 3079 3086 "anasynt.ml" 111 3079 3088
+)
+"anasynt.ml" 111 3079 3191 "anasynt.ml" 111 3079 3202
+type(
+  arbre_concret list
+)
+ident(
+  int_ref liste_arbre "anasynt.ml" 111 3079 3108 "anasynt.ml" 111 3079 3119
+)
+"anasynt.ml" 111 3079 3181 "anasynt.ml" 111 3079 3203
+type(
+  arbre_concret
+)
+"anasynt.ml" 111 3079 3205 "anasynt.ml" 111 3079 3214
+type(
+  Ulex.token list
+)
+ident(
+  int_ref liste_ul2 "anasynt.ml" 111 3079 3121 "anasynt.ml" 111 3079 3130
+)
+"anasynt.ml" 111 3079 3181 "anasynt.ml" 111 3079 3214
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 111 3079 3104 "anasynt.ml" 111 3079 3214
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 112 3215 3219 "anasynt.ml" 112 3215 3220
+type(
+  v
+)
+"anasynt.ml" 112 3215 3221 "anasynt.ml" 112 3215 3222
+type(
+  Ulex.token list
+)
+"anasynt.ml" 112 3215 3219 "anasynt.ml" 112 3215 3222
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 112 3215 3226 "anasynt.ml" 112 3215 3234
+type(
+  string -> arbre_concret * Ulex.token list
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"anasynt.ml" 112 3215 3235 "anasynt.ml" 112 3215 3263
+type(
+  string
+)
+"anasynt.ml" 112 3215 3226 "anasynt.ml" 112 3215 3263
+call(
+  tail
+)
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 109 3002 3004 "anasynt.ml" 112 3215 3263
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 114 3268 3272 "anasynt.ml" 114 3268 3283
+type(
+  v list * Ulex.token list -> arbre_concret list * Ulex.token list
+)
+ident(
+  def analyse_mot "anasynt.ml" 108 2959 2959 --
+)
+"anasynt.ml" 114 3268 3285 "anasynt.ml" 114 3268 3292
+type(
+  v list
+)
+ident(
+  def liste_v "anasynt.ml" 115 3307 3309 "anasynt.ml" 121 3623 3664
+)
+"anasynt.ml" 114 3268 3294 "anasynt.ml" 114 3268 3303
+type(
+  Ulex.token list
+)
+ident(
+  def liste_ul1 "anasynt.ml" 115 3307 3309 "anasynt.ml" 121 3623 3664
+)
+"anasynt.ml" 114 3268 3284 "anasynt.ml" 114 3268 3304
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 115 3307 3315 "anasynt.ml" 115 3307 3322
+type(
+  v list
+)
+ident(
+  int_ref liste_v "anasynt.ml" 114 3268 3285 "anasynt.ml" 114 3268 3292
+)
+"anasynt.ml" 115 3307 3324 "anasynt.ml" 115 3307 3333
+type(
+  Ulex.token list
+)
+ident(
+  int_ref liste_ul1 "anasynt.ml" 114 3268 3294 "anasynt.ml" 114 3268 3303
+)
+"anasynt.ml" 115 3307 3315 "anasynt.ml" 115 3307 3333
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 116 3339 3343 "anasynt.ml" 116 3339 3345
+type(
+  v list
+)
+"anasynt.ml" 116 3339 3347 "anasynt.ml" 116 3339 3349
+type(
+  Ulex.token list
+)
+"anasynt.ml" 116 3339 3343 "anasynt.ml" 116 3339 3349
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 116 3339 3353 "anasynt.ml" 116 3339 3355
+type(
+  arbre_concret list
+)
+"anasynt.ml" 116 3339 3356 "anasynt.ml" 116 3339 3358
+type(
+  Ulex.token list
+)
+"anasynt.ml" 116 3339 3353 "anasynt.ml" 116 3339 3358
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 117 3359 3363 "anasynt.ml" 117 3359 3364
+type(
+  v list
+)
+"anasynt.ml" 117 3359 3366 "anasynt.ml" 117 3359 3368
+type(
+  Ulex.token list
+)
+"anasynt.ml" 117 3359 3363 "anasynt.ml" 117 3359 3368
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 117 3359 3372 "anasynt.ml" 117 3359 3380
+type(
+  string -> arbre_concret list * Ulex.token list
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"anasynt.ml" 117 3359 3381 "anasynt.ml" 117 3359 3440
+type(
+  string
+)
+"anasynt.ml" 117 3359 3372 "anasynt.ml" 117 3359 3440
+call(
+  tail
+)
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 118 3441 3445 "anasynt.ml" 118 3441 3447
+type(
+  v list
+)
+"anasynt.ml" 118 3441 3448 "anasynt.ml" 118 3441 3449
+type(
+  Ulex.token list
+)
+ident(
+  def l "anasynt.ml" 118 3441 3453 "anasynt.ml" 118 3441 3458
+)
+"anasynt.ml" 118 3441 3445 "anasynt.ml" 118 3441 3449
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 118 3441 3453 "anasynt.ml" 118 3441 3455
+type(
+  arbre_concret list
+)
+"anasynt.ml" 118 3441 3457 "anasynt.ml" 118 3441 3458
+type(
+  Ulex.token list
+)
+ident(
+  int_ref l "anasynt.ml" 118 3441 3448 "anasynt.ml" 118 3441 3449
+)
+"anasynt.ml" 118 3441 3453 "anasynt.ml" 118 3441 3458
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 119 3460 3464 "anasynt.ml" 119 3460 3465
+type(
+  v
+)
+ident(
+  def v "anasynt.ml" 119 3460 3488 "anasynt.ml" 121 3623 3664
+)
+"anasynt.ml" 119 3460 3467 "anasynt.ml" 119 3460 3473
+type(
+  v list
+)
+ident(
+  def reste1 "anasynt.ml" 119 3460 3488 "anasynt.ml" 121 3623 3664
+)
+"anasynt.ml" 119 3460 3464 "anasynt.ml" 119 3460 3473
+type(
+  v list
+)
+"anasynt.ml" 119 3460 3475 "anasynt.ml" 119 3460 3484
+type(
+  Ulex.token list
+)
+ident(
+  def liste_ul1 "anasynt.ml" 119 3460 3488 "anasynt.ml" 121 3623 3664
+)
+"anasynt.ml" 119 3460 3464 "anasynt.ml" 119 3460 3484
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 119 3460 3492 "anasynt.ml" 119 3460 3497
+type(
+  arbre_concret
+)
+"anasynt.ml" 119 3460 3499 "anasynt.ml" 119 3460 3508
+type(
+  Ulex.token list
+)
+"anasynt.ml" 119 3460 3492 "anasynt.ml" 119 3460 3508
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 119 3460 3511 "anasynt.ml" 119 3460 3528
+type(
+  v * Ulex.token list -> arbre_concret * Ulex.token list
+)
+ident(
+  int_ref analyse_caractere "anasynt.ml" 108 2959 2967 "anasynt.ml" 108 2959 2984
+)
+"anasynt.ml" 119 3460 3530 "anasynt.ml" 119 3460 3531
+type(
+  v
+)
+ident(
+  int_ref v "anasynt.ml" 119 3460 3464 "anasynt.ml" 119 3460 3465
+)
+"anasynt.ml" 119 3460 3533 "anasynt.ml" 119 3460 3542
+type(
+  Ulex.token list
+)
+ident(
+  int_ref liste_ul1 "anasynt.ml" 119 3460 3475 "anasynt.ml" 119 3460 3484
+)
+"anasynt.ml" 119 3460 3529 "anasynt.ml" 119 3460 3543
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 119 3460 3511 "anasynt.ml" 119 3460 3543
+call(
+  stack
+)
+type(
+  arbre_concret * Ulex.token list
+)
+"anasynt.ml" 120 3547 3558 "anasynt.ml" 120 3547 3569
+type(
+  arbre_concret list
+)
+"anasynt.ml" 120 3547 3571 "anasynt.ml" 120 3547 3585
+type(
+  Ulex.token list
+)
+"anasynt.ml" 120 3547 3558 "anasynt.ml" 120 3547 3585
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 120 3547 3588 "anasynt.ml" 120 3547 3599
+type(
+  v list * Ulex.token list -> arbre_concret list * Ulex.token list
+)
+ident(
+  int_ref analyse_mot "anasynt.ml" 114 3268 3272 "anasynt.ml" 114 3268 3283
+)
+"anasynt.ml" 120 3547 3601 "anasynt.ml" 120 3547 3607
+type(
+  v list
+)
+ident(
+  int_ref reste1 "anasynt.ml" 119 3460 3467 "anasynt.ml" 119 3460 3473
+)
+"anasynt.ml" 120 3547 3609 "anasynt.ml" 120 3547 3618
+type(
+  Ulex.token list
+)
+ident(
+  int_ref liste_ul2 "anasynt.ml" 119 3460 3499 "anasynt.ml" 119 3460 3508
+)
+"anasynt.ml" 120 3547 3600 "anasynt.ml" 120 3547 3619
+type(
+  v list * Ulex.token list
+)
+"anasynt.ml" 120 3547 3588 "anasynt.ml" 120 3547 3619
+call(
+  stack
+)
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 121 3623 3630 "anasynt.ml" 121 3623 3635
+type(
+  arbre_concret
+)
+ident(
+  int_ref arbre "anasynt.ml" 119 3460 3492 "anasynt.ml" 119 3460 3497
+)
+"anasynt.ml" 121 3623 3637 "anasynt.ml" 121 3623 3648
+type(
+  arbre_concret list
+)
+ident(
+  int_ref suite_arbre "anasynt.ml" 120 3547 3558 "anasynt.ml" 120 3547 3569
+)
+"anasynt.ml" 121 3623 3630 "anasynt.ml" 121 3623 3648
+type(
+  arbre_concret list
+)
+"anasynt.ml" 121 3623 3650 "anasynt.ml" 121 3623 3664
+type(
+  Ulex.token list
+)
+ident(
+  int_ref suite_liste_ul "anasynt.ml" 120 3547 3571 "anasynt.ml" 120 3547 3585
+)
+"anasynt.ml" 121 3623 3630 "anasynt.ml" 121 3623 3664
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 120 3547 3554 "anasynt.ml" 121 3623 3664
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 119 3460 3488 "anasynt.ml" 121 3623 3664
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 115 3307 3309 "anasynt.ml" 121 3623 3664
+type(
+  arbre_concret list * Ulex.token list
+)
+"anasynt.ml" 125 3668 3672 "anasynt.ml" 125 3668 3673
+type(
+  arbre_concret * Ulex.token list
+)
+ident(
+  def x "anasynt.ml" 126 3676 3746 --
+)
+"anasynt.ml" 126 3676 3676 "anasynt.ml" 126 3676 3693
+type(
+  v * Ulex.token list -> arbre_concret * Ulex.token list
+)
+ident(
+  int_ref analyse_caractere "anasynt.ml" 108 2959 2967 "anasynt.ml" 108 2959 2984
+)
+"anasynt.ml" 126 3676 3697 "anasynt.ml" 126 3676 3708
+type(
+  vn
+)
+"anasynt.ml" 126 3676 3694 "anasynt.ml" 126 3676 3708
+type(
+  v
+)
+"anasynt.ml" 126 3676 3719 "anasynt.ml" 126 3676 3722
+type(
+  string
+)
+"anasynt.ml" 126 3676 3710 "anasynt.ml" 126 3676 3722
+type(
+  Ulex.token
+)
+"anasynt.ml" 126 3676 3724 "anasynt.ml" 126 3676 3730
+type(
+  Ulex.token
+)
+"anasynt.ml" 126 3676 3741 "anasynt.ml" 126 3676 3744
+type(
+  string
+)
+"anasynt.ml" 126 3676 3732 "anasynt.ml" 126 3676 3744
+type(
+  Ulex.token
+)
+"anasynt.ml" 126 3676 3709 "anasynt.ml" 126 3676 3745
+type(
+  Ulex.token list
+)
+"anasynt.ml" 126 3676 3693 "anasynt.ml" 126 3676 3746
+type(
+  v * Ulex.token list
+)
+"anasynt.ml" 126 3676 3676 "anasynt.ml" 126 3676 3746
+call(
+  stack
+)
+type(
+  arbre_concret * Ulex.token list
+)

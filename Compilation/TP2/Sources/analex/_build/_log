@@ -1,0 +1,18 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules main.ml > main.ml.depends # cached
+# Target: lexer.mll, tags: { extension:mll, file:lexer.mll, lexer, ocaml, ocamllex, quiet }
+/usr/bin/ocamllex.opt -q lexer.mll
+# Target: lexer.ml.depends, tags: { extension:ml, file:lexer.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules lexer.ml > lexer.ml.depends
+# Target: ulex.ml.depends, tags: { extension:ml, file:ulex.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules ulex.ml > ulex.ml.depends # cached
+# Target: ulex.cmo, tags: { byte, compile, extension:ml, file:ulex.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -annot -o ulex.cmo ulex.ml # cached
+# Target: lexer.cmo, tags: { byte, compile, extension:ml, file:lexer.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -annot -o lexer.cmo lexer.ml
+# Target: main.cmo, tags: { byte, compile, extension:ml, file:main.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -annot -o main.cmo main.ml # cached
+# Target: main.byte, tags: { byte, dont_link_with, extension:byte, file:main.byte, link, ocaml, program, quiet }
+/usr/bin/ocamlc.opt ulex.cmo lexer.cmo main.cmo -o main.byte
+# Compilation successful.
