@@ -1,0 +1,56 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{listings}
+\usepackage{listingsutf8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{
+  Damien \textsc{Crémilleux}, Tom \textsc{Demulier--Chevret} \\ \\
+  INSA de Rennes \\
+  4INFO, LSR-B
+}
+
+\title{Compte Rendu - TP1 Compilation}
+\date{18 Septembre 2013}
+
+\begin{document}
+\maketitle
+
+\section{Sources}
+
+Les sources OCaml sont disponibles dans le dossier Sources. Le fichier ulex.ml contient la déclaration de type des unités lexicales. lexer.mll décrit l'analyseur lexical.
+
+\section{Questions de compréhension}
+
+\paragraph{Question 1.1} L'intérêt d'avoir un crible séparé de l'analyseur lexical réside dans la maintenance et l'adaptabilité du code.
+En effet, dans l'hypothèse d'ajout de nouvelles unités lexicales, seul le crible sera à modifier, l'analyseur lexical restera inchangé.
+
+\paragraph{Question 1.2} Il est possible de reconnaître les mots clefs ``et'' et ``ou'' par le même lexème que ``ident''.
+L'AFD n'aura pas à faire la différence entre le ``et'', le ``ou'' et les ``ident'' (ce sont tous des chaînes de charactères).
+Ce sera donc au crible d'assigner la bonne unité lexicale en fonction du contenu du lexeme ``ident''. 
+
+\paragraph{Question 1.3} Les types énumérés de Caml assurent une bonne lisibilité du code (noms explicites) et permettent d'effectuer des filtrages simplement (match with).
+De plus, on ainsi leur assoccier un constructeur (exemple : ident contenant un parametre chaine de charactères ``lxm'').
+
+\paragraph{Question 1.4} L'utilisation d'un scanner incrémental permet d'appliquer immédiatement le crible au lexème et donc de détecter immédiatemment les erreurs.
+Sans cela, une erreur serait détectée, mais on ne connaîtrait pas la position de celle-ci, rendant ainsi plus compliqué le débogage.
+
+\paragraph{Question 1.5} On considère ``ident'' comme un terminal, car sa grammaire associée ne sert qu'à décrire une chaine de charactère commençant par une lettre et suivi de chiffres ou de lettres.
+
+\paragraph{Question 1.6} Pour introduire les modifications venant avec la grammaire 1.2, il suffit de créer de nouvelles unités lexicales correspondantes aux nouveaux terminaux (``si'' donnera UL\_SI, ``sinon'' donnera UL\_SINON, ``>='' donnera UL\_SUPEQUAL, etc) et de les ajouter au crible.
+
+\section{Tests}
+
+Le fichier contenant les tests est situé dans le dossier Test. Ne maitrisant pas les entrées sorties en Caml, ceux ci sont dupliqués en dur dans le code du programme principale. Tous les tests se déroulent comme prévus.
+
+\end{document}

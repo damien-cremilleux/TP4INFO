@@ -1,0 +1,8 @@
+toto et titi tutu ou tata
+toto et titi tutu ou tata
+jojo et /* commentaires */ ) cheval = sinon (
+ = titi = <> jean < > et
+toto /* this is a comment */ et /* another comment */ =
+toto /* this is a comment /* more complicated */ et /* another / *** complicated /* comment */ = 
+= /***** blabla * petit /*/ etoile/***/ toto 
+(tests are ) ( terminated (()
