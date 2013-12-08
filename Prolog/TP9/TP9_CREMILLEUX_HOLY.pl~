@@ -1,0 +1,83 @@
+/**
+TP 9 Prolog
+
+@author Damien CREMILLEUX
+@author Lauriane HOLY
+@version Annee scolaire 2013/2014
+*/
+
+%%Liste Copains pour les tests
+copain([damien, arnaud, samuel, aurelien, lauriane, clement]).
+exemple([plutot,riri,fifi,loulou]).
+
+
+%% Question 1.1
+%% combiner(+Copains,-Binomes) : 'a list * ('a * 'a) list
+%% Produit la liste de tous les binomes
+
+%% Associe un binome avec le reste de la liste
+associer(_,[],[]).
+associer(Binome,[Bin1| Reste],[(Binome,Bin1)|ResTemp]) :-
+	associer(Binome,Reste,ResTemp).
+	
+combiner([],[]).
+combiner([Copain1|Rest],Binomes) :-
+	associer(Copain1,Rest,Binomes1),
+	combiner(Rest,Binomes2),
+	append(Binomes1,Binomes2,Binomes).
+
+%%Question 1.2
+%%extraire(+AllPossibleBinomes, +NbBinomes, -Tp, -RemainingBinomes)
+%% 
+
+extraire2(BinomeRestant,0,[],BinomeRestant,_).
+
+extraire2([(Bin1,Bin2)|Reste],NbBinomes,[(Bin1,Bin2)|Tp],RemainingBinomes,BinDejaPris) :-
+	not(member(Bin1,BinDejaPris)),
+	not(member(Bin2,BinDejaPris)),
+	NbBinomes2 is NbBinomes-1,
+	extraire2(Reste,NbBinomes2,Tp,RemainingBinomes,[Bin1,Bin2|BinDejaPris]).
+
+extraire2([(Bin1,Bin2)|Reste],NbBinomes,Tp,[(Bin1,Bin2)|RemainingBinomes],BinDejaPris) :-
+	extraire2(Reste,NbBinomes,Tp,RemainingBinomes,BinDejaPris).
+	
+/*
+extraire2([(Bin1,Bin2)|Reste],NbBinomes,Tp,[(Bin1,Bin2)|RemainingBinomes],BinDejaPris) :-
+	member(Bin1,BinDejaPris),
+	not(member(Bin2,BinDejaPris)),
+	extraire2(Reste,NbBinomes,Tp,RemainingBinomes,BinDejaPris).
+
+extraire2([(Bin1,Bin2)|Reste],NbBinomes,Tp,[(Bin1,Bin2)|RemainingBinomes],BinDejaPris) :-
+	not(member(Bin1,BinDejaPris)),
+	member(Bin2,BinDejaPris),
+	extraire2(Reste,NbBinomes,Tp,RemainingBinomes,BinDejaPris).
+
+extraire2([(Bin1,Bin2)|Reste],NbBinomes,Tp,[(Bin1,Bin2)|RemainingBinomes],BinDejaPris) :-
+	member(Bin1,BinDejaPris),
+	member(Bin2,BinDejaPris),
+	extraire2(Reste,NbBinomes,Tp,RemainingBinomes,BinDejaPris).
+*/
+
+extraire(AllPossibleBinomes,NbBinomes, Tp, RemainingBinomes) :-
+	extraire2(AllPossibleBinomes,NbBinomes, Tp, RemainingBinomes,[]).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% TEST %%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+
+%%Question 1.1
+[eclipse 13]: copain(X), combiner(X,Binomes).
+
+X = [damien, arnaud, samuel, aurelien, lauriane, clement]
+Binomes = [(damien, arnaud), (damien, samuel), (damien, aurelien), (damien, lauriane), (damien, clement), (arnaud, samuel), (arnaud, aurelien), (arnaud, lauriane), (arnaud, clement), (samuel, aurelien), (samuel, lauriane), (samuel, clement), (aurelien, lauriane), (aurelien, clement), (lauriane, clement)]
+Yes (0.00s cpu)
+
+[eclipse 15]: exemple(X), combiner(X,Binomes).
+
+X = [plutot, riri, fifi, loulou]
+Binomes = [(plutot, riri), (plutot, fifi), (plutot, loulou), (riri, fifi), (riri, loulou), (fifi, loulou)]
+Yes (0.00s cpu)
+
+
+*/
