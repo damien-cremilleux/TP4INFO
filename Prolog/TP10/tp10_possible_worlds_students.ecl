@@ -75,9 +75,47 @@ prop5([likes(_,Y)|Reste],ListeLikes) :-
 	\==(Y,bess),
 	prop5(Reste,ListeLikes).
 
+proposition6(ListeLikes) :-
+	prop6(ListeLikes,ListeLikes).
 
-proposition6([likes(dana,X),likes(bess,X)]).
-proposition7([likes(abby,X),likes(X,bess)]).
+prop6([],_).
+
+prop6([likes(bess,X)|Reste],ListeLikes) :-
+	member(likes(dana,X),ListeLikes),
+	prop6(Reste,ListeLikes).
+
+prop6([likes(Y,_)|Reste],ListeLikes) :-
+	\==(Y,bess),
+	prop6(Reste,ListeLikes).
+
+
+proposition7(ListeLikes) :-
+        people(ListePersonnes),
+        prop7(ListePersonnes,ListeLikes).
+
+prop7([],_).
+
+prop7([Personne|RestePersonne],ListeLikes) :-
+        member(likes(Personne,_),ListeLikes),
+        prop7(RestePersonne,ListeLikes),
+        !.
+
+
+%% Question 1.4
+%% possible_worlds(-) : likes('a,'a) list
+
+possible_worlds(Monde) :-
+        people(ListePersonnes),
+        make_all_pairs(ListePersonnes,ListePaires),
+        sub_list(ListePaires,Monde),
+        proposition1(Monde),
+        proposition2(Monde),
+        proposition3(Monde),
+        proposition4(Monde),
+        proposition5(Monde),
+        proposition6(Monde),
+        proposition7(Monde).
+
 
 
 % Questions 1.6 and 1.7
@@ -85,6 +123,35 @@ test_possible_worlds :-
         possible_worlds(World),
         writeln(World),
         fail.
+
+possible_worlds2(Monde) :-
+        people(ListePersonnes),
+        make_all_pairs(ListePersonnes,ListePaires),
+        sub_list(ListePaires,Monde),
+        proposition7(Monde),
+        proposition4(Monde),
+        proposition5(Monde),
+        proposition6(Monde),
+        proposition1(Monde),
+        proposition2(Monde),
+        proposition3(Monde).
+
+test_possible_worlds2 :-
+        possible_worlds2(World),
+        writeln(World),
+        fail.
+
+%% Question 1.6
+% On remarque que la liste de 4 personnes engendre un nombre de monde
+% possible de 65 536 (soit 2^16).
+% La liste de 5 personnes engendre un nombre de monde possible de
+% 33 554 432 (soit près de 2^34).
+% On propose une borne inférieure de 2^(2^n), de façon empirique.
+
+% Question 1.7
+% Le changement d'ordre des littéraux ne change heureusement pas la liste des solutions.
+% On constate que les résultats de coverage sont légèrement différents, car les propositions éliminent plus ou moins de résultats. Enfin, la complexité dépendant de la taille de la liste , celle-ci n'est pas changée.
+
 
 %% TESTS
 /*
@@ -216,4 +283,55 @@ No (0.00s cpu)
 [eclipse 116]: proposition4([likes(bess,dana),likes(dana,bess),likes(dana,cody)]). 
 
 No (0.00s cpu)
+
+[eclipse 3]: proposition5(likes(dana,bess),likes(abby,dana)).
+calling an undefined procedure proposition5(likes(dana, bess), likes(abby, dana)) in module eclipse
+Abort
+[eclipse 4]: proposition5([likes(dana,bess),likes(abby,dana)]).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 5]: proposition5([likes(dana,bess),likes(bess,dana)]).
+
+No (0.00s cpu)
+
+
+[eclipse 8]: proposition6([likes(dana,bess),likes(bess,dana),likes(dana,dana)]).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 9]: proposition6([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby)]).
+
+No (0.00s cpu)
+
+
+[eclipse 16]: proposition7([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby),likes(cody,dana),likes(bess,abby),likes(abby,abby)]).
+
+Yes (0.00s cpu)
+[eclipse 17]: proposition7([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby)]).
+
+No (0.00s cpu)
+
+
+%% Question 1.4
+
+[eclipse 25]: possible_worlds(Monde).
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(cody, cody), likes(dana, cody), likes(abby, dana), likes(cody, dana), likes(dana, dana)]
+Yes (0.02s cpu, solution 1, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(cody, cody), likes(dana, cody), likes(abby, dana), likes(cody, dana)]
+Yes (0.02s cpu, solution 2, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(dana, cody), likes(abby, dana), likes(cody, dana), likes(dana, dana)]
+Yes (0.02s cpu, solution 3, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(dana, cody), likes(abby, dana), likes(cody, dana)]
+Yes (0.02s cpu, solution 4, maybe more) ? ;
+
+No (0.10s cpu)
+
+
 */
