@@ -19,7 +19,7 @@ void handler_fils(int sig){
 }
 
 void handler_pere(int sig){
-   printf("Signal recu SIGUSR2\n");
+  printf("Signal recu SIGUSR2\n");
 }
 
 int main (int argc, char * argv[])
@@ -48,7 +48,7 @@ int main (int argc, char * argv[])
       exit(0);
     }
 
- //fils
+  //fils
   if(pid==0)
     {
       cpt_rec = 0;
@@ -56,14 +56,14 @@ int main (int argc, char * argv[])
       while(1) {
 	sigsuspend(&mask_anc); // le masque est temporairement remplacé en attendant le fils
 	int pid_papa = getppid();
-	 kill(pid_papa,SIGUSR2); // envoie de SIGUSR2
+	kill(pid_papa,SIGUSR2); // envoie de SIGUSR2
       }
     }
   else //pere
     {
       cpt_env = 0;
       while(1) {
-	printf("Envoi du : %d\n", ++cpt_rec);
+	printf("Envoi du : %d\n", ++cpt_env);
 	kill(pid,SIGUSR1); // envoie de SIGUSR1
 	// attente de la réception
 	sigsuspend(&mask_anc); 

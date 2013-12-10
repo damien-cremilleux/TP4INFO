@@ -21,7 +21,7 @@ int main (int argc, char * argv[])
   cpt =0;
 
   sigemptyset(&mask_nv);
-  sigaddset(&mask_nv, SIGINT);// on ajoute le signal SIGUSR1 // A decommenter
+  sigaddset(&mask_nv, SIGINT);// on ajoute le signal SIGINT (Ctrl-C)
   sigprocmask(SIG_UNBLOCK, &mask_nv, &mask_anc); // met en place le nouveau masque, on débloque SIGINT
  
   //Définition du handler
