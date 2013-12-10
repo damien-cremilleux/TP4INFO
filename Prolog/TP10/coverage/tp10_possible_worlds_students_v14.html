@@ -1,0 +1,329 @@
+<html><head><title>tp10_possible_worlds_students.ecl</title>
+	    <link type="text/css" rel="stylesheet" href="style.css"> </head><body><h1>File: tp10_possible_worlds_students.ecl
+</h1><HR>
+<pre><span class="comment">%% TP 10 MONDES POSSIBLES
+%% Cremilleux Damien - Holy Lauriane
+
+
+
+% dana likes cody
+% bess does not like dana
+% cody does not like abby
+% nobody likes someone who does not like her
+% abby likes everyone who likes bess
+% dana likes everyone bess likes
+% everybody likes somebody
+
+</span><a name="people-1"></a><span class="head">people</span>([<span class="atom">abby</span>, <span class="atom">bess</span>, <span class="atom">cody</span>, <span class="atom">dana</span>])<span class="coverage"> 21 </span>.<span class="comment">
+
+%% Question 1.1
+%% make_all_pairs(+,-) : 
+
+</span><a name="make_all_pairs_elem-3"></a><span class="head">make_all_pairs_elem</span>(<span class="head">[]</span>, <span class="variable">_3075</span>, <span class="head">[]</span>)<span class="coverage"> 4 </span>.<span class="comment">
+</span><span class="head">make_all_pairs_elem</span>([<span class="variable">Elem</span>|<span class="variable">Rest</span>], <span class="variable">Elem2</span>, [<span class="functor">likes</span>(<span class="variable">Elem</span>, <span class="variable">Elem2</span>)|<span class="variable">ListeRes</span>]) <span class="control">:-</span>
+        <span class="coverage"> 16 </span><a class="call" href="#make_all_pairs_elem-3">make_all_pairs_elem</a>(<span class="variable">Rest</span>, <span class="variable">Elem2</span>, <span class="variable">ListeRes</span>)<span class="coverage"> 16 </span>.<span class="comment">
+
+</span><a name="make_all_pairs-2"></a><span class="head">make_all_pairs</span>(<span class="head">[]</span>, <span class="head">[]</span>)<span class="nocoverage"> 0 </span>.<span class="comment">
+</span><span class="head">make_all_pairs</span>(<span class="variable">ListeElem</span>, <span class="variable">Res</span>) <span class="control">:-</span>
+        <span class="coverage"> 1 </span><a class="call" href="#make_all_pairs2-3">make_all_pairs2</a>(<span class="variable">ListeElem</span>, <span class="variable">ListeElem</span>, <span class="variable">Res</span>)<span class="coverage"> 1 </span>.<span class="comment">
+
+</span><a name="make_all_pairs2-3"></a><span class="head">make_all_pairs2</span>(<span class="variable">_5021</span>, <span class="head">[]</span>, <span class="head">[]</span>)<span class="coverage"> 1 </span>.<span class="comment">
+
+</span><span class="head">make_all_pairs2</span>(<span class="variable">ListeElem</span>, [<span class="variable">Elem2</span>|<span class="variable">Reste2</span>], <span class="variable">Res</span>) <span class="control">:-</span>
+        <span class="coverage"> 4 </span><a class="call" href="#make_all_pairs_elem-3">make_all_pairs_elem</a>(<span class="variable">ListeElem</span>, <span class="variable">Elem2</span>, <span class="variable">ResTmp</span>),
+        <span class="coverage"> 4 </span><a class="call" href="#make_all_pairs2-3">make_all_pairs2</a>(<span class="variable">ListeElem</span>, <span class="variable">Reste2</span>, <span class="variable">ResTmp2</span>),
+        <span class="coverage"> 4 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/append-3.html">append</a>(<span class="variable">ResTmp</span>, <span class="variable">ResTmp2</span>, <span class="variable">Res</span>)<span class="coverage"> 4 </span>.<span class="comment">
+
+%% Question 1.2
+%% sub_list(+,-): 'a list * 'a list
+</span><a name="sub_list-2"></a><span class="head">sub_list</span>(<span class="head">[]</span>, <span class="head">[]</span>)<span class="coverage"> 65536 </span>.<span class="comment">
+
+</span><span class="head">sub_list</span>([<span class="variable">Elem</span>|<span class="variable">Rest</span>], [<span class="variable">Elem</span>|<span class="variable">Res</span>]) <span class="control">:-</span>
+        <span class="coverage"> 65535 </span><a class="call" href="#sub_list-2">sub_list</a>(<span class="variable">Rest</span>, <span class="variable">Res</span>)<span class="coverage"> 524288 </span>.<span class="comment">
+
+</span><span class="head">sub_list</span>([<span class="variable">_7587</span>|<span class="variable">Rest</span>], <span class="variable">Res</span>) <span class="control">:-</span>
+        <span class="coverage"> 65535 </span><a class="call" href="#sub_list-2">sub_list</a>(<span class="variable">Rest</span>, <span class="variable">Res</span>)<span class="coverage"> 524288 </span>.<span class="comment">
+
+
+%% Question 1.3
+%% proposition(+) : likes('a,'a) list
+</span><a name="proposition1-1"></a><span class="head">proposition1</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 65536 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="atom">dana</span>, <span class="atom">cody</span>), <span class="variable">ListeLikes</span>)<span class="coverage"> 32768 </span>.<span class="comment">
+
+</span><a name="proposition2-1"></a><span class="head">proposition2</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 32768 </span><a class="warning" href="file:///opt/eclipseclp/doc/bips/kernel/control/not-1.html">not</a> <a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="atom">bess</span>, <span class="atom">dana</span>), <span class="variable">ListeLikes</span>)<span class="coverage"> 16384 </span><span class="coverage"> 16384 </span>.<span class="comment">
+
+</span><a name="proposition3-1"></a><span class="head">proposition3</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 16384 </span><a class="warning" href="file:///opt/eclipseclp/doc/bips/kernel/control/not-1.html">not</a> <a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="atom">cody</span>, <span class="atom">abby</span>), <span class="variable">ListeLikes</span>)<span class="coverage"> 8192 </span><span class="coverage"> 8192 </span>.<span class="comment">
+
+</span><a name="proposition4-1"></a><span class="head">proposition4</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 8192 </span><a class="call" href="#prop4-2">prop4</a>(<span class="variable">ListeLikes</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 128 </span>.<span class="comment">
+
+</span><a name="prop4-2"></a><span class="head">prop4</span>([<span class="functor">likes</span>(<span class="variable">X</span>, <span class="variable">Y</span>)|<span class="variable">Reste</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 20416 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="variable">Y</span>, <span class="variable">X</span>), <span class="variable">ListeLikes</span>),
+        <span class="coverage"> 12352 </span><a class="call" href="#prop4-2">prop4</a>(<span class="variable">Reste</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 896 </span>.<span class="comment">
+
+</span><span class="head">prop4</span>(<span class="head">[]</span>, <span class="variable">_11876</span>)<span class="coverage"> 128 </span>.<span class="comment">
+
+</span><a name="proposition5-1"></a><span class="head">proposition5</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 128 </span><a class="call" href="#prop5-2">prop5</a>(<span class="variable">ListeLikes</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 32 </span>.<span class="comment">
+
+</span><a name="prop5-2"></a><span class="head">prop5</span>(<span class="head">[]</span>, <span class="variable">_12635</span>)<span class="coverage"> 32 </span>.<span class="comment">
+
+</span><span class="head">prop5</span>([<span class="functor">likes</span>(<span class="variable">X</span>, <span class="atom">bess</span>)|<span class="variable">Reste</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 144 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="atom">abby</span>, <span class="variable">X</span>), <span class="variable">ListeLikes</span>),
+        <span class="coverage"> 48 </span><a class="call" href="#prop5-2">prop5</a>(<span class="variable">Reste</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 24 </span>.<span class="comment">
+
+</span><span class="head">prop5</span>([<span class="functor">likes</span>(<span class="variable">_13770</span>, <span class="variable">Y</span>)|<span class="variable">Reste</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 448 </span><span class="variable">Y</span> <a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/termcomp/REE-2.html">\==</a> <span class="atom">bess</span>,
+        <span class="coverage"> 304 </span><a class="call" href="#prop5-2">prop5</a>(<span class="variable">Reste</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 168 </span>.<span class="comment">
+
+</span><a name="proposition6-1"></a><span class="head">proposition6</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 32 </span><a class="call" href="#prop6-2">prop6</a>(<span class="variable">ListeLikes</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 20 </span>.<span class="comment">
+
+</span><a name="prop6-2"></a><span class="head">prop6</span>(<span class="head">[]</span>, <span class="variable">_14995</span>)<span class="coverage"> 20 </span>.<span class="comment">
+
+</span><span class="head">prop6</span>([<span class="functor">likes</span>(<span class="atom">bess</span>, <span class="variable">X</span>)|<span class="variable">Reste</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 20 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="atom">dana</span>, <span class="variable">X</span>), <span class="variable">ListeLikes</span>),
+        <span class="coverage"> 8 </span><a class="call" href="#prop6-2">prop6</a>(<span class="variable">Reste</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 4 </span>.<span class="comment">
+
+</span><span class="head">prop6</span>([<span class="functor">likes</span>(<span class="variable">Y</span>, <span class="variable">_16131</span>)|<span class="variable">Reste</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 140 </span><span class="variable">Y</span> <a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/termcomp/REE-2.html">\==</a> <span class="atom">bess</span>,
+        <span class="coverage"> 120 </span><a class="call" href="#prop6-2">prop6</a>(<span class="variable">Reste</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 100 </span>.<span class="comment">
+
+
+</span><a name="proposition7-1"></a><span class="head">proposition7</span>(<span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 20 </span><a class="call" href="#people-1">people</a>(<span class="variable">ListePersonnes</span>),
+        <span class="coverage"> 20 </span><a class="call" href="#prop7-2">prop7</a>(<span class="variable">ListePersonnes</span>, <span class="variable">ListeLikes</span>)<span class="coverage"> 4 </span>.<span class="comment">
+
+</span><a name="prop7-2"></a><span class="head">prop7</span>(<span class="head">[]</span>, <span class="variable">_17526</span>)<span class="coverage"> 4 </span>.<span class="comment">
+
+</span><span class="head">prop7</span>([<span class="variable">Personne</span>|<span class="variable">RestePersonne</span>], <span class="variable">ListeLikes</span>) <span class="control">:-</span>
+        <span class="coverage"> 48 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/lib/lists/member-2.html">member</a>(<span class="functor">likes</span>(<span class="variable">Personne</span>, <span class="variable">_17871</span>), <span class="variable">ListeLikes</span>),
+        <span class="coverage"> 32 </span><a class="call" href="#prop7-2">prop7</a>(<span class="variable">RestePersonne</span>, <span class="variable">ListeLikes</span>),
+        <span class="coverage"> 16 </span><a class="warning" href="file:///opt/eclipseclp/doc/bips/kernel/control/I-0.html">!</a><span class="coverage"> 16 </span>.<span class="comment">
+
+
+%% Question 1.4
+%% possible_worlds(-) : likes('a,'a) list
+
+</span><a name="possible_worlds-1"></a><span class="head">possible_worlds</span>(<span class="variable">Monde</span>) <span class="control">:-</span>
+        <span class="coverage"> 1 </span><a class="call" href="#people-1">people</a>(<span class="variable">ListePersonnes</span>),
+        <span class="coverage"> 1 </span><a class="call" href="#make_all_pairs-2">make_all_pairs</a>(<span class="variable">ListePersonnes</span>, <span class="variable">ListePaires</span>),
+        <span class="coverage"> 1 </span><a class="call" href="#sub_list-2">sub_list</a>(<span class="variable">ListePaires</span>, <span class="variable">Monde</span>),
+        <span class="coverage"> 65536 </span><a class="call" href="#proposition1-1">proposition1</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 32768 </span><a class="call" href="#proposition2-1">proposition2</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 16384 </span><a class="call" href="#proposition3-1">proposition3</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 8192 </span><a class="call" href="#proposition4-1">proposition4</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 128 </span><a class="call" href="#proposition5-1">proposition5</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 32 </span><a class="call" href="#proposition6-1">proposition6</a>(<span class="variable">Monde</span>),
+        <span class="coverage"> 20 </span><a class="call" href="#proposition7-1">proposition7</a>(<span class="variable">Monde</span>)<span class="coverage"> 4 </span>.<span class="comment">
+
+
+
+% Questions 1.6 and 1.7
+</span><a name="test_possible_worlds-0"></a><span class="head">test_possible_worlds</span> <span class="control">:-</span>
+        <span class="coverage"> 1 </span><a class="call" href="#possible_worlds-1">possible_worlds</a>(<span class="variable">World</span>),
+        <span class="coverage"> 4 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/ioterm/writeln-1.html">writeln</a>(<span class="variable">World</span>),
+        <span class="coverage"> 4 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/control/fail-0.html">fail</a><span class="nocoverage"> 0 </span>.<span class="comment">
+
+</span><a name="possible_worlds2-1"></a><span class="head">possible_worlds2</span>(<span class="variable">Monde</span>) <span class="control">:-</span>
+        <span class="nocoverage"> 0 </span><a class="call" href="#people-1">people</a>(<span class="variable">ListePersonnes</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#make_all_pairs-2">make_all_pairs</a>(<span class="variable">ListePersonnes</span>, <span class="variable">ListePaires</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#sub_list-2">sub_list</a>(<span class="variable">ListePaires</span>, <span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition7-1">proposition7</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition4-1">proposition4</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition5-1">proposition5</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition6-1">proposition6</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition1-1">proposition1</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition2-1">proposition2</a>(<span class="variable">Monde</span>),
+        <span class="nocoverage"> 0 </span><a class="call" href="#proposition3-1">proposition3</a>(<span class="variable">Monde</span>)<span class="nocoverage"> 0 </span>.<span class="comment">
+
+</span><a name="test_possible_worlds2-0"></a><span class="head">test_possible_worlds2</span> <span class="control">:-</span>
+        <span class="nocoverage"> 0 </span><a class="call" href="#possible_worlds2-1">possible_worlds2</a>(<span class="variable">World</span>),
+        <span class="nocoverage"> 0 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/ioterm/writeln-1.html">writeln</a>(<span class="variable">World</span>),
+        <span class="nocoverage"> 0 </span><a class="builtin" href="file:///opt/eclipseclp/doc/bips/kernel/control/fail-0.html">fail</a><span class="nocoverage"> 0 </span>.<span class="comment">
+
+%% TESTS
+/*
+%% Question 1.1
+
+[eclipse 10]: make_all_pairs([1,2],Res).	
+
+Res = [likes(1, 1), likes(2, 1), likes(1, 2), likes(2, 2)]
+Yes (0.00s cpu)
+
+
+[eclipse 11]: people(X),make_all_pairs(X,Res).
+
+X = [abby, bess, cody, dana]
+Res = [likes(abby, abby), likes(bess, abby), likes(cody, abby), likes(dana, abby), likes(abby, bess), likes(bess, bess), likes(cody, bess), likes(dana, bess), likes(abby, cody), likes(bess, cody), likes(cody, cody), likes(dana, cody), likes(abby, dana), likes(bess, dana), likes(cody, dana
+
+
+%% Question 1.2
+[eclipse 84]: sub_list([1,2],Res).
+
+Res = [1, 2]
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Res = [1]
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+Res = [2]
+Yes (0.00s cpu, solution 3, maybe more) ? ;
+
+Res = []
+Yes (0.00s cpu, solution 4)
+[eclipse 85]: people(X),sub_list(X,Res).
+
+X = [abby, bess, cody, dana]
+Res = [abby, bess, cody, dana]
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, bess, cody]
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, bess, dana]
+Yes (0.01s cpu, solution 3, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, bess]
+Yes (0.01s cpu, solution 4, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, cody, dana]
+Yes (0.01s cpu, solution 5, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, cody]
+Yes (0.01s cpu, solution 6, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby, dana]
+Yes (0.01s cpu, solution 7, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [abby]
+Yes (0.01s cpu, solution 8, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [bess, cody, dana]
+Yes (0.01s cpu, solution 9, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [bess, cody]
+Yes (0.01s cpu, solution 10, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [bess, dana]
+Yes (0.01s cpu, solution 11, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [bess]
+Yes (0.01s cpu, solution 12, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [cody, dana]
+Yes (0.01s cpu, solution 13, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [cody]
+Yes (0.01s cpu, solution 14, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = [dana]
+Yes (0.01s cpu, solution 15, maybe more) ? ;
+
+X = [abby, bess, cody, dana]
+Res = []
+Yes (0.01s cpu, solution 16)
+
+
+%% Question 1.3
+
+[eclipse 55]: proposition1([likes(dana,cody),likes(dana,dana)]).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 56]: proposition1([likes(bess,dana),likes(dana,dana)]).
+
+No (0.00s cpu)
+
+[eclipse 53]: proposition2([likes(dana,cody),likes(dana,dana)]).
+
+Yes (0.00s cpu)
+[eclipse 54]: proposition2([likes(bess,dana),likes(dana,dana)]).
+
+No (0.00s cpu)
+
+[eclipse 61]: proposition3([likes(bess,dana),likes(dana,dana)]).
+
+Yes (0.00s cpu)
+[eclipse 62]: proposition3([likes(bess,dana),likes(cody,abby)]).
+
+No (0.00s cpu)
+
+[eclipse 115]: proposition4([likes(bess,dana),likes(dana,bess)]). 
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 116]: proposition4([likes(bess,dana),likes(dana,bess),likes(dana,cody)]). 
+
+No (0.00s cpu)
+
+[eclipse 3]: proposition5(likes(dana,bess),likes(abby,dana)).
+calling an undefined procedure proposition5(likes(dana, bess), likes(abby, dana)) in module eclipse
+Abort
+[eclipse 4]: proposition5([likes(dana,bess),likes(abby,dana)]).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 5]: proposition5([likes(dana,bess),likes(bess,dana)]).
+
+No (0.00s cpu)
+
+
+[eclipse 8]: proposition6([likes(dana,bess),likes(bess,dana),likes(dana,dana)]).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 9]: proposition6([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby)]).
+
+No (0.00s cpu)
+
+
+[eclipse 16]: proposition7([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby),likes(cody,dana),likes(bess,abby),likes(abby,abby)]).
+
+Yes (0.00s cpu)
+[eclipse 17]: proposition7([likes(dana,bess),likes(bess,dana),likes(dana,dana),likes(bess,abby)]).
+
+No (0.00s cpu)
+
+
+%% Question 1.4
+
+[eclipse 25]: possible_worlds(Monde).
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(cody, cody), likes(dana, cody), likes(abby, dana), likes(cody, dana), likes(dana, dana)]
+Yes (0.02s cpu, solution 1, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(cody, cody), likes(dana, cody), likes(abby, dana), likes(cody, dana)]
+Yes (0.02s cpu, solution 2, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(dana, cody), likes(abby, dana), likes(cody, dana), likes(dana, dana)]
+Yes (0.02s cpu, solution 3, maybe more) ? ;
+
+Monde = [likes(abby, abby), likes(bess, abby), likes(dana, abby), likes(abby, bess), likes(dana, cody), likes(abby, dana), likes(cody, dana)]
+Yes (0.02s cpu, solution 4, maybe more) ? ;
+
+No (0.10s cpu)
+
+
+*/</span></pre><HR>
+</body></html>
