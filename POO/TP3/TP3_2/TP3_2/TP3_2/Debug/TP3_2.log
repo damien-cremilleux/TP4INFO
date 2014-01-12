@@ -1,0 +1,30 @@
+﻿La génération a démarré 10/10/2013 11:46:36.
+     1>Projet "H:\POO\TP3\TP3_2\TP3_2\TP3_2\TP3_2.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\TP3_2.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CaractereException.cpp seq_main.cpp sequences.cpp
+         sequences.cpp
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2061: erreur de syntaxe : identificateur 'string'
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2535: 'const char *CaractereException::what(void) throw() const' : fonction membre déjà définie ou déclarée
+                 h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(9) : voir la déclaration de 'CaractereException::what'
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\sequences.cpp(27): error C2440: '<function-style-cast>' : impossible de convertir de 'const std::string' en 'CaractereException'
+                 Aucun constructeur n'a pu prendre le type de source, ou la résolution de la surcharge du constructeur était ambiguë
+         CaractereException.cpp
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2061: erreur de syntaxe : identificateur 'string'
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2535: 'const char *CaractereException::what(void) throw() const' : fonction membre déjà définie ou déclarée
+                 h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(9) : voir la déclaration de 'CaractereException::what'
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.cpp(13): error C2511: 'const char *CaractereException::what(std::string) throw() const' : impossible de trouver la fonction membre surchargée dans 'CaractereException'
+                 h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(6) : voir la déclaration de 'CaractereException'
+         Génération de code en cours...
+         Compilation en cours...
+         seq_main.cpp
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2061: erreur de syntaxe : identificateur 'string'
+     1>h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(10): error C2535: 'const char *CaractereException::what(void) throw() const' : fonction membre déjà définie ou déclarée
+                 h:\poo\tp3\tp3_2\tp3_2\tp3_2\caractereexception.h(9) : voir la déclaration de 'CaractereException::what'
+         Génération de code en cours...
+     1>Génération du projet "H:\POO\TP3\TP3_2\TP3_2\TP3_2\TP3_2.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+
+ÉCHEC de la build.
+
+Temps écoulé 00:00:01.66
