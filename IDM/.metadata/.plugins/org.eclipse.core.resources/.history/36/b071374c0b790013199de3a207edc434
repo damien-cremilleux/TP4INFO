@@ -1,0 +1,7 @@
+package robot;
+
+import robot.NXCCodeGenerator;
+
+@SuppressWarnings("all")
+public class Foo extends NXCCodeGenerator {
+}

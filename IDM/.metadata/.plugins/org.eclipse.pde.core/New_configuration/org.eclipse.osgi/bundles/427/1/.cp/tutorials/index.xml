@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?><!--
+    Copyright (c) 2004, 2010 BREDEX GmbH.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+ -->
+
+<introContent>
+  	<extensionContent id="GDWelcome-tutorialsExtension" style="css/layout.css" name="Functional Testing Tutorials" path="tutorials/@">
+		<group style-id="content-group" id="GDWelcome-tutorialsLink-group">
+       		<link label="Go to the Functional Testing tutorials page" url="html/tutorials.html" id="GDWelcome-introLink" style-id="content-link">
+          		<text>The tutorials page explains how to open the cheat sheets in your client. </text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

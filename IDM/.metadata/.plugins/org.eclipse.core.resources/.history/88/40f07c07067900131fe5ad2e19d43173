@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.OrAspectStopProgramAspectProperties;
+import robotG.flow.StopProgram;
+
+@SuppressWarnings("all")
+public class OrAspectStopProgramAspectContext {
+  public final static OrAspectStopProgramAspectContext INSTANCE = new OrAspectStopProgramAspectContext();
+  
+  public static OrAspectStopProgramAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<StopProgram,OrAspectStopProgramAspectProperties> map = new java.util.HashMap<robotG.flow.StopProgram, robot.OrAspectStopProgramAspectProperties>();
+  
+  public Map<StopProgram,OrAspectStopProgramAspectProperties> getMap() {
+    return map;
+  }
+}

@@ -1,0 +1,4 @@
+java.lang.Object = robot.NXCCodeGenerator
+robotG.robot.StopEngine = robot.Foo
+robotG.flow.Programme = robot.ProgramUnitAspect
+robotG.flow.While = robot.WhileAspect

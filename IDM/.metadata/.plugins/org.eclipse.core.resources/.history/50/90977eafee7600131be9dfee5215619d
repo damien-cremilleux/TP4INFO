@@ -1,0 +1,161 @@
+/**
+ */
+package robotG.flow.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import robotG.flow.*;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static FlowFactory init() {
+		try {
+			FlowFactory theFlowFactory = (FlowFactory)EPackage.Registry.INSTANCE.getEFactory(FlowPackage.eNS_URI);
+			if (theFlowFactory != null) {
+				return theFlowFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new FlowFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FlowFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case FlowPackage.WHILE: return createWhile();
+			case FlowPackage.IF: return createIf();
+			case FlowPackage.NOT: return createNot();
+			case FlowPackage.STOP_PROGRAM: return createStopProgram();
+			case FlowPackage.AND: return createAnd();
+			case FlowPackage.OR: return createOr();
+			case FlowPackage.PROGRAMME: return createProgramme();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public While createWhile() {
+		WhileImpl while_ = new WhileImpl();
+		return while_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public If createIf() {
+		IfImpl if_ = new IfImpl();
+		return if_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Not createNot() {
+		NotImpl not = new NotImpl();
+		return not;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StopProgram createStopProgram() {
+		StopProgramImpl stopProgram = new StopProgramImpl();
+		return stopProgram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public And createAnd() {
+		AndImpl and = new AndImpl();
+		return and;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Or createOr() {
+		OrImpl or = new OrImpl();
+		return or;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Programme createProgramme() {
+		ProgrammeImpl programme = new ProgrammeImpl();
+		return programme;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FlowPackage getFlowPackage() {
+		return (FlowPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static FlowPackage getPackage() {
+		return FlowPackage.eINSTANCE;
+	}
+
+} //FlowFactoryImpl

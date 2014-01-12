@@ -1,0 +1,39 @@
+/**
+ */
+package robotG.flow.impl;
+
+import org.eclipse.emf.ecore.EClass;
+
+import robotG.flow.FlowPackage;
+import robotG.flow.StopProgram;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Stop Program</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class StopProgramImpl extends ExprImpl implements StopProgram {
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	protected StopProgramImpl() {
+    super();
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	protected EClass eStaticClass() {
+    return FlowPackage.Literals.STOP_PROGRAM;
+  }
+
+} //StopProgramImpl

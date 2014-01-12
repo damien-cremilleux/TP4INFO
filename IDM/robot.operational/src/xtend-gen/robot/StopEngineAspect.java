@@ -1,0 +1,52 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.StopEngineAspectStopEngineAspectProperties;
+import robotG.robot.StopEngine;
+
+@Aspect(className = StopEngine.class)
+@SuppressWarnings("all")
+public class StopEngineAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final StopEngine _self, final ContextNCX ctx) {
+    robot.StopEngineAspectStopEngineAspectContext _instance = robot.StopEngineAspectStopEngineAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.StopEngine,robot.StopEngineAspectStopEngineAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.StopEngineAspectStopEngineAspectProperties prop = new robot.StopEngineAspectStopEngineAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.StopEngine){
+    			     							return robot.StopEngineAspect.privgenerateCode((robotG.robot.StopEngine)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static StopEngineAspectStopEngineAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final StopEngine _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final StopEngine _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      InputOutput.<String>println("coucou");
+      StringBuilder _stringBuilder = new StringBuilder();
+      StringBuilder _append = _stringBuilder.append("Off(OUT_BC);\n");
+      _xblockexpression = (_append);
+    }
+    return _xblockexpression;
+  }
+}

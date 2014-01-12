@@ -1,0 +1,32 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.ProgramUnitAspectvoidAspectProperties;
+
+@Aspect(className = void.class)
+@SuppressWarnings("all")
+public class ProgramUnitAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  public static ProgramUnitAspectvoidAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  protected static StringBuilder privgenerateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method block is undefined for the type ProgramUnitAspect"
+      + "\nType mismatch: type void is not applicable at this location"
+      + "\nmap cannot be resolved"
+      + "\njoin cannot be resolved");
+  }
+}

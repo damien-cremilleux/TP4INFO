@@ -1,0 +1,12 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import robot.FooStopEngineAspectProperties;
+import robot.NXCCodeGenerator;
+import robotG.robot.StopEngine;
+
+@Aspect(className = StopEngine.class)
+@SuppressWarnings("all")
+public class Foo extends NXCCodeGenerator {
+  public static FooStopEngineAspectProperties _self_;
+}

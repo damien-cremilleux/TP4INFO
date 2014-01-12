@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?><!--
+    Copyright (c) 2004, 2010 BREDEX GmbH.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+ -->
+
+<introContent>
+  	<extensionContent id="GDWelcome-samplesExtension" style="css/layout.css" name="Functional Testing Examples" path="samples/@">
+		<group style-id="content-group" id="GDWelcome-samplesLink-group">
+       		<link label="Go to the Functional Testing samples page" url="html/samples.html" id="GDWelcome-introLink" style-id="content-link">
+          		<text>The samples page contains a few guides for some of the first tasks you 
+          		will do in your tests.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

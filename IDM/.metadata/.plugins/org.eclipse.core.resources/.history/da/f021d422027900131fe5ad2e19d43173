@@ -1,0 +1,17 @@
+package robot;
+
+@SuppressWarnings("all")
+public class Main {
+  public static void main(final String... args) {
+    throw new Error("Unresolved compilation problems:"
+      + "\ngenerateCode cannot be resolved");
+  }
+  
+  public static /* ProgramUnit */Object load(final String path) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field RobotPackage is undefined for the type Main"
+      + "\nThe method or field ProgramUnit is undefined for the type Main"
+      + "\neINSTANCE cannot be resolved"
+      + "\neClass cannot be resolved");
+  }
+}

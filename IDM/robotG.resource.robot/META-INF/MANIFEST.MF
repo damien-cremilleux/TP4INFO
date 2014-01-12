@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: robot
+Bundle-SymbolicName: robotG.resource.robot;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.eclipse.debug.core;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  IDM
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: robotG.resource.robot,
+  robotG.resource.robot.analysis,
+  robotG.resource.robot.mopp,
+  robotG.resource.robot.debug,
+  robotG.resource.robot.launch,
+  robotG.resource.robot.grammar,
+  robotG.resource.robot.util
+Bundle-Activator: robotG.resource.robot.mopp.RobotPlugin

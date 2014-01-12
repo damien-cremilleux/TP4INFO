@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="../../css/layout.css" type="text/css">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+			<title>Structure</title>
+	</head>
+	<body>
+		<div id="bodywrapper">
+			<div id="head"> 
+				<div class="firststep_pic">
+				</div>
+			
+			</div>
+			
+			<div id="right">
+			
+				<div id="right_bluediv">
+						<span class="rightheadline">Info</span>	
+				</div>
+				
+					<span class="tab"><b>Hierarchy</b></span>
+					<div class="righttxt">
+					You can build Test Cases in any hierarchy you want to!							
+					</div>
+					
+					<span class="tab"><b>Reusing Test Cases</b></span>
+					<div class="righttxt">
+					There are various ways to make your Test Cases 
+					more reusable. 													
+					</div>
+			</div>
+								
+			<div id="main">
+			
+				<div id="navi">
+					<a class="navipoint" href="firststep.html">First Steps Overview</a>
+					<a class="navipoint" href="keywords.html">Keywords</a>
+				</div>
+				
+			<p class="headline1">Test structure</p>
+			
+			<div class="maincontent">
+				
+			<p class="maintxt">
+			Useful terms:
+			</p>
+			
+			<ol>
+			<li class="list"><b>Projects</b> are containers for your Test Cases and Test Suites. 
+			They also contain information about your application under test (AUT), including
+			how and where to start it. 
+			<br>
+			Projects are stored in a database, and can also be exported and imported in
+			XML format.
+			</li>
+			
+			<li class="list"><b>Test Suites</b> are the executable elements. 
+			Fill your Test Suites with the Test Cases you want to execute. 
+			<br>
+			Test Suites are bound to an AUT. 
+			</li>
+			
+			<li class="list"><b>Test Jobs</b> are collections of Test Suites. 
+			A Test Job can be used to test different instances of the same AUT, 
+			or different AUTs within one test run.  
+			<br>
+			Test Jobs are bound to an AUT via its ID. 
+			</li>
+			
+			
+			<li class="list"><b>Test Cases</b> are the building blocks (keywords) for your tests. 
+			They can contain Test Steps and other Test Cases. 
+			<br>
+			Combine Test Cases to create larger, more complex Test Cases. 
+			</li>
+		
+			<li class="list"><b>Test Steps</b> are the smallest available units. 
+			Each Test Step contains three pieces of information:
+			<br>
+			<ol>
+			<li class="list">The component to be tested in the interface</li>
+			<li class="list">The action to execute on the component</li>
+			<li class="list">The data (or parameters) for the action</li>
+			</ol>
+			<br>
+			You also enter a <i>component name</i>, which is your own name for this 
+			interface component. This name is joined to the real component name in the 
+			AUT later.  
+			</li>
+			
+			<li class="list">Most of the time, you will not be working with Test Steps, but with 
+			the library of unbound modules, which contains ready made Test Cases to reference in
+			your tests. Each unbound module represents one Test Step to carry out a particular action. The library 
+			makes test creation easier by allowing you to drag and drop modules to create your Test Cases. 
+			</li>
+			</ol>
+			 
+			</div>
+		</div>
+
+			<div id="gdlogo">
+			</div>
+						
+		</div>
+	</body>
+</html>

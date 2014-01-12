@@ -1,0 +1,172 @@
+/**
+ */
+package robotG.robot.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import robotG.robot.*;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static RobotFactory init() {
+		try {
+			RobotFactory theRobotFactory = (RobotFactory)EPackage.Registry.INSTANCE.getEFactory(RobotPackage.eNS_URI);
+			if (theRobotFactory != null) {
+				return theRobotFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new RobotFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RobotFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case RobotPackage.MOVE: return createMove();
+			case RobotPackage.BIP: return createBip();
+			case RobotPackage.TURN: return createTurn();
+			case RobotPackage.SET_TURN_ANGLE: return createSetTurnAngle();
+			case RobotPackage.HAS_TURNED: return createHasTurned();
+			case RobotPackage.DISPLAY: return createDisplay();
+			case RobotPackage.OBSTACLE: return createObstacle();
+			case RobotPackage.STOP_ENGINE: return createStopEngine();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Move createMove() {
+		MoveImpl move = new MoveImpl();
+		return move;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bip createBip() {
+		BipImpl bip = new BipImpl();
+		return bip;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Turn createTurn() {
+		TurnImpl turn = new TurnImpl();
+		return turn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SetTurnAngle createSetTurnAngle() {
+		SetTurnAngleImpl setTurnAngle = new SetTurnAngleImpl();
+		return setTurnAngle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HasTurned createHasTurned() {
+		HasTurnedImpl hasTurned = new HasTurnedImpl();
+		return hasTurned;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Display createDisplay() {
+		DisplayImpl display = new DisplayImpl();
+		return display;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Obstacle createObstacle() {
+		ObstacleImpl obstacle = new ObstacleImpl();
+		return obstacle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StopEngine createStopEngine() {
+		StopEngineImpl stopEngine = new StopEngineImpl();
+		return stopEngine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RobotPackage getRobotPackage() {
+		return (RobotPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static RobotPackage getPackage() {
+		return RobotPackage.eINSTANCE;
+	}
+
+} //RobotFactoryImpl

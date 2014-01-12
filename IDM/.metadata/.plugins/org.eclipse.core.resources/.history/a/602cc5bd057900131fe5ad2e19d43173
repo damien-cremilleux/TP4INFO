@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.AndAspectOrAspectProperties;
+import robotG.flow.Or;
+
+@SuppressWarnings("all")
+public class AndAspectOrAspectContext {
+  public final static AndAspectOrAspectContext INSTANCE = new AndAspectOrAspectContext();
+  
+  public static AndAspectOrAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Or,AndAspectOrAspectProperties> map = new java.util.HashMap<robotG.flow.Or, robot.AndAspectOrAspectProperties>();
+  
+  public Map<Or,AndAspectOrAspectProperties> getMap() {
+    return map;
+  }
+}

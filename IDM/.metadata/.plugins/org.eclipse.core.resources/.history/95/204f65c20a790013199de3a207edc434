@@ -1,0 +1,12 @@
+java.lang.Object = robot.NXCCodeGenerator
+robotG.flow.Programme = robot.ProgramUnitAspect
+robotG.flow.While = robot.WhileAspect
+robotG.flow.If = robot.IfAspect
+robotG.flow.And = robot.AndAspect
+robotG.flow.Not = robot.NotAspect
+robotG.flow.Or = robot.OrAspect
+robotG.flow.StopProgram = robot.StopProgramAspect
+robotG.robot.Bip = robot.BipAspect
+robotG.robot.Display = robot.DisplayAspect
+robotG.robot.HasTurned = robot.HasTurnedAspect
+robotG.robot.Move = robot.MoveCmdAspect

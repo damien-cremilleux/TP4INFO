@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="robotG.resource.robot.ui.RobotUIMetaInformation" id="robotG.resource.robot.ui.RobotUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="robotG.resource.robot.ui.RobotEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="robot" icon="icons/editor_icon.gif" id="robotG.resource.robot.ui.RobotEditor" name="EMFText robot Editor">
+			<contentTypeBinding contentTypeId="robotG.resource.robot">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="robotG.resource.robot.ui.RobotPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Robot Text Editor" id="robotG.resource.robot.ui.RobotPreferencePage" class="robotG.resource.robot.ui.RobotPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="robotG.resource.robot.ui.RobotSyntaxColoringPreferencePage" class="robotG.resource.robot.ui.RobotSyntaxColoringPreferencePage" category="robotG.resource.robot.ui.RobotPreferencePage">
+		</page>
+		<page name="Brackets" id="robotG.resource.robot.ui.RobotBracketPreferencePage" class="robotG.resource.robot.ui.RobotBracketPreferencePage" category="robotG.resource.robot.ui.RobotPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="robotG.resource.robot.ui.RobotNewFileWizard" id="robotG.resource.robot.ui.RobotNewFileWizard" name="EMFText .robot file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="robotG.resource.robot.ui.RobotNewProjectWizard" id="robotG.resource.robot.ui.RobotNewProjectWizard" name="EMFText robot project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="robotG.resource.robot.ui.RobotMarkerResolutionGenerator" markerType="robotG.resource.robot.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="robotG.resource.robot.ui.RobotAnnotationModelFactory" extensions="robot">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="robotG.resource.robot" name=".robot File" base-type="org.eclipse.core.runtime.text" file-extensions="robot">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="robot" id="robotG.resource.robot.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="robotG.resource.robot.ui.occurences">
+		</type>
+		<type name="robotG.resource.robot.ui.occurences.declaration" super="robotG.resource.robot.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="robotG.resource.robot.ui.occurences" label="Occurrences (in .robot files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="robot.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="robot.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="robot.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="robot.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="robot.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="robot.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="robot.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="robot.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="robot.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="robotG.resource.robot.ui.occurences.declaration" label="Declarations (in .robot files)" textPreferenceKey="robot.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="robot.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="robot.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="robot.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="robot.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="robot.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="robotG.resource.robot.ui.launchConfigurationType" id="robot.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="robotG.resource.robot.ui.launchConfigurationType" class="robotG.resource.robot.ui.launch.RobotLaunchConfigurationTabGroup" id="robot.launchConfigurationTabGroup" helpContextId="robot.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug robot model.">
+			</launchMode>
+			<launchMode mode="run" description="Run robot model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="robot Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="robot.launch" modes="run,debug" class="robotG.resource.robot.ui.launch.RobotLaunchShortcut" description="Launch a robot model" id="robot.launchShortcut">
+			<description description="Run robot model" mode="run">
+			</description>
+			<description description="Debug robot model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="robot.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="robotG.resource.robot.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="robot.PropertyTester" type="java.lang.Object" namespace="robot" properties="isLaunchable" class="robotG.resource.robot.ui.RobotPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="robotG.resource.robot.ui.debug.lineBreakpoint" markerType="robotG.resource.robot.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="robotG.resource.robot.ui.debug.lineBreakpoint" label="Breakpoints (in .robot files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="robotG.resource.robot.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="robotG.resource.robot.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="robotG.resource.robot.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="robotG.resource.robot.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="robotG.resource.robot.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="robotG.resource.robot.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="robotG.resource.robot.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="robotG.resource.robot.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="robotG.resource.robot.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="robotG.resource.robot.ui.RobotEditor" class="robotG.resource.robot.ui.debug.RobotAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="robotG.resource.robot.debug.RobotDebugVariable" class="robotG.resource.robot.ui.debug.RobotAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="robotG.resource.robot.debug.RobotDebugVariable" class="robotG.resource.robot.ui.debug.RobotAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="robotG.resource.robot.ui.RulerPopupActions" targetID="robotG.resource.robot.EditorRuler">
+			<action id="robotG.resource.robot.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="robotG.resource.robot.ui.RobotEditor" id="robotG.resource.robot.ui.BreakpointRulerActions">
+			<action id="robotG.resource.robot.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="robotG.resource.robot.debugModel" class="robotG.resource.robot.ui.debug.RobotDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

@@ -1,0 +1,55 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.ObstacleAspectObstacleAspectProperties;
+import robotG.robot.Obstacle;
+
+@Aspect(className = Obstacle.class)
+@SuppressWarnings("all")
+public class ObstacleAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final Obstacle _self, final ContextNCX ctx) {
+    robot.ObstacleAspectObstacleAspectContext _instance = robot.ObstacleAspectObstacleAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.Obstacle,robot.ObstacleAspectObstacleAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.ObstacleAspectObstacleAspectProperties prop = new robot.ObstacleAspectObstacleAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.Obstacle){
+    			     							return robot.ObstacleAspect.privgenerateCode((robotG.robot.Obstacle)_self,ctx);
+    			     							} else    if (_self instanceof robotG.robot.Obstacle){
+    			     							return robot.ObstacleAspect.privgenerateCode((robotG.robot.Obstacle)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static ObstacleAspectObstacleAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final Obstacle _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final Obstacle _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      StringBuilder _stringBuilder = new StringBuilder();
+      final StringBuilder code = _stringBuilder;
+      StringBuilder _append = code.append("SensorUS(S4)<");
+      int _distance = _self.getDistance();
+      StringBuilder _append_1 = _append.append(_distance);
+      _xblockexpression = (_append_1);
+    }
+    return _xblockexpression;
+  }
+}

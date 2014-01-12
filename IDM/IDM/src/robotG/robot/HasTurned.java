@@ -1,0 +1,50 @@
+/**
+ */
+package robotG.robot;
+
+import robotG.flow.ExprBool;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Has Turned</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link robotG.robot.HasTurned#getAngle <em>Angle</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see robotG.robot.RobotPackage#getHasTurned()
+ * @model
+ * @generated
+ */
+public interface HasTurned extends ExprBool, CommandeRobot {
+	/**
+   * Returns the value of the '<em><b>Angle</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Angle</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+   * @return the value of the '<em>Angle</em>' attribute.
+   * @see #setAngle(int)
+   * @see robotG.robot.RobotPackage#getHasTurned_Angle()
+   * @model required="true"
+   * @generated
+   */
+	int getAngle();
+
+	/**
+   * Sets the value of the '{@link robotG.robot.HasTurned#getAngle <em>Angle</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Angle</em>' attribute.
+   * @see #getAngle()
+   * @generated
+   */
+	void setAngle(int value);
+
+} // HasTurned

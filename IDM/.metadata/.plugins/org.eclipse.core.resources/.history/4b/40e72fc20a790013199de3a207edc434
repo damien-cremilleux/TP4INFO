@@ -1,0 +1,47 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.StopEngineAspectStopEngineImplAspectProperties;
+import robotG.robot.impl.StopEngineImpl;
+
+@Aspect(className = StopEngineImpl.class)
+@SuppressWarnings("all")
+public class StopEngineAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final StopEngineImpl _self, final ContextNCX ctx) {
+    robot.StopEngineAspectStopEngineImplAspectContext _instance = robot.StopEngineAspectStopEngineImplAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.impl.StopEngineImpl,robot.StopEngineAspectStopEngineImplAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.StopEngineAspectStopEngineImplAspectProperties prop = new robot.StopEngineAspectStopEngineImplAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.impl.StopEngineImpl){
+    			     							return robot.StopEngineAspect.privgenerateCode((robotG.robot.impl.StopEngineImpl)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static StopEngineAspectStopEngineImplAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final StopEngineImpl _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final StopEngineImpl _self, final ContextNCX ctx) {
+    InputOutput.<String>println("coucou");
+    StringBuilder _stringBuilder = new StringBuilder();
+    return _stringBuilder.append("Off(OUT_BC);\n");
+  }
+}

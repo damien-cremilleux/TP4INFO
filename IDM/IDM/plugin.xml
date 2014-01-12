@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated robotG -->
+      <package
+            uri="http://robot"
+            class="robotG.robot.RobotPackage"
+            genModel="metamodels/robotG.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated robotG -->
+      <package
+            uri="http://flow"
+            class="robotG.flow.FlowPackage"
+            genModel="metamodels/robotG.genmodel"/>
+   </extension>
+
+</plugin>

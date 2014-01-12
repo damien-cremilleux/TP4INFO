@@ -1,0 +1,19 @@
+package robot;
+
+import java.util.Map;
+import robot.BipAspectvoidAspectProperties;
+
+@SuppressWarnings("all")
+public class BipAspectvoidAspectContext {
+  public final static BipAspectvoidAspectContext INSTANCE = new BipAspectvoidAspectContext();
+  
+  public static BipAspectvoidAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Void,BipAspectvoidAspectProperties> map = new java.util.HashMap<void, robot.BipAspectvoidAspectProperties>();
+  
+  public Map<Void,BipAspectvoidAspectProperties> getMap() {
+    return map;
+  }
+}

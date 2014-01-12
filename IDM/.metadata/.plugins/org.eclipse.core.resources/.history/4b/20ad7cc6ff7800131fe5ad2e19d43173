@@ -1,0 +1,16 @@
+package robot;
+
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+
+/* @Aspect(
+ */@SuppressWarnings("all")
+public class SetTurnAngleCmdAspect extends NXCCodeGenerator {
+  /* @OverrideAspectMethod
+   */public StringBuilder generateCode(final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field _self is undefined for the type SetTurnAngleCmdAspect"
+      + "\nangle cannot be resolved"
+      + "\nintValue cannot be resolved");
+  }
+}

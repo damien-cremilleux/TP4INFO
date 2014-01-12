@@ -1,0 +1,3 @@
+
+a#GDWelcome-introLink img { background-image : url(graphics/firststeps.png); }
+a#GDWelcome-introLink:hover img { background-image : url(graphics/firststeps_hov.png); }

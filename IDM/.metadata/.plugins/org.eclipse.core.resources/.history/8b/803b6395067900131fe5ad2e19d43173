@@ -1,0 +1,46 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.BipAspectDisplayAspectProperties;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robotG.robot.Display;
+
+@Aspect(className = Display.class)
+@SuppressWarnings("all")
+public class BipAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final Display _self, final ContextNCX ctx) {
+    robot.BipAspectDisplayAspectContext _instance = robot.BipAspectDisplayAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.Display,robot.BipAspectDisplayAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.BipAspectDisplayAspectProperties prop = new robot.BipAspectDisplayAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.Display){
+    			     							return robot.BipAspect.privgenerateCode((robotG.robot.Display)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static BipAspectDisplayAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final Display _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final Display _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method power is undefined for the type BipAspect"
+      + "\nThe method repeat is undefined for the type BipAspect");
+  }
+}

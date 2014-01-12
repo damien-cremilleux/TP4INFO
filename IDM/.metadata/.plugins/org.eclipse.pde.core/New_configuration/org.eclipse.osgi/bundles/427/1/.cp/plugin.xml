@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?><!--
+    Copyright (c) 2004, 2010 BREDEX GmbH.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+ -->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            content="overview/index.xml"
+            configId="org.eclipse.ui.intro.universalConfig">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="whatsnew/index.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="tutorials/index.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="firststeps/index.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="samples/index.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="migrate/index.xml">
+      </configExtension>
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="webresources/index.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.ui.preferencePages.Workbench"
+            class="org.eclipse.ui.intro.universal.ExtensionFactory:welcomeCustomization"
+            id="com.example.intro.introCustomization"
+            name="%introCustomizationPreference.name">
+         <keywordReference id="org.eclipse.ui.ide.appearance"/>
+      </page>
+   </extension> 	
+
+</plugin>

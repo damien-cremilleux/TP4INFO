@@ -1,0 +1,32 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.AndAspectvoidAspectProperties;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+
+@Aspect(className = void.class)
+@SuppressWarnings("all")
+public class AndAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  public static AndAspectvoidAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  protected static StringBuilder privgenerateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method filsGauche is undefined for the type AndAspect"
+      + "\nThe method filsDroit is undefined for the type AndAspect"
+      + "\nType mismatch: type void is not applicable at this location"
+      + "\nType mismatch: type void is not applicable at this location");
+  }
+}

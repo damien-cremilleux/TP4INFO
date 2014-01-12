@@ -1,0 +1,10 @@
+SYNTAXDEF robot
+FOR <http://robotG/1.0>
+START Flow.Programme
+
+RULES {
+	Flow.Programme ::= programme;
+	Flow.While ::= "while" condition "do" instructions "end";
+	Flow.If ::= "if" condition "then" instructions;
+	
+}

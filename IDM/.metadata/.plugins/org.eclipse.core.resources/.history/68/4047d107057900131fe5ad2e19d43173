@@ -1,0 +1,30 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.NotAspectvoidAspectProperties;
+
+@Aspect(className = void.class)
+@SuppressWarnings("all")
+public class NotAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  public static NotAspectvoidAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  protected static StringBuilder privgenerateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method expression is undefined for the type NotAspect"
+      + "\nType mismatch: type void is not applicable at this location");
+  }
+}

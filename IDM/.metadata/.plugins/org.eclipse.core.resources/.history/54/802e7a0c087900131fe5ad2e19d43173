@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.StopEngineAspectTurnAspectProperties;
+import robotG.robot.Turn;
+
+@SuppressWarnings("all")
+public class StopEngineAspectTurnAspectContext {
+  public final static StopEngineAspectTurnAspectContext INSTANCE = new StopEngineAspectTurnAspectContext();
+  
+  public static StopEngineAspectTurnAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Turn,StopEngineAspectTurnAspectProperties> map = new java.util.HashMap<robotG.robot.Turn, robot.StopEngineAspectTurnAspectProperties>();
+  
+  public Map<Turn,StopEngineAspectTurnAspectProperties> getMap() {
+    return map;
+  }
+}

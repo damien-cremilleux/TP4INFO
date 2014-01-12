@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.DispalyAspectDisplayAspectProperties;
+import robotG.robot.Display;
+
+@SuppressWarnings("all")
+public class DispalyAspectDisplayAspectContext {
+  public final static DispalyAspectDisplayAspectContext INSTANCE = new DispalyAspectDisplayAspectContext();
+  
+  public static DispalyAspectDisplayAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Display,DispalyAspectDisplayAspectProperties> map = new java.util.HashMap<robotG.robot.Display, robot.DispalyAspectDisplayAspectProperties>();
+  
+  public Map<Display,DispalyAspectDisplayAspectProperties> getMap() {
+    return map;
+  }
+}

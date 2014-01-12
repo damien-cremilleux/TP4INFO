@@ -1,0 +1,26 @@
+package robot;
+
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robotG.flow.Programme;
+
+@SuppressWarnings("all")
+public class Main {
+  public static void main(final String... args) {
+    final Programme program = Main.load("src/resources/Program1.xmi");
+    ContextNCX _contextNCX = new ContextNCX();
+    final ContextNCX ctx = _contextNCX;
+    final StringBuilder code = NXCCodeGenerator.generateCode(program, ctx);
+    InputOutput.<StringBuilder>println(code);
+  }
+  
+  public static Programme load(final String path) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field RobotPackage is undefined for the type Main"
+      + "\nThe method or field ProgramUnit is undefined for the type Main"
+      + "\nType mismatch: cannot convert from EObject to Programme"
+      + "\neINSTANCE cannot be resolved"
+      + "\neClass cannot be resolved");
+  }
+}

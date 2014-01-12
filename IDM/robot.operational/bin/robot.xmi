@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<flow:Programme xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flow="http://flow" xmlns:robot="http://robot">
+  <programme xsi:type="flow:While">
+    <condition xsi:type="flow:Not">
+      <expression xsi:type="robot:Obstacle" distance="40"/>
+    </condition>
+    <instructions xsi:type="robot:Move" power="75"/>
+  </programme>
+  <programme xsi:type="robot:Bip" duration="250" power="100"/>
+  <programme xsi:type="robot:SetTurnAngle"/>
+  <programme xsi:type="flow:While">
+    <condition xsi:type="flow:And">
+      <filsGauche xsi:type="robot:Obstacle" distance="40"/>
+      <filsDroit xsi:type="flow:Not">
+        <expression xsi:type="robot:HasTurned" angle="360"/>
+      </filsDroit>
+    </condition>
+    <instructions xsi:type="robot:Turn" power="25" angle="3"/>
+  </programme>
+  <programme xsi:type="flow:If">
+    <condition xsi:type="robot:HasTurned" angle="360"/>
+    <instructions xsi:type="robot:StopEngine"/>
+    <instructions xsi:type="robot:Display" msg="&quot;Stuck !!!&quot;" duration="3000" line="4"/>
+  </programme>
+</flow:Programme>

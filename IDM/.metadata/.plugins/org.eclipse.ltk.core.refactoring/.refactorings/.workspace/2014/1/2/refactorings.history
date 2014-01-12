@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="true" description="Delete 3 resources" element1="/org.emftext.commons.antlr3_4_0" element2="/robotG.resource.robot" element3="/robotG.resource.robot.ui" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1389026571218"/>
+</session>
