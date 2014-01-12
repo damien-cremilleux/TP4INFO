@@ -1,0 +1,39 @@
+﻿La génération a démarré 16/10/2013 10:01:41.
+     1>Projet "H:\4INFO\POO\TP4\TP4\TP4.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\TP4.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>h:\4info\poo\tp4\tp4\list.h(165): warning C4800: 'int' : valeur forcée à la valeur booléenne 'true' ou 'false' (avertissement sur les performances)
+                 h:\4info\poo\tp4\tp4\list.h(156) : lors de la compilation de la fonction membre 'bool List<T>::operator ==(const T &) const' de la classe modèle
+                 with
+                 [
+                     T=int
+                 ]
+                 h:\4info\poo\tp4\tp4\ensemble.h(56) : voir la référence à l'instanciation de la fonction modèle 'bool List<T>::operator ==(const T &) const' en cours de compilation
+                 with
+                 [
+                     T=int
+                 ]
+                 h:\4info\poo\tp4\tp4\ensemble.h(9) : voir la référence à l'instanciation de la classe modèle 'List<T>' en cours de compilation
+                 with
+                 [
+                     T=int
+                 ]
+                 h:\4info\poo\tp4\tp4\main.cpp(16) : voir la référence à l'instanciation de la classe modèle 'Ensemble<T>' en cours de compilation
+                 with
+                 [
+                     T=int
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\4INFO\POO\TP4\Debug\TP4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\4INFO\POO\TP4\Debug\TP4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\4INFO\POO\TP4\Debug\TP4.lib" /MACHINE:X86 Debug\main.obj
+         TP4.vcxproj -> H:\4INFO\POO\TP4\Debug\TP4.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\TP4.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\TP4.lastbuildstate".
+     1>Génération du projet "H:\4INFO\POO\TP4\TP4\TP4.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:02.18
