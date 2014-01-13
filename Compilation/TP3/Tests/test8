@@ -1,0 +1,6 @@
+begin 
+	int a,
+	bool b;
+
+	a <- a <- b
+ end

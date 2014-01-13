@@ -1,0 +1,91 @@
+Tests :
+
+begin int a ;
+ a <- 654b + c
+ end
+
+Fatal error: exception Failure("lexing: empty token")
+
+
+begin ;
+ a <- b + c
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 1, caractere 6")
+
+
+begin 
+	int a,
+	bool b;
+	int c;
+
+	a <- a + c;
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 1")
+
+
+begin 
+	int a,
+	bool b;
+
+	a <- a <- b
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 5, caractere 8")
+
+
+begin 
+	bool b;
+	b and and b and
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 3, caractere 3")
+
+
+begin 
+	int a,
+	bool b;
+	int c;
+
+	a <- a + c,
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 1")
+
+
+begin 
+	int a,
+	b,
+	int c;
+
+	a <- a + c;
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 3, caractere 1")
+
+
+begin 
+	int a;
+	a <- a + c
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 0")
+
+
+begin 
+	int a,
+	int c;
+
+	a <- c;
+	begin 
+		int b,
+		int c;
+		b <- c
+			
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 12, caractere 0")
+

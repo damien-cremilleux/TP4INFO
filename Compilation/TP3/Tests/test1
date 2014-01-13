@@ -1,0 +1,3 @@
+begin int a ;
+ a <- 654b + c
+ end

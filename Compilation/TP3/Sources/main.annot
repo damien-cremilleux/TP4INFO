@@ -1,0 +1,273 @@
+"main.ml" 16 300 305 "main.ml" 16 300 308
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lex "main.ml" 29 405 406 "main.ml" 33 587 650
+)
+"main.ml" 16 300 311 "main.ml" 16 300 322
+type(
+  string -> Lexing.lexbuf
+)
+ident(
+  ext_ref Lexing.from_string
+)
+"main.ml" 17 324 324 "main.ml" 26 396 400
+type(
+  string
+)
+"main.ml" 16 300 311 "main.ml" 26 396 400
+call(
+  stack
+)
+type(
+  Lexing.lexbuf
+)
+"main.ml" 29 405 410 "main.ml" 29 405 414
+type(
+  (Lexing.lexbuf -> Parser.token) -> Lexing.lexbuf -> Anasynt.arbre_bloc
+)
+ident(
+  ext_ref Parser.main
+)
+"main.ml" 29 405 415 "main.ml" 29 405 420
+type(
+  Lexing.lexbuf -> Parser.token
+)
+ident(
+  ext_ref Lexer.token
+)
+"main.ml" 29 405 421 "main.ml" 29 405 424
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "main.ml" 16 300 305 "main.ml" 16 300 308
+)
+"main.ml" 29 405 410 "main.ml" 29 405 424
+call(
+  stack
+)
+type(
+  Anasynt.arbre_bloc
+)
+"main.ml" 30 430 435 "main.ml" 30 430 446
+type(
+  exn
+)
+"main.ml" 30 430 450 "main.ml" 30 430 458
+type(
+  string -> Anasynt.arbre_bloc
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"main.ml" 30 430 464 "main.ml" 30 430 467
+type(
+  Lexing.position
+)
+"main.ml" 30 430 470 "main.ml" 30 430 484
+type(
+  Lexing.lexbuf -> Lexing.position
+)
+ident(
+  ext_ref Lexing.lexeme_start_p
+)
+"main.ml" 30 430 485 "main.ml" 30 430 488
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "main.ml" 16 300 305 "main.ml" 16 300 308
+)
+"main.ml" 30 430 470 "main.ml" 30 430 488
+call(
+  stack
+)
+type(
+  Lexing.position
+)
+"main.ml" 31 492 497 "main.ml" 31 492 522
+type(
+  string
+)
+"main.ml" 31 492 522 "main.ml" 31 492 523
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"main.ml" 31 492 523 "main.ml" 31 492 526
+type(
+  Lexing.position
+)
+ident(
+  int_ref err "main.ml" 30 430 464 "main.ml" 30 430 467
+)
+"main.ml" 31 492 523 "main.ml" 31 492 536
+type(
+  string
+)
+"main.ml" 32 537 542 "main.ml" 32 537 543
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"main.ml" 32 537 543 "main.ml" 32 537 558
+type(
+  string
+)
+"main.ml" 32 537 558 "main.ml" 32 537 559
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"main.ml" 32 537 559 "main.ml" 32 537 572
+type(
+  int -> string
+)
+ident(
+  ext_ref Pervasives.string_of_int
+)
+"main.ml" 32 537 573 "main.ml" 32 537 576
+type(
+  Lexing.position
+)
+ident(
+  int_ref err "main.ml" 30 430 464 "main.ml" 30 430 467
+)
+"main.ml" 32 537 572 "main.ml" 32 537 586
+type(
+  int
+)
+"main.ml" 32 537 559 "main.ml" 32 537 586
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 33 587 592 "main.ml" 33 587 593
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"main.ml" 33 587 593 "main.ml" 33 587 607
+type(
+  string
+)
+"main.ml" 33 587 607 "main.ml" 33 587 608
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"main.ml" 33 587 608 "main.ml" 33 587 621
+type(
+  int -> string
+)
+ident(
+  ext_ref Pervasives.string_of_int
+)
+"main.ml" 33 587 622 "main.ml" 33 587 625
+type(
+  Lexing.position
+)
+ident(
+  int_ref err "main.ml" 30 430 464 "main.ml" 30 430 467
+)
+"main.ml" 33 587 622 "main.ml" 33 587 634
+type(
+  int
+)
+"main.ml" 33 587 635 "main.ml" 33 587 636
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"main.ml" 33 587 637 "main.ml" 33 587 640
+type(
+  Lexing.position
+)
+ident(
+  int_ref err "main.ml" 30 430 464 "main.ml" 30 430 467
+)
+"main.ml" 33 587 637 "main.ml" 33 587 648
+type(
+  int
+)
+"main.ml" 33 587 621 "main.ml" 33 587 649
+type(
+  int
+)
+"main.ml" 33 587 608 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 33 587 593 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 32 537 559 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 32 537 543 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 31 492 523 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 31 492 497 "main.ml" 33 587 649
+call(
+  stack
+)
+type(
+  string
+)
+"main.ml" 30 430 459 "main.ml" 33 587 650
+type(
+  string
+)
+"main.ml" 30 430 450 "main.ml" 33 587 650
+call(
+  stack
+)
+type(
+  Anasynt.arbre_bloc
+)
+"main.ml" 29 405 406 "main.ml" 33 587 650
+type(
+  Anasynt.arbre_bloc
+)
+"main.ml" 16 300 301 "main.ml" 33 587 650
+type(
+  Anasynt.arbre_bloc
+)

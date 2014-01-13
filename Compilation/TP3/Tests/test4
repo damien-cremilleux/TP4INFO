@@ -1,0 +1,8 @@
+begin 
+	int a,
+	b,
+	int c;
+
+	a <- a + c;
+	b and (a < c)
+ end
