@@ -1,0 +1,5 @@
+prologues := 1;
+input turing;
+beginfig(1)
+endfig;
+end
