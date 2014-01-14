@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robotG" nsURI="http://robotG/1.0" nsPrefix="robotG">
+  <eSubpackages name="robot" nsURI="http://robot" nsPrefix="robot">
+    <eClassifiers xsi:type="ecore:EClass" name="Move" eSuperTypes="#//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bip" eSuperTypes="#//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeat" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Turn" eSuperTypes="#//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetTurnAngle" eSuperTypes="#//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HasTurned" eSuperTypes="#//flow/ExprBool #//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Display" eSuperTypes="#//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="msg" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="line" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="col" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Obstacle" eSuperTypes="#//flow/ExprBool #//robot/CommandeRobot">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopEngine" eSuperTypes="#//robot/CommandeRobot"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CommandeRobot" abstract="true" eSuperTypes="#//flow/Expr"/>
+  </eSubpackages>
+  <eSubpackages name="flow" nsURI="http://flow" nsPrefix="flow">
+    <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="#//flow/Expr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//flow/ExprBool" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+          eType="#//flow/Expr" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//flow/Expr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//flow/ExprBool" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+          eType="#//flow/Expr" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//flow/OpUnaire"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExprBool" abstract="true" eSuperTypes="#//flow/Expr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StopProgram" eSuperTypes="#//flow/Expr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Expr" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OpUnaire" abstract="true" eSuperTypes="#//flow/ExprBool">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+          eType="#//flow/ExprBool" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpBinaire" abstract="true" eSuperTypes="#//flow/ExprBool">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filsGauche" lowerBound="1"
+          eType="#//flow/ExprBool" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filsDroit" lowerBound="1"
+          eType="#//flow/ExprBool" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//flow/OpBinaire"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//flow/OpBinaire"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Programme">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="programme" upperBound="-1"
+          eType="#//flow/Expr" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

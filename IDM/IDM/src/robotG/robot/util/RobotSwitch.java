@@ -1,0 +1,341 @@
+/**
+ */
+package robotG.robot.util;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
+
+import robotG.flow.Expr;
+import robotG.flow.ExprBool;
+
+import robotG.robot.*;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Switch</b> for the model's inheritance hierarchy.
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
+ * to invoke the <code>caseXXX</code> method for each class of the model,
+ * starting with the actual class of the object
+ * and proceeding up the inheritance hierarchy
+ * until a non-null result is returned,
+ * which is the result of the switch.
+ * <!-- end-user-doc -->
+ * @see robotG.robot.RobotPackage
+ * @generated
+ */
+public class RobotSwitch<T> extends Switch<T> {
+	/**
+   * The cached model package
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	protected static RobotPackage modelPackage;
+
+	/**
+   * Creates an instance of the switch.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	public RobotSwitch() {
+    if (modelPackage == null)
+    {
+      modelPackage = RobotPackage.eINSTANCE;
+    }
+  }
+
+	/**
+   * Checks whether this is a switch for the given package.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @parameter ePackage the package in question.
+   * @return whether this is a switch for the given package.
+   * @generated
+   */
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+    return ePackage == modelPackage;
+  }
+
+	/**
+   * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @return the first non-null result returned by a <code>caseXXX</code> call.
+   * @generated
+   */
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
+    switch (classifierID)
+    {
+      case RobotPackage.MOVE:
+      {
+        Move move = (Move)theEObject;
+        T result = caseMove(move);
+        if (result == null) result = caseCommandeRobot(move);
+        if (result == null) result = caseExpr(move);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.BIP:
+      {
+        Bip bip = (Bip)theEObject;
+        T result = caseBip(bip);
+        if (result == null) result = caseCommandeRobot(bip);
+        if (result == null) result = caseExpr(bip);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.TURN:
+      {
+        Turn turn = (Turn)theEObject;
+        T result = caseTurn(turn);
+        if (result == null) result = caseCommandeRobot(turn);
+        if (result == null) result = caseExpr(turn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.SET_TURN_ANGLE:
+      {
+        SetTurnAngle setTurnAngle = (SetTurnAngle)theEObject;
+        T result = caseSetTurnAngle(setTurnAngle);
+        if (result == null) result = caseCommandeRobot(setTurnAngle);
+        if (result == null) result = caseExpr(setTurnAngle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.HAS_TURNED:
+      {
+        HasTurned hasTurned = (HasTurned)theEObject;
+        T result = caseHasTurned(hasTurned);
+        if (result == null) result = caseExprBool(hasTurned);
+        if (result == null) result = caseCommandeRobot(hasTurned);
+        if (result == null) result = caseExpr(hasTurned);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.DISPLAY:
+      {
+        Display display = (Display)theEObject;
+        T result = caseDisplay(display);
+        if (result == null) result = caseCommandeRobot(display);
+        if (result == null) result = caseExpr(display);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.OBSTACLE:
+      {
+        Obstacle obstacle = (Obstacle)theEObject;
+        T result = caseObstacle(obstacle);
+        if (result == null) result = caseExprBool(obstacle);
+        if (result == null) result = caseCommandeRobot(obstacle);
+        if (result == null) result = caseExpr(obstacle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.STOP_ENGINE:
+      {
+        StopEngine stopEngine = (StopEngine)theEObject;
+        T result = caseStopEngine(stopEngine);
+        if (result == null) result = caseCommandeRobot(stopEngine);
+        if (result == null) result = caseExpr(stopEngine);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RobotPackage.COMMANDE_ROBOT:
+      {
+        CommandeRobot commandeRobot = (CommandeRobot)theEObject;
+        T result = caseCommandeRobot(commandeRobot);
+        if (result == null) result = caseExpr(commandeRobot);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      default: return defaultCase(theEObject);
+    }
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Move</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Move</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseMove(Move object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Bip</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bip</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseBip(Bip object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Turn</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Turn</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseTurn(Turn object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Set Turn Angle</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Turn Angle</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseSetTurnAngle(SetTurnAngle object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Has Turned</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Has Turned</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseHasTurned(HasTurned object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Display</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Display</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseDisplay(Display object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Obstacle</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Obstacle</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseObstacle(Obstacle object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Stop Engine</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stop Engine</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseStopEngine(StopEngine object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Commande Robot</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Commande Robot</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseCommandeRobot(CommandeRobot object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseExpr(Expr object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>Expr Bool</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expr Bool</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+	public T caseExprBool(ExprBool object) {
+    return null;
+  }
+
+	/**
+   * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+   * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch, but this is the last case anyway.
+	 * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+   * @generated
+   */
+	@Override
+	public T defaultCase(EObject object) {
+    return null;
+  }
+
+} //RobotSwitch

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="883" class="robotG.resource.robot.ui.RobotUIPlugin" localization="OSGI-INF/l10n/bundle" name="EMFText UI Plugin: robot" project="robotG.resource.robot.ui" provider="Software Technology Group - TU Dresden Germany"/>
+	<bundle bundleID="884" class="robotG.resource.robot.mopp.RobotPlugin" localization="OSGI-INF/l10n/bundle" name="EMFText Parser Plugin: robot" project="robotG.resource.robot" provider="Software Technology Group - TU Dresden Germany"/>
+	<bundle bundleID="885" class="robotG.robot.presentation.RobotGEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="IDM.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="886" class="robotG.robot.provider.RobotGEditPlugin$Implementation" localization="plugin" name="%pluginName" project="IDM.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="888" localization="OSGI-INF/l10n/bundle" name="ANTLR 3.3.0 Runtime Classes" project="org.emftext.commons.antlr3_4_0" provider="Software Technology Group - TU Dresden Germany"/>
+	<bundle bundleID="887" localization="plugin" name="%pluginName" project="IDM" provider="%providerName">
+		<library name="."/>
+	</bundle>
+</map>

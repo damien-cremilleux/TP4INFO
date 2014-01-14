@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.NotAspectIfAspectProperties;
+import robotG.flow.If;
+
+@SuppressWarnings("all")
+public class NotAspectIfAspectContext {
+  public final static NotAspectIfAspectContext INSTANCE = new NotAspectIfAspectContext();
+  
+  public static NotAspectIfAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<If,NotAspectIfAspectProperties> map = new java.util.HashMap<robotG.flow.If, robot.NotAspectIfAspectProperties>();
+  
+  public Map<If,NotAspectIfAspectProperties> getMap() {
+    return map;
+  }
+}

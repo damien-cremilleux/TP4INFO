@@ -1,0 +1,21 @@
+SYNTAXDEF robot
+FOR <http://robotG/1.0>
+START Flow.Programme
+
+RULES {
+	Flow.Programme ::= programme*;
+	Flow.While ::= "while" condition "do" instructions "end";
+	Flow.If ::= "if" condition "then" instructions;
+	Flow.And ::= filsGauche "and" filsDroit;
+	Flow.Or ::= filsGauche "or" filsDroit; 
+	Flow.Not ::= "not" expression;
+	Flow.StopProgram ::= "stopProgram";
+	Robot.Bip ::= "bip" "(" "duration" "=" duration[] "," "power" "=" power[] "," "repeat" "=" repeat[] ")";
+	Robot.Display ::= "display" "(" "msg" "=" msg[] "," "duration" "=" duration[] "," "line" "=" line[] "," "col" "=" col[] ")";
+	Robot.HasTurned ::= "hasTurned" "(" "angle" "=" angle[] ")";
+	Robot.Move ::= "move" "(" "power" "=" power[] ")";
+	Robot.Obstacle ::= "obstacle" "(" "distance" "=" distance[] ")";
+	Robot.SetTurnAngle ::= "setTrunAngle" "(" "angle" "=" angle[] ")";
+	Robot.StopEngine ::= "stopEngine";
+	Robot.Turn ::= "turn" "(" "power" "=" power[] "," "angle" "=" angle[] ")";
+	}

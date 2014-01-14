@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.BipAspectDisplayAspectProperties;
+import robotG.robot.Display;
+
+@SuppressWarnings("all")
+public class BipAspectDisplayAspectContext {
+  public final static BipAspectDisplayAspectContext INSTANCE = new BipAspectDisplayAspectContext();
+  
+  public static BipAspectDisplayAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Display,BipAspectDisplayAspectProperties> map = new java.util.HashMap<robotG.robot.Display, robot.BipAspectDisplayAspectProperties>();
+  
+  public Map<Display,BipAspectDisplayAspectProperties> getMap() {
+    return map;
+  }
+}

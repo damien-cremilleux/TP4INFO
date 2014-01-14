@@ -1,0 +1,71 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+
+\pagestyle{plain}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+\DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png,.gif}
+
+\usepackage{color}
+\definecolor{grey}{rgb}{0.9,0.9,0.9}
+\definecolor{teal}{rgb}{0.0,0.5,0.5}
+\definecolor{violet}{rgb}{0.5,0,0.5}
+
+\usepackage{listings}
+\usepackage{listingsutf8}
+\lstloadlanguages{[Visual]C++}
+\lstdefinestyle{listing}{
+  language=Java,
+  captionpos=t,
+  inputencoding=utf8/latin1,
+  extendedchars=true,
+  resetmargins=true,
+  xleftmargin=-60pt,
+  xrightmargin=-70pt,
+%  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  breakatwhitespace=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  basicstyle=\footnotesize\ttfamily,
+  backgroundcolor=\color{grey},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{teal},
+  identifierstyle=\color{black},
+  stringstyle=\color{red},
+  numberstyle=\color{violet},
+}
+\lstset{style=listing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{
+ Damien \textsc{Cremilleux},Lauriane \textsc{Holy} \\ \\
+  INSA de Rennes \\
+  4INFO, groupe 2.1
+}
+
+\title{Compte Rendu TP2 CPOO}
+
+\begin{document}
+\maketitle
+
+\lstinputlisting[caption=Le main avec notre implémentation.]{Main.cpp}
+\lstinputlisting[caption=Fichier en-tete.]{Chaine.h}
+\lstinputlisting[caption=Fichier cpp de l'implémentation.]{Chaine.cpp}
+\lstinputlisting[caption=Le main avec la classe string de C++]{main2.cpp}
+
+\end{document}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Script de test pour le compilo
+# auteur : Damien Crémilleux
+
+# les fichiers de test doivent être mis dans le dossier tests, sous la forme test* (ex : test1.txt)
+
+echo "Tests :" > res
+
+for i in `find . -type f -name 'test*'`; do
+	echo '' >> res
+	cat $i >> res
+	echo '' >> res
+	./tp3 < $i &>> res
+	echo '' >> res
+done

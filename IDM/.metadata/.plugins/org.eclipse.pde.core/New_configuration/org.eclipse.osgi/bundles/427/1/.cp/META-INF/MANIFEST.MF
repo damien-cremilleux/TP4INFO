@@ -1,0 +1,222 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.6.0_21
+Bundle-Vendor: %Bundle-Vendor.0
+Bundle-Localization: plugin
+Bundle-Name: %Bundle-Name.0 
+Built-By: hudsonbuild
+Bundle-SymbolicName: org.eclipse.jubula.client.ua.welcome;singleton:=t
+ rue
+Require-Bundle: org.eclipse.ui.intro;bundle-version="[3.4.0,4.0.0)",or
+ g.eclipse.ui.intro.universal;bundle-version="[3.2.4,4.0.0)",org.eclip
+ se.ui;bundle-version="[3.6.1,4.0.0)"
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Bundle-Version: 2.1.1.201309020759
+Bundle-ManifestVersion: 2
+
+Name: css/graphics/cube.gif
+SHA1-Digest: 6z2CCAdQj4cp1mrjSckc/fGdpXg=
+
+Name: samples/html/graphics/testcases.png
+SHA1-Digest: /CVdL+ymz5wakQLQt8uXex5hGGk=
+
+Name: whatsnew/css/layout.css
+SHA1-Digest: TcM03zxc/VMo9DQ0PKDPNG+hrXY=
+
+Name: migrate/html/migrate.html
+SHA1-Digest: TvBsNvU79EXygroHSwgCGbIQfWo=
+
+Name: webresources/html/websources.html
+SHA1-Digest: 87AaT3E8KJPQ5/1nYTDOqenVH9A=
+
+Name: samples/css/layout.css
+SHA1-Digest: 544ZPq4IDFxLkH9LmbgBG1iTBnA=
+
+Name: META-INF/maven/org.eclipse.jubula/org.eclipse.jubula.client.ua.w
+ elcome/pom.xml
+SHA1-Digest: 9+H5+7HY830uJeJ083fWGpq3qmo=
+
+Name: tutorials/css/graphics/tutorials.png
+SHA1-Digest: MaOAivh/d87JH5AjrXV3zt3dZwI=
+
+Name: firststeps/css/graphics/firststeps.png
+SHA1-Digest: RsdaQsl3dGOrJjKwrNL3yP+MG1o=
+
+Name: firststeps/html/structure.html
+SHA1-Digest: wVxLwvynXsEjPtV7gk1SLLWZfOw=
+
+Name: overview/css/graphics/overview.png
+SHA1-Digest: iafKT/2gMbHHAasziIljMgFbu3U=
+
+Name: migrate/index.xml
+SHA1-Digest: NTrFukLaxLl6jRSA7qIO/Y0zjMI=
+
+Name: css/graphics/websources.png
+SHA1-Digest: 6ZjqJiAuVIm3tUwgnRUIpMPzLzo=
+
+Name: css/graphics/tutorials.png
+SHA1-Digest: ROX7SAdcKw3Xj+i3U7dSuA3paBI=
+
+Name: overview/css/layout.css
+SHA1-Digest: /gacnyeVYc5usSm+xFWkh44srIc=
+
+Name: tutorials/css/graphics/tutorials_hov.png
+SHA1-Digest: a6eFcN5NT3ixUNd8FTumvEDjjH8=
+
+Name: firststeps/css/graphics/firststeps_hov.png
+SHA1-Digest: 1XD7NlPgIxwN8a0Bk5FDqdnyGxk=
+
+Name: firststeps/html/keywords.html
+SHA1-Digest: sZFNO/+lIIS5iactdOoAUFbK12s=
+
+Name: overview/css/graphics/overview_hov.png
+SHA1-Digest: wCF90Xdq0+zqfKqz3uFXxNayTQw=
+
+Name: firststeps/html/firststep.html
+SHA1-Digest: RkBrIHUwXWEB40q9chPxd+AfMSo=
+
+Name: css/graphics/firststeps.png
+SHA1-Digest: n+vV9yh/QRp4YCRK3HDT1FqkTPE=
+
+Name: css/graphics/overview.png
+SHA1-Digest: 2YQcf+MWC7PcM3H8fgGfNy0JmzM=
+
+Name: migrate/css/layout.css
+SHA1-Digest: RbYIRf3Z/5u+Lw8f5ptmt+w+v1w=
+
+Name: samples/html/graphics/AUTDialogWelcomeHelp.png
+SHA1-Digest: bm0PfHrp5BrPBqnaoCOBv5eRYw0=
+
+Name: webresources/index.xml
+SHA1-Digest: 49o5QhSulonNfZ5L/4HCNnsN0i0=
+
+Name: tutorials/index.xml
+SHA1-Digest: 6Vzlm5JQQnaXG8cCKJ2g9vq/D/8=
+
+Name: whatsnew/html/whatsnew.html
+SHA1-Digest: PcCn3gTDF7JuTAGqI/4/DQlPg3c=
+
+Name: css/graphics/whatsnew.png
+SHA1-Digest: sJ6KMrjiO8gRSc7+9Onnl94EScU=
+
+Name: tutorials/css/layout.css
+SHA1-Digest: 8bn5XJSAxf9tiZJXNi7+U/LOv6k=
+
+Name: samples/html/graphics/testCaseStructure.png
+SHA1-Digest: B79Gwv9+GM3XUbNdpfDdFCUJ+C0=
+
+Name: whatsnew/css/graphics/whatsnew.png
+SHA1-Digest: SnDRNpLF8bRz/U7NH9qmB0vwr18=
+
+Name: webresources/css/layout.css
+SHA1-Digest: sFnCTHVZDCXtmiLFO0ZlbLbOHrY=
+
+Name: css/layout.css
+SHA1-Digest: e5uZSJtwm7J4QQ0kCn7ZQIGBv6s=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp1.png
+SHA1-Digest: BY7O0N1zbKsbMB6uphvrhM6P2ww=
+
+Name: css/graphics/plus.png
+SHA1-Digest: aa65j4+5eTa7pDERBF5SzlZAoUE=
+
+Name: tutorials/html/tutorials.html
+SHA1-Digest: 4tiqDJhYjNO9O7YGGSAaLqt+rHQ=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp2.png
+SHA1-Digest: b8zKepyeSpuOMo4nbxU8mwN98ok=
+
+Name: plugin.properties
+SHA1-Digest: uygPgClKygNTFETnzM1CYSvHBVk=
+
+Name: samples/html/samples.html
+SHA1-Digest: /w4qiQCsVt9fIDg0CjdA82DbwzA=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp3.png
+SHA1-Digest: JsolQdKTwdKVHoCWYNBSBdVwfQw=
+
+Name: tutorials/html/graphics/tutorials.gif
+SHA1-Digest: q3HTYYiY2L+TSqARh7rJ+HthORU=
+
+Name: migrate/css/graphics/migrate.png
+SHA1-Digest: BWEWAfV+8JoSHRObg56x4u1XPZE=
+
+Name: whatsnew/css/graphics/whatsnew_hov.png
+SHA1-Digest: ob3MvJePvIgd3FUzBvXJgCnh5kM=
+
+Name: samples/css/graphics/sample.png
+SHA1-Digest: QPd2yjGRe+5XROhZJH5+wbSQU7g=
+
+Name: META-INF/maven/org.eclipse.jubula/org.eclipse.jubula.client.ua.w
+ elcome/pom.properties
+SHA1-Digest: MHDF2U7yxYb3RutqtiRjAnDlCAs=
+
+Name: webresources/css/graphics/websources.png
+SHA1-Digest: cGTgwidfN+lTh/jly8N593U4Hdc=
+
+Name: samples/html/configAut.html
+SHA1-Digest: mjlxAJtGDpCEGKeN2cbmus8gW1E=
+
+Name: plugin.xml
+SHA1-Digest: Lz7UGgC4GetffdLjPT4ZlsYiuto=
+
+Name: css/graphics/sample.png
+SHA1-Digest: rzAH14DuUN8PJO+Bh7cMgEwgHNw=
+
+Name: css/graphics/hg_blue.png
+SHA1-Digest: zHixe/N50928G1QZWMUdC5n6Yu8=
+
+Name: samples/html/graphics/testCaseStructure.gif
+SHA1-Digest: vtfU1qdQlF/IBmLWj7DZonkqDgQ=
+
+Name: migrate/css/graphics/migrate_hov.png
+SHA1-Digest: NbjfL0q+9MaxgMV3B5vBH3G1D08=
+
+Name: samples/html/graphics/projectDialogWelcomeHelp.png
+SHA1-Digest: pno9aIRsOWFsfI4inKyBXu4Ag20=
+
+Name: firststeps/css/layout.css
+SHA1-Digest: sAB3wkQFrlPs1qWVE7odZjEWpEo=
+
+Name: firststeps/index.xml
+SHA1-Digest: Hiky0S5k0BrBX6Lhx77DKCtg1tQ=
+
+Name: overview/index.xml
+SHA1-Digest: olAcQvIQIwIYYVqCE6qUW24nBmI=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp1.psd
+SHA1-Digest: 0OSYw4SBibEopBq469NuIMH8viA=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp2.psd
+SHA1-Digest: dYsa+2/q1jmA1YuizsoTfeda5lg=
+
+Name: samples/html/testcases.html
+SHA1-Digest: xe8reg2sVb6AS2APFbL2qLUrG/M=
+
+Name: samples/css/graphics/sample_hov.png
+SHA1-Digest: vfYD9qsdbi2QI0Iue9y8Miao/qU=
+
+Name: samples/html/graphics/AUTconfigDialogWelcomeHelp3.psd
+SHA1-Digest: 0UZOQUoiBvI5hF/HVRDxITfqPx0=
+
+Name: webresources/css/graphics/websources_hov.png
+SHA1-Digest: jN3Hh/m4vVrniGUFtNKJkLFzzKw=
+
+Name: about.html
+SHA1-Digest: 0gXCt1Q0Tsh2XFQ/XMdxJg1J64k=
+
+Name: css/graphics/migrate.png
+SHA1-Digest: +G+RoG9FhTLnARtZDWhfkxTA8fQ=
+
+Name: overview/html/overview.html
+SHA1-Digest: /qlYpWzT7htY+uam4teUeljscgE=
+
+Name: samples/index.xml
+SHA1-Digest: av8O1TdUGZqVRgUZ2MOVfkRo30o=
+
+Name: css/graphics/hg_wave.png
+SHA1-Digest: LrnkeEH8GyX9ckuSCDr66D67nDw=
+
+Name: whatsnew/index.xml
+SHA1-Digest: iGa5axi9+Zd5t8+B1crmyGxlT00=
+

@@ -1,0 +1,51 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.StopEngineAspectTurnAspectProperties;
+import robotG.robot.Turn;
+
+@Aspect(className = Turn.class)
+@SuppressWarnings("all")
+public class StopEngineAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final Turn _self, final ContextNCX ctx) {
+    robot.StopEngineAspectTurnAspectContext _instance = robot.StopEngineAspectTurnAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.Turn,robot.StopEngineAspectTurnAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.StopEngineAspectTurnAspectProperties prop = new robot.StopEngineAspectTurnAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.Turn){
+    			     							return robot.StopEngineAspect.privgenerateCode((robotG.robot.Turn)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static StopEngineAspectTurnAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final Turn _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final Turn _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      StringBuilder _stringBuilder = new StringBuilder();
+      final StringBuilder code = _stringBuilder;
+      StringBuilder _append = code.append("Off(OUT_BC);\n");
+      _xblockexpression = (_append);
+    }
+    return _xblockexpression;
+  }
+}

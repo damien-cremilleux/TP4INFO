@@ -1,0 +1,11 @@
+begin 
+	int a,
+	int c;
+
+	a <- c;
+	begin 
+		int b,
+		int c;
+		b <- c
+			
+ end

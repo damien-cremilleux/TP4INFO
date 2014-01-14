@@ -1,0 +1,17 @@
+package robot;
+
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+
+/* @Aspect(
+ */@SuppressWarnings("all")
+public class ProgramUnitAspect extends NXCCodeGenerator {
+  /* @OverrideAspectMethod
+   */public StringBuilder generateCode(final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field _self is undefined for the type ProgramUnitAspect"
+      + "\nblock cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\njoin cannot be resolved");
+  }
+}

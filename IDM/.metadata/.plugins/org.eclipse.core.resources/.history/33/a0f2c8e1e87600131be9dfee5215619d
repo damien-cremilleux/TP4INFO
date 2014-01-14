@@ -1,0 +1,15 @@
+SYNTAXDEF robot
+FOR <http://robotG/1.0>
+START Flow.Programme
+
+RULES {
+	Flow.Programme ::= programme;
+	Flow.While ::= "while" condition "do" instructions "end";
+	Flow.If ::= "if" condition "then" instructions;
+	Flow.And ::= filsGauche "and" filsDroit;
+	Flow.Or ::= filsGauche "or" filsDroit; 
+	Flow.Not ::= "not" expression;
+	Flow.StopProgram ::= "stopProgram";
+	Robot.Bip ::= "bip(duration="
+
+}

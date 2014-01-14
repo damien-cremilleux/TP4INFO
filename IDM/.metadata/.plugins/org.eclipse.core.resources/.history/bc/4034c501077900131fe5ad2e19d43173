@@ -1,0 +1,48 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.DisplayAspectHasTurnedAspectProperties;
+import robot.NXCCodeGenerator;
+import robotG.robot.HasTurned;
+
+@Aspect(className = HasTurned.class)
+@SuppressWarnings("all")
+public class DisplayAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final HasTurned _self, final ContextNCX ctx) {
+    robot.DisplayAspectHasTurnedAspectContext _instance = robot.DisplayAspectHasTurnedAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.HasTurned,robot.DisplayAspectHasTurnedAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.DisplayAspectHasTurnedAspectProperties prop = new robot.DisplayAspectHasTurnedAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.HasTurned){
+    			     							return robot.DisplayAspect.privgenerateCode((robotG.robot.HasTurned)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static DisplayAspectHasTurnedAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final HasTurned _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final HasTurned _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method msg is undefined for the type DisplayAspect"
+      + "\nThe method duration is undefined for the type DisplayAspect"
+      + "\nThe method line is undefined for the type DisplayAspect"
+      + "\nThe method col is undefined for the type DisplayAspect");
+  }
+}

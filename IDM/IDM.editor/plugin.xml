@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated robotG -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="robotG.robot.presentation.RobotModelWizardID"
+            name="%_UI_RobotModelWizard_label"
+            class="robotG.robot.presentation.RobotModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RobotModelFile.gif">
+         <description>%_UI_RobotModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated robotG -->
+      <editor
+            id="robotG.robot.presentation.RobotEditorID"
+            name="%_UI_RobotEditor_label"
+            icon="icons/full/obj16/RobotModelFile.gif"
+            extensions="robot"
+            class="robotG.robot.presentation.RobotEditor"
+            contributorClass="robotG.robot.presentation.RobotActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated robotG -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="robotG.flow.presentation.FlowModelWizardID"
+            name="%_UI_FlowModelWizard_label"
+            class="robotG.flow.presentation.FlowModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FlowModelFile.gif">
+         <description>%_UI_FlowModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated robotG -->
+      <editor
+            id="robotG.flow.presentation.FlowEditorID"
+            name="%_UI_FlowEditor_label"
+            icon="icons/full/obj16/FlowModelFile.gif"
+            extensions="flow"
+            class="robotG.flow.presentation.FlowEditor"
+            contributorClass="robotG.flow.presentation.FlowActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

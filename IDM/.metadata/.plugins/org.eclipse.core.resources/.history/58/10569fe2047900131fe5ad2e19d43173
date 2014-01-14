@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.ObstacleAspectNotAspectProperties;
+import robotG.flow.Not;
+
+@SuppressWarnings("all")
+public class ObstacleAspectNotAspectContext {
+  public final static ObstacleAspectNotAspectContext INSTANCE = new ObstacleAspectNotAspectContext();
+  
+  public static ObstacleAspectNotAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Not,ObstacleAspectNotAspectProperties> map = new java.util.HashMap<robotG.flow.Not, robot.ObstacleAspectNotAspectProperties>();
+  
+  public Map<Not,ObstacleAspectNotAspectProperties> getMap() {
+    return map;
+  }
+}

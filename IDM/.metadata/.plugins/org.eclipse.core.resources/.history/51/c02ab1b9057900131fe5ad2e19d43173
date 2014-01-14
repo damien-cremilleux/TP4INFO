@@ -1,0 +1,19 @@
+package robot;
+
+import java.util.Map;
+import robot.AndAspectvoidAspectProperties;
+
+@SuppressWarnings("all")
+public class AndAspectvoidAspectContext {
+  public final static AndAspectvoidAspectContext INSTANCE = new AndAspectvoidAspectContext();
+  
+  public static AndAspectvoidAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Void,AndAspectvoidAspectProperties> map = new java.util.HashMap<void, robot.AndAspectvoidAspectProperties>();
+  
+  public Map<Void,AndAspectvoidAspectProperties> getMap() {
+    return map;
+  }
+}

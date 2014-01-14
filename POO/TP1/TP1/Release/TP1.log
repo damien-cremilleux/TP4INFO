@@ -1,0 +1,22 @@
+﻿La génération a démarré 12/09/2013 14:45:14.
+     1>Projet "H:\POO\TP1\TP1\TP1.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Release\TP1.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp carte.cpp
+         main.cpp
+         carte.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\POO\TP1\Release\TP1.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\POO\TP1\Release\TP1.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\POO\TP1\Release\TP1.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Release\carte.obj
+         Génération de code en cours
+         Fin de la génération du code
+         TP1.vcxproj -> H:\POO\TP1\Release\TP1.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "Release\TP1.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Release\TP1.lastbuildstate".
+     1>Génération du projet "H:\POO\TP1\TP1\TP1.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:02.23

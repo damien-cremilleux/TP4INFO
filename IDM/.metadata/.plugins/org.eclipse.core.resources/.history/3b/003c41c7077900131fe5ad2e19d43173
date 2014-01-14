@@ -1,0 +1,19 @@
+package robot;
+
+import java.util.Map;
+import robot.ObstacleAspectvoidAspectProperties;
+
+@SuppressWarnings("all")
+public class ObstacleAspectvoidAspectContext {
+  public final static ObstacleAspectvoidAspectContext INSTANCE = new ObstacleAspectvoidAspectContext();
+  
+  public static ObstacleAspectvoidAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Void,ObstacleAspectvoidAspectProperties> map = new java.util.HashMap<void, robot.ObstacleAspectvoidAspectProperties>();
+  
+  public Map<Void,ObstacleAspectvoidAspectProperties> getMap() {
+    return map;
+  }
+}

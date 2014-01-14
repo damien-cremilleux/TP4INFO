@@ -1,0 +1,166 @@
+/**
+ */
+package robotG.robot.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import robotG.robot.Move;
+import robotG.robot.RobotPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Move</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link robotG.robot.impl.MoveImpl#getPower <em>Power</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class MoveImpl extends CommandeRobotImpl implements Move {
+	/**
+   * The default value of the '{@link #getPower() <em>Power</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getPower()
+   * @generated
+   * @ordered
+   */
+	protected static final int POWER_EDEFAULT = 0;
+
+	/**
+   * The cached value of the '{@link #getPower() <em>Power</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getPower()
+   * @generated
+   * @ordered
+   */
+	protected int power = POWER_EDEFAULT;
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	protected MoveImpl() {
+    super();
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	protected EClass eStaticClass() {
+    return RobotPackage.Literals.MOVE;
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	public int getPower() {
+    return power;
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	public void setPower(int newPower) {
+    int oldPower = power;
+    power = newPower;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.MOVE__POWER, oldPower, power));
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    switch (featureID)
+    {
+      case RobotPackage.MOVE__POWER:
+        return getPower();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+    switch (featureID)
+    {
+      case RobotPackage.MOVE__POWER:
+        setPower((Integer)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public void eUnset(int featureID) {
+    switch (featureID)
+    {
+      case RobotPackage.MOVE__POWER:
+        setPower(POWER_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public boolean eIsSet(int featureID) {
+    switch (featureID)
+    {
+      case RobotPackage.MOVE__POWER:
+        return power != POWER_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public String toString() {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (power: ");
+    result.append(power);
+    result.append(')');
+    return result.toString();
+  }
+
+} //MoveImpl

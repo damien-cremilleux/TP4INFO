@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+		<link rel="stylesheet" href="../../css/layout.css" type="text/css">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		
+		
+		<title>Starting AUTs</title>
+	</head>
+
+	<a name="anfang"></a>
+	
+	<body>
+		
+		<div id="bodywrapper">	
+		
+		
+			<div id="head">
+				<div class="sample_pic">
+				</div>
+			</div>
+			
+			<!-- <div id="right">
+					
+			
+				<div id="right_bluediv">
+						<span class="rightheadline">INFO</span>	
+				</div>
+				
+					<span class="tab"><b>some samples</b></span>
+					<div class="righttxt">					
+															
+					</div>
+			
+			</div>
+			-->
+			
+			
+			<div id="main">
+			
+				<div id="navi">	
+						<span class="navipoint"><a href="samples.html">Samples Overview</a>	</span>
+						<span class="navipoint"><a href="testcases.html">Using Test Cases</a></span>		
+				</div>
+					
+					
+				<p class="headline1">Starting AUTs for testing</p>
+				
+				<div class="maintxt">
+				<p>
+				There are two ways you can start your application to be tested. 
+				</p>
+				<br>
+					<ol style="list-style-type:decimal">
+						<li>
+						You can configure the application so that it is started from the user interface. 
+						In an AUT configuration, you can specify how the AUT is started. 
+						You can have different configurations 
+						for different platforms. 
+						</li>
+						<br>
+						<li>
+						You can start your AUT independently
+						using the command <b>autrun</b>. This lets us
+						know that that AUT is testable. 
+						</li>
+					</ol>
+				<br>
+				<p>
+				In both cases, the AUT can run on any machine in the network, 
+				as long as the <b>AUT Agent</b> (the server component)
+				is also installed and running there. 
+				</p>
+				
+				<p class="headline2">Options for starting AUTs</p>
+				
+				<ol style="list-style-type:decimal">
+					<li>
+					You can start your AUT via an executable file if it is
+					written in Java 1.5 or above, and you are using an Oracle VM. 
+					</li>
+					<br>
+					<li>
+					You can also start your AUT via a jar file that can 
+					be started with a double click.
+					</li>
+					<br>
+					<li>
+					If your AUT is not a jar or executable file, you can start it
+					by entering the main class name and class paths necessary to start the AUT.
+					</li>
+				</ol>
+
+		
+					<br>
+							<a href="#anfang">top of page</a>			
+						
+				</div>		
+			
+			</div>
+	</div>
+</body>
+</html>

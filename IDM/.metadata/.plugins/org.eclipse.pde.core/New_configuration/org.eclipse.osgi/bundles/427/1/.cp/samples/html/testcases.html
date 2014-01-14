@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="../../css/layout.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Using Test Cases</title>
+	</head>
+	<a name="anfang"></a>
+		<body>
+		
+		
+		<div id="bodywrapper">	
+		
+			<div id="head">
+				<div class="sample_pic">
+				</div>
+			</div>
+			
+			
+			<!--Zusatzinfos "Rechte Seite"-->
+
+			<div id="right">
+					
+					
+				<div id="right_bluediv">
+						<span class="rightheadline">Info</span>	
+				</div>
+					
+					<span class="tab"><b>Building blocks</b></span>
+					<div class="righttxt">							
+					Sometimes it helps to create empty Test Cases for the
+					test first to see what sort of a structure to use, and
+					which Test Cases can be reused.															
+					</div>
+					
+					<span class="tab"><b>Filling in the gaps</b></span>
+					<div class="righttxt">
+					You can then begin to fill the Test Cases with 
+					other Test Cases from the library.													
+					</div>
+					
+					<span class="tab"><b>Refactoring</b></span>
+					<div class="righttxt">
+					If you notice you need a sequence of Test Cases twice,
+					then create a module for the sequence!												
+					</div>
+					
+			</div>
+			
+			
+			<div id="main">
+				
+				<div id="navi">	
+						<span class="navipoint"><a href="samples.html">Samples Overview</a>	</span>
+						<span class="navipoint"><a href="configAut.html">Configuring the AUT</a></span>		
+				</div>
+				
+					<p class="headline1">Using Test Cases correctly</p>
+				<div class="maincontent">	
+					<p class="maintxt">
+					Test Cases are building blocks (keywords). You can use small Test Cases to 
+					do simple actions, like clicking a component, or entering text. 
+					Simple Test Cases like this are already prepared for you to use in
+					the library projects "unbound_modules". 
+					</p>
+					<p class="maintxt">
+					You can then group Test Cases together to test larger sequences, like
+					grouping two text input Test Cases and a click Test Case to make a keyword for a login dialog. 
+					</p>
+					<p class="maintxt">
+					You can create even larger sequences - for example - you could group a set of Test Cases together
+					to create a keyword which fills in a dialog with default data. In this way, you don't have to specify the 
+					same actions more than once. Another example of a larger keyword is an "application startup" Test Case. 
+					This could contain Test Cases to wait for the application window, wait for the progress bar to disappear, wait 
+					for the user interface components to become enabled etc. 
+					</p>
+					
+						<img src="graphics/testcases.png">
+			</div>		
+					<p class="headline2">Tips on structuring your test</p>
+			<div class="maincontent">
+					
+					<p class="maintxt">
+					Some people don't find it easy at first to think about how a 
+					test should be structured, or what parts can be made into reusable
+					units. 
+					</p>
+					<p class="maintxt">
+					If you know which modules you will need to reuse, then you 
+					can create them in advance. If you want to wait and see which
+					modules will be reused, then you can create your test in a more
+					"linear" way at first, just adding the actions you need in the
+					order you need them.  
+					</p>
+					<p class="maintxt">
+					You can use the <b>refactor</b> function 
+					to combine one or more Test Cases from an editor into a 
+					reusable modules. This gives you the chance to add structure 
+					even when you've already started creating your tests. 
+					</p>
+					
+			<br>
+					<a href="#anfang">top of page</a>
+			</div>
+				
+			</div>
+			
+					
+	</div>
+</body>
+</html>

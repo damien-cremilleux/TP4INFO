@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.FooStopEngineAspectProperties;
+import robotG.robot.StopEngine;
+
+@SuppressWarnings("all")
+public class FooStopEngineAspectContext {
+  public final static FooStopEngineAspectContext INSTANCE = new FooStopEngineAspectContext();
+  
+  public static FooStopEngineAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<StopEngine,FooStopEngineAspectProperties> map = new java.util.HashMap<robotG.robot.StopEngine, robot.FooStopEngineAspectProperties>();
+  
+  public Map<StopEngine,FooStopEngineAspectProperties> getMap() {
+    return map;
+  }
+}

@@ -1,0 +1,35 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.StopProgramAspectvoidAspectProperties;
+
+@Aspect(className = void.class)
+@SuppressWarnings("all")
+public class StopProgramAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  public static StopProgramAspectvoidAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final void _self, final ContextNCX ctx) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe primitive \'void\' cannot be the type of a parameter");
+  }
+  
+  protected static StringBuilder privgenerateCode(final void _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      StringBuilder _stringBuilder = new StringBuilder();
+      final StringBuilder code = _stringBuilder;
+      StringBuilder _append = code.append("Stop(true);");
+      _xblockexpression = (_append);
+    }
+    return _xblockexpression;
+  }
+}

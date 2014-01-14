@@ -1,0 +1,19 @@
+package robot;
+
+import java.util.Map;
+import robot.SetTurnAngleCmdAspectvoidAspectProperties;
+
+@SuppressWarnings("all")
+public class SetTurnAngleCmdAspectvoidAspectContext {
+  public final static SetTurnAngleCmdAspectvoidAspectContext INSTANCE = new SetTurnAngleCmdAspectvoidAspectContext();
+  
+  public static SetTurnAngleCmdAspectvoidAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Void,SetTurnAngleCmdAspectvoidAspectProperties> map = new java.util.HashMap<void, robot.SetTurnAngleCmdAspectvoidAspectProperties>();
+  
+  public Map<Void,SetTurnAngleCmdAspectvoidAspectProperties> getMap() {
+    return map;
+  }
+}

@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.StopProgramAspectBipAspectProperties;
+import robotG.robot.Bip;
+
+@SuppressWarnings("all")
+public class StopProgramAspectBipAspectContext {
+  public final static StopProgramAspectBipAspectContext INSTANCE = new StopProgramAspectBipAspectContext();
+  
+  public static StopProgramAspectBipAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<Bip,StopProgramAspectBipAspectProperties> map = new java.util.HashMap<robotG.robot.Bip, robot.StopProgramAspectBipAspectProperties>();
+  
+  public Map<Bip,StopProgramAspectBipAspectProperties> getMap() {
+    return map;
+  }
+}

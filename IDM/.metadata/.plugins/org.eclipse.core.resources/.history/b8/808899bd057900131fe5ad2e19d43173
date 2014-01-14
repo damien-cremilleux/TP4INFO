@@ -1,0 +1,56 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.AndAspectOrAspectProperties;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robotG.flow.ExprBool;
+import robotG.flow.Or;
+
+@Aspect(className = Or.class)
+@SuppressWarnings("all")
+public class AndAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final Or _self, final ContextNCX ctx) {
+    robot.AndAspectOrAspectContext _instance = robot.AndAspectOrAspectContext.getInstance();
+    				    java.util.Map<robotG.flow.Or,robot.AndAspectOrAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.AndAspectOrAspectProperties prop = new robot.AndAspectOrAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.flow.Or){
+    			     							return robot.AndAspect.privgenerateCode((robotG.flow.Or)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static AndAspectOrAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final Or _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final Or _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      StringBuilder _stringBuilder = new StringBuilder();
+      final StringBuilder code = _stringBuilder;
+      ExprBool _filsGauche = _self.getFilsGauche();
+      StringBuilder _append = code.append(_filsGauche);
+      StringBuilder _append_1 = _append.append(" && ");
+      ExprBool _filsDroit = _self.getFilsDroit();
+      StringBuilder _append_2 = _append_1.append(_filsDroit);
+      _xblockexpression = (_append_2);
+    }
+    return _xblockexpression;
+  }
+}

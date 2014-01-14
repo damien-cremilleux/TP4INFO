@@ -1,0 +1,51 @@
+package robot;
+
+import fr.inria.triskell.k3.Aspect;
+import fr.inria.triskell.k3.OverrideAspectMethod;
+import robot.ContextNCX;
+import robot.NXCCodeGenerator;
+import robot.StopProgramAspectBipAspectProperties;
+import robotG.robot.Bip;
+
+@Aspect(className = Bip.class)
+@SuppressWarnings("all")
+public class StopProgramAspect extends NXCCodeGenerator {
+  @OverrideAspectMethod
+  public static StringBuilder generateCode(final Bip _self, final ContextNCX ctx) {
+    robot.StopProgramAspectBipAspectContext _instance = robot.StopProgramAspectBipAspectContext.getInstance();
+    				    java.util.Map<robotG.robot.Bip,robot.StopProgramAspectBipAspectProperties> selfProp = _instance.getMap();
+    					boolean _containsKey = selfProp.containsKey(_self);
+    				    boolean _not = (!_containsKey);
+    				    if (_not) {
+      						robot.StopProgramAspectBipAspectProperties prop = new robot.StopProgramAspectBipAspectProperties();
+    				   selfProp.put(_self, prop);
+    			    }
+    			     _self_ = selfProp.get(_self);
+    			        if (_self instanceof robotG.robot.Bip){
+    			     							return robot.StopProgramAspect.privgenerateCode((robotG.robot.Bip)_self,ctx);
+    			     							} else    if (_self instanceof java.lang.Object){
+    			     							return robot.NXCCodeGenerator.privgenerateCode((java.lang.Object)_self,ctx);
+    			     							} else 
+    			      {
+    			       										throw new IllegalArgumentException("Unhandled parameter types: " +
+    			     							        java.util.Arrays.<Object>asList(_self).toString());
+    			     					    } 
+  }
+  
+  public static StopProgramAspectBipAspectProperties _self_;
+  
+  private static StringBuilder super_generateCode(final Bip _self, final ContextNCX ctx) {
+     return  robot.NXCCodeGenerator.privgenerateCode(_self,ctx);  
+  }
+  
+  protected static StringBuilder privgenerateCode(final Bip _self, final ContextNCX ctx) {
+    StringBuilder _xblockexpression = null;
+    {
+      StringBuilder _stringBuilder = new StringBuilder();
+      final StringBuilder code = _stringBuilder;
+      StringBuilder _append = code.append("Stop(true);");
+      _xblockexpression = (_append);
+    }
+    return _xblockexpression;
+  }
+}

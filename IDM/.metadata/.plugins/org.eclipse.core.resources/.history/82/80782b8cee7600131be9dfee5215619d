@@ -1,0 +1,27 @@
+SYNTAXDEF robot
+FOR <http://robotG/1.0>
+START Flow.Programme
+
+RULES {
+	Flow.Programme ::= programme*;
+	Flow.While ::= "while" condition "do" instructions* "end";
+	@Operator(type="primitive", weight="4", superclass="Expr")
+	Flow.If ::= "if" condition "then" instructions*;
+	@Operator(type="binary_left_associative", weight="1", superclass="ExprBool")
+	Flow.And ::= filsGauche "and" filsDroit;
+	@Operator(type="binary_left_associative", weight="2", superclass="ExprBool")
+	Flow.Or ::= filsGauche "or" filsDroit; 
+    @Operator(type="unary_prefix", weight="3", superclass="ExprBool")
+	Flow.Not ::= "not" expression;
+	Flow.StopProgram ::= "stopProgram";
+	Robot.Bip ::= "bip" "(" "duration" "=" duration[] "," "power" "=" power[] "," "repeat" "=" repeat[] ")";
+	Robot.Display ::= "display" "(" "msg" "=" msg[] "," "duration" "=" duration[] "," "line" "=" line[] "," "col" "=" col[] ")";
+    @Operator(type="primitive", weight="4", superclass="ExprBool")
+	Robot.HasTurned ::= "hasTurned" "(" "angle" "=" angle[] ")";
+	Robot.Move ::= "move" "(" "power" "=" power[] ")";
+    @Operator(type="primitive", weight="4", superclass="ExprBool")
+	Robot.Obstacle ::= "obstacle" "(" "distance" "=" distance[] ")";
+	Robot.SetTurnAngle ::= "setTrunAngle" "(" "angle" "=" angle[] ")";
+	Robot.StopEngine ::= "stopEngine";
+	Robot.Turn ::= "turn" "(" "power" "=" power[] "," "angle" "=" angle[] ")";
+	}

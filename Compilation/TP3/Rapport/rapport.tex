@@ -1,0 +1,245 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{listings}
+\usepackage{color}
+%%\usepackage{listingsutf8}
+\usepackage{mathtools}
+%% \usepackage{pst-tree}
+%% \usepackage{pdftricks}
+%% \begin{psinputs}
+%%    \usepackage{pstricks}
+%%    \usepackage{multido}
+%% \end{psinputs}
+%%\usepackage{qtree}
+
+\lstset{
+  mathescape=true,
+  breaklines=true,
+  language=Caml
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{
+  Damien \textsc{Crémilleux}, Tom \textsc{Demulier--Chevret} \\ \\
+  INSA de Rennes \\
+  4INFO, LSR-B
+}
+
+\title{TP3 Compilation \\ Analyse syntaxique ascendante, ocamllex et ocamlyacc}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Compte-rendu}
+
+\subsection{Table SLR}
+\begin{center}
+  \begin{tabular}{| c || c | c | c | c | c | c | c || c | c |}
+    \hline
+    État & + & < & and & ( & ) & <- & Ident & Inst & Expr  \\ \hline
+    0    &   &   &     &   &   &    &  d1   &      &       \\ \hline
+    1    &   &   &     &   &   & d2 &       &      &       \\ \hline
+    2    &   &   &     & d4&   &    &   d5  &      & 3     \\ \hline
+    3    & d6& d7& d8  &   &   &    &       &      &       \\ \hline
+    4    &   &   &     & d4&   &    & d5    &      & 9     \\ \hline
+    5    &r14&r14&r14  &   &r14&    &       &      &       \\ \hline
+    6    &   &   &     & d4&   &    &   d5  &      & 10    \\ \hline
+    7    &   &   &     & d4&   &    & d5    &      & 11    \\ \hline
+    8    &   &   &     & d4&   &    & d5    &      &  12   \\ \hline
+    9    & d6& d7&   d8&   &d13&    &       &      &       \\ \hline
+    10   &d6/r10 &d7/r10 &d8/r10   &   &r10&    &       &      &       \\ \hline
+    11   &d6/r11 &d7/r11 &d8/r11   &   &r11&    &       &      &       \\ \hline
+    12   &d6/r12 &d7/r12 &d8/r12   &   &r12&    &       &      &       \\ \hline
+    13   &r13&r13&r13  &   &r13&    &       &      &       \\ \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Résolutions pour les éventuels conflits}
+On trouve 9 conflits dans la table SLR générés par 3 tokens : 6 pour les conflits de prédominance entre deux tokens différents (ex : a and b inf c) et 3 pour les conflits de réductions entre même tokens (ex : a + b + c).
+L'ordre de préfominance gardé correspond à celui donné par la grammaire : AND > INF > PLUS.
+De plus nous avons choisis un décalage à droite pour les conflits entre même tokens.
+
+\subsection{Questions de compréhension du TP}
+
+\paragraph{Question 3.1}
+Un crible filtre la suite des lexèmes et génère les identifiants. En utilisant ocamllex, on peut générer une hashtable pour stocker les identifiants et limiter ainsi le nombre de transitions (en effet ocamllex est limité à 32767 transitions).
+
+\paragraph{Question 3.2}
+Écrire une grammaire sous forme LR plutôt qur LL comporte plusieurs avantage :
+\begin{itemize}
+  \item La classe de grammaire couverte par LR est plus large.
+  \item La détection d'erreur est faire au plus tôt.
+  \item On peut traiter des grammaires ambiguës.
+\end{itemize}
+
+\paragraph{Question 3.3}
+Une colone vide dans une table SLR correspond à un token inutilisé.
+
+\section{Sources}
+
+Cf dossier source.
+
+\section{Tests}
+
+\subsection{Tests Positifs}
+
+\begin{lstlisting}
+
+begin int a,bool b, int c; b <- a < c end
+
+Anasynt.arbre_bloc =
+Anasynt.Node_bloc
+ ([Anasynt.Node_decl_int "a"; Anasynt.Node_decl_bool "b";
+   Anasynt.Node_decl_int "c"],
+ [Anasynt.Node_inst ("b",
+   Anasynt.Node_inf (Anasynt.Leaf_ident "a", Anasynt.Leaf_ident "c"))])
+
+
+begin
+int a,
+int c;
+a <- c;
+c <- a + c
+end
+
+Anasynt.arbre_bloc =
+Anasynt.Node_bloc ([Anasynt.Node_decl_int "a"; Anasynt.Node_decl_int "c"],
+ [Anasynt.Node_inst ("a", Anasynt.Leaf_ident "c");
+  Anasynt.Node_inst ("c",
+   Anasynt.Node_plus (Anasynt.Leaf_ident "a", Anasynt.Leaf_ident "c"))])
+
+begin
+int a,
+int c;
+a <- c;
+c <- a + c;
+begin
+bool b;
+b <- b and b
+end
+end
+
+Anasynt.arbre_bloc =
+Anasynt.Node_bloc ([Anasynt.Node_decl_int "a"; Anasynt.Node_decl_int "c"],
+ [Anasynt.Node_inst ("a", Anasynt.Leaf_ident "c");
+  Anasynt.Node_inst ("c",
+   Anasynt.Node_plus (Anasynt.Leaf_ident "a", Anasynt.Leaf_ident "c"));
+  Anasynt.Node_inst_bloc
+   (Anasynt.Node_bloc ([Anasynt.Node_decl_bool "b"],
+     [Anasynt.Node_inst ("b",
+       Anasynt.Node_and (Anasynt.Leaf_ident "b", Anasynt.Leaf_ident "b"))]))])
+
+
+
+\end{lstlisting}
+
+\subsection{Tests Negatifs}
+
+\begin{lstlisting}
+
+begin int a ;
+ a <- 654b + c
+ end
+
+Fatal error: exception Failure("lexing: empty token")
+
+
+begin ;
+ a <- b + c
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 1, caractere 6")
+
+
+begin 
+	int a,
+	bool b;
+	int c;
+
+	a <- a + c;
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 1")
+
+
+begin 
+	int a,
+	bool b;
+
+	a <- a <- b
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 5, caractere 8")
+
+
+begin 
+	bool b;
+	b and and b and
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 3, caractere 3")
+
+
+begin 
+	int a,
+	bool b;
+	int c;
+
+	a <- a + c,
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 1")
+
+
+begin 
+	int a,
+	b,
+	int c;
+
+	a <- a + c;
+	b and (a < c)
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 3, caractere 1")
+
+
+begin 
+	int a;
+	a <- a + c
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 4, caractere 0")
+
+
+begin 
+	int a,
+	int c;
+
+	a <- c;
+	begin 
+		int b,
+		int c;
+		b <- c
+			
+ end
+
+Fatal error: exception Failure("Erreur dans le fichier , a la ligne 12, caractere 0")
+
+
+
+\end{lstlisting}
+
+\end{document}

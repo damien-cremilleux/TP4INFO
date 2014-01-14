@@ -1,0 +1,312 @@
+Les paquets de depart sont :
+Paquet de N :
+roi de carreau
+dame de carreau
+valet de carreau
+dix de carreau
+neuf de carreau
+sept de carreau
+trois de carreau
+roi de coeur
+dame de coeur
+valet de coeur
+dix de coeur
+sept de coeur
+cinq de coeur
+roi de trefle
+dame de trefle
+valet de trefle
+neuf de trefle
+huit de trefle
+six de trefle
+roi de pique
+dame de pique
+valet de pique
+dix de pique
+huit de pique
+cinq de pique
+trois de pique
+
+Paquet de S :
+huit de carreau
+six de carreau
+cinq de carreau
+quate de carreau
+deux de carreau
+as de carreau
+neuf de coeur
+huit de coeur
+six de coeur
+quate de coeur
+trois de coeur
+deux de coeur
+as de coeur
+dix de trefle
+sept de trefle
+cinq de trefle
+quate de trefle
+trois de trefle
+deux de trefle
+as de trefle
+neuf de pique
+sept de pique
+six de pique
+quate de pique
+deux de pique
+as de pique
+
+Boucle principale
+Carte de N :roi de carreau
+Carte de S :huit de carreau
+
+
+ N gagne les cartes :
+huit de carreau
+roi de carreau
+
+----
+Carte de N :dame de carreau
+Carte de S :six de carreau
+
+
+ N gagne les cartes :
+six de carreau
+dame de carreau
+
+----
+Carte de N :valet de carreau
+Carte de S :cinq de carreau
+
+
+ N gagne les cartes :
+cinq de carreau
+valet de carreau
+
+----
+Carte de N :dix de carreau
+Carte de S :quate de carreau
+
+
+ N gagne les cartes :
+quate de carreau
+dix de carreau
+
+----
+Carte de N :neuf de carreau
+Carte de S :deux de carreau
+
+
+ N gagne les cartes :
+deux de carreau
+neuf de carreau
+
+----
+Carte de N :sept de carreau
+Carte de S :as de carreau
+
+
+ N gagne les cartes :
+as de carreau
+sept de carreau
+
+----
+Carte de N :trois de carreau
+Carte de S :neuf de coeur
+
+
+ S gagne les cartes :
+trois de carreau
+neuf de coeur
+
+----
+Carte de N :roi de coeur
+Carte de S :huit de coeur
+
+
+ N gagne les cartes :
+huit de coeur
+roi de coeur
+
+----
+Carte de N :dame de coeur
+Carte de S :six de coeur
+
+
+ N gagne les cartes :
+six de coeur
+dame de coeur
+
+----
+Carte de N :valet de coeur
+Carte de S :quate de coeur
+
+
+ N gagne les cartes :
+quate de coeur
+valet de coeur
+
+----
+Carte de N :dix de coeur
+Carte de S :trois de coeur
+
+
+ N gagne les cartes :
+trois de coeur
+dix de coeur
+
+----
+Carte de N :sept de coeur
+Carte de S :deux de coeur
+
+
+ N gagne les cartes :
+deux de coeur
+sept de coeur
+
+----
+Carte de N :cinq de coeur
+Carte de S :as de coeur
+
+
+ N gagne les cartes :
+as de coeur
+cinq de coeur
+
+----
+Carte de N :roi de trefle
+Carte de S :dix de trefle
+
+
+ N gagne les cartes :
+dix de trefle
+roi de trefle
+
+----
+Carte de N :dame de trefle
+Carte de S :sept de trefle
+
+
+ N gagne les cartes :
+sept de trefle
+dame de trefle
+
+----
+Carte de N :valet de trefle
+Carte de S :cinq de trefle
+
+
+ N gagne les cartes :
+cinq de trefle
+valet de trefle
+
+----
+Carte de N :neuf de trefle
+Carte de S :quate de trefle
+
+
+ N gagne les cartes :
+quate de trefle
+neuf de trefle
+
+----
+Carte de N :huit de trefle
+Carte de S :trois de trefle
+
+
+ N gagne les cartes :
+trois de trefle
+huit de trefle
+
+----
+Carte de N :six de trefle
+Carte de S :deux de trefle
+
+
+ N gagne les cartes :
+deux de trefle
+six de trefle
+
+----
+Carte de N :roi de pique
+Carte de S :as de trefle
+
+
+ N gagne les cartes :
+as de trefle
+roi de pique
+
+----
+Carte de N :dame de pique
+Carte de S :neuf de pique
+
+
+ N gagne les cartes :
+neuf de pique
+dame de pique
+
+----
+Carte de N :valet de pique
+Carte de S :sept de pique
+
+
+ N gagne les cartes :
+sept de pique
+valet de pique
+
+----
+Carte de N :dix de pique
+Carte de S :six de pique
+
+
+ N gagne les cartes :
+six de pique
+dix de pique
+
+----
+Carte de N :huit de pique
+Carte de S :quate de pique
+
+
+ N gagne les cartes :
+quate de pique
+huit de pique
+
+----
+Carte de N :cinq de pique
+Carte de S :deux de pique
+
+
+ N gagne les cartes :
+deux de pique
+cinq de pique
+
+----
+Carte de N :trois de pique
+Carte de S :as de pique
+
+
+ N gagne les cartes :
+as de pique
+trois de pique
+
+----
+Carte de N :huit de carreau
+Carte de S :trois de carreau
+
+
+ N gagne les cartes :
+trois de carreau
+huit de carreau
+
+----
+Carte de N :roi de carreau
+Carte de S :neuf de coeur
+
+
+ N gagne les cartes :
+neuf de coeur
+roi de carreau
+
+----
+ >>>>>>>>>>>>> le gagnant de ce jeu est : N
+fin de partie

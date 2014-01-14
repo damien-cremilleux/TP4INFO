@@ -1,0 +1,20 @@
+package robot;
+
+import java.util.Map;
+import robot.DisplayAspectHasTurnedAspectProperties;
+import robotG.robot.HasTurned;
+
+@SuppressWarnings("all")
+public class DisplayAspectHasTurnedAspectContext {
+  public final static DisplayAspectHasTurnedAspectContext INSTANCE = new DisplayAspectHasTurnedAspectContext();
+  
+  public static DisplayAspectHasTurnedAspectContext getInstance() {
+    return INSTANCE;
+  }
+  
+  private Map<HasTurned,DisplayAspectHasTurnedAspectProperties> map = new java.util.HashMap<robotG.robot.HasTurned, robot.DisplayAspectHasTurnedAspectProperties>();
+  
+  public Map<HasTurned,DisplayAspectHasTurnedAspectProperties> getMap() {
+    return map;
+  }
+}
