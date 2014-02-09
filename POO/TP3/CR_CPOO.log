@@ -1,18 +1,18 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.10)  10 OCT 2013 10:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.22)  13 JAN 2014 10:49
 entering extended mode
 **CR_CPOO.tex
-(H:\POO\TP3\CR_CPOO.tex
+(C:\Users\utilisateur\Documents\GitHub\TP4INFO\POO\TP3\CR_CPOO.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -30,10 +30,10 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucs.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-global.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count87
@@ -46,7 +46,7 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\utf8x.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
@@ -119,7 +119,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen106
 \Gin@req@width=\dimen107
 )
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip43
 \subfigcapskip=\skip44
@@ -131,15 +131,15 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \c@lofdepth=\count93
 \c@subtable=\count94
 \c@lotdepth=\count95
+
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg
-)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
 \subfig@top=\skip47
 \subfig@bottom=\skip48
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
@@ -147,7 +147,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count96
 \lst@gtempboxa=\box26
 \lst@token=\toks20
@@ -161,16 +161,17 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \lst@lineno=\count101
 \lst@maxwidth=\dimen113
 
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 \c@lstnumber=\count102
 \lst@skipnumbers=\count103
 \lst@framebox=\box27
 )
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\listingsutf8.sty"
 Package: listingsutf8 2011/11/10 v1.2 Allow UTF-8 in listings input (HO)
 
@@ -198,13 +199,13 @@ Package: stringenc 2011/12/02 v1.10 Convert strings between diff. encodings (HO
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdfescape.sty"
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 )))
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(C:\Users\dcremill\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-No file CR_CPOO.aux.
+(C:\Users\utilisateur\Documents\GitHub\TP4INFO\POO\TP3\CR_CPOO.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaul
+LaTeX Font Info:    Checking defaults for
