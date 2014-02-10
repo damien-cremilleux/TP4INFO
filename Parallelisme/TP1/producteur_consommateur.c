@@ -9,6 +9,7 @@
 int tampon[NB_CASE];		/* tableau des ressources */
 int thread_bloque[NB_THREAD];	/* tableau des threads bloqués */
 int nb_val;			/* nombre de ressources présentes dans le tableau */
+int nb_thread_bloque;
 int indice_prod;
 int indice_consom; 
 int cpt;
@@ -37,14 +38,42 @@ int vide()
   return res;
 }
 
-void ajouter_thread_bloquer()
+void ajouter_thread_bloque()
 {
+  int pid;
+  pid = getpid();
+  thread_bloque[nb_thread_bloque] = pid;
+  nb_thread_bloque++;  
+}
+
+void enlever_thread_bloque()
+{
+  int i;
+  int pid;
+  int trouve;
+  pid = getpid();
+
+  trouve = 0;
+  for(i = 0; i < nb_thread_bloque; i++)
+    {
+      if(thread_bloque[i] == pid)
+	{
+	  trouve =1;
+	}
+      
+      if(trouve && i<nb_thread_bloque-1)
+	{
+	  thread_bloque[i]= thread_bloque[i+1];
+	}
+    }
   
+  nb_thread_bloque--;  
 }
 
 void put(int v)
 {
   pthread_mutex_lock(&mutex_tampon);
+  printf("indice_prod : %d\n", indice_prod);
   while(plein())
     {
       ajouter_thread_bloque();
@@ -52,7 +81,7 @@ void put(int v)
       enlever_thread_bloque();
     }
   tampon[indice_prod] = v;
-  indice_prod = (indice_prod++)%NB_CASE;
+  indice_prod = (indice_prod+1)%NB_CASE;
 
   pthread_mutex_lock(&mutex_nb_val);
   nb_val++;
@@ -74,7 +103,7 @@ int get()
     }
   v = tampon[indice_consom];
   tampon[indice_consom] = 0;
-  indice_consom = (indice_consom++)%NB_CASE;
+  indice_consom = (indice_consom+1)%NB_CASE;
 
   pthread_mutex_lock(&mutex_nb_val);
   nb_val--;
@@ -116,7 +145,14 @@ void affiche()
   for (i=0; i< NB_CASE; i++)
     {
       printf(" %d ", tampon[i]);
-      
+    }
+  printf("\n");
+
+  printf("Threads bloqués : ");
+  i =0;
+  for (i=0; i< nb_thread_bloque; i++)
+    {
+      printf(" %d ", thread_bloque[i]); 
     }
   printf("\n");
 }
@@ -130,6 +166,7 @@ int main(int argc, char* argv[])
   indice_prod =0;
   indice_consom = 0;
   nb_val = 0;
+  nb_thread_bloque = 0;
 
   while(encore)
     {
