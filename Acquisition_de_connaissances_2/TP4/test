@@ -1,0 +1,133 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -N 400 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -A -c -1
+Relation:     adult1-weka.filters.unsupervised.attribute.Remove-R2-4,6-7,12-weka.filters.unsupervised.attribute.Discretize-F-B3-M-1.0-Rfirst-last
+Instances:    250
+Attributes:   9
+              age
+               education-num
+               relationship
+               race
+               sex
+               capital-gain
+               hours-per-week
+               native-country
+               gain
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.1 (25 instances)
+Minimum metric <confidence>: 0.9
+Number of cycles performed: 18
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 27
+
+Size of set of large itemsets L(2): 93
+
+Size of set of large itemsets L(3): 130
+
+Size of set of large itemsets L(4): 74
+
+Size of set of large itemsets L(5): 14
+
+Best rules found:
+
+  1. age='(-inf-31.5]'  education-num='(-inf-9.5]' 38 ==>  gain=_<=50K 38    conf:(1)
+  2.  relationship=_Own-child 36 ==>  gain=_<=50K 36    conf:(1)
+  3. age='(-inf-31.5]'  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]' 36 ==>  gain=_<=50K 36    conf:(1)
+  4.  relationship=_Own-child  capital-gain='(-inf-704.5]' 35 ==>  gain=_<=50K 35    conf:(1)
+  5. age='(-inf-31.5]'  education-num='(-inf-9.5]'  race=_White 34 ==>  gain=_<=50K 34    conf:(1)
+  6. age='(-inf-31.5]'  relationship=_Own-child 32 ==>  gain=_<=50K 32    conf:(1)
+  7. age='(-inf-31.5]'  education-num='(-inf-9.5]'  native-country=_United-States 32 ==>  gain=_<=50K 32    conf:(1)
+  8. age='(-inf-31.5]'  education-num='(-inf-9.5]'  race=_White  capital-gain='(-inf-704.5]' 32 ==>  gain=_<=50K 32    conf:(1)
+  9.  relationship=_Own-child  native-country=_United-States 31 ==>  gain=_<=50K 31    conf:(1)
+ 10. age='(-inf-31.5]'  relationship=_Own-child  capital-gain='(-inf-704.5]' 31 ==>  gain=_<=50K 31    conf:(1)
+ 11.  relationship=_Own-child  race=_White 30 ==>  gain=_<=50K 30    conf:(1)
+ 12.  relationship=_Own-child  capital-gain='(-inf-704.5]'  native-country=_United-States 30 ==>  gain=_<=50K 30    conf:(1)
+ 13. age='(-inf-31.5]'  education-num='(-inf-9.5]'  race=_White  native-country=_United-States 30 ==>  gain=_<=50K 30    conf:(1)
+ 14. age='(-inf-31.5]'  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]'  native-country=_United-States 30 ==>  gain=_<=50K 30    conf:(1)
+ 15.  relationship=_Own-child  race=_White  capital-gain='(-inf-704.5]' 29 ==>  gain=_<=50K 29    conf:(1)
+ 16.  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]' 28 ==>  gain=_<=50K 28    conf:(1)
+ 17.  sex=_Female  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]' 28 ==>  gain=_<=50K 28    conf:(1)
+ 18. age='(-inf-31.5]'  education-num='(-inf-9.5]'  race=_White  capital-gain='(-inf-704.5]'  native-country=_United-States 28 ==>  gain=_<=50K 28    conf:(1)
+ 19. age='(-inf-31.5]'  relationship=_Own-child  race=_White 27 ==>  gain=_<=50K 27    conf:(1)
+ 20. age='(-inf-31.5]'  relationship=_Own-child  native-country=_United-States 27 ==>  gain=_<=50K 27    conf:(1)
+ 21. age='(-inf-31.5]'  sex=_Female  capital-gain='(-inf-704.5]' 27 ==>  gain=_<=50K 27    conf:(1)
+ 22.  relationship=_Own-child  race=_White  native-country=_United-States 26 ==>  gain=_<=50K 26    conf:(1)
+ 23. age='(-inf-31.5]'  relationship=_Own-child  race=_White  capital-gain='(-inf-704.5]' 26 ==>  gain=_<=50K 26    conf:(1)
+ 24. age='(-inf-31.5]'  relationship=_Own-child  capital-gain='(-inf-704.5]'  native-country=_United-States 26 ==>  gain=_<=50K 26    conf:(1)
+ 25.  relationship=_Own-child  race=_White  capital-gain='(-inf-704.5]'  native-country=_United-States 25 ==>  gain=_<=50K 25    conf:(1)
+ 26.  race=_White  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]'  native-country=_United-States 32 ==>  gain=_<=50K 31    conf:(0.97)
+ 27.  education-num='(-inf-9.5]'  hours-per-week='(-inf-39]' 31 ==>  gain=_<=50K 30    conf:(0.97)
+ 28.  sex=_Female  hours-per-week='(-inf-39]' 31 ==>  gain=_<=50K 30    conf:(0.97)
+ 29. age='(-inf-31.5]'  education-num='(9.5-12.5]'  native-country=_United-States 31 ==>  gain=_<=50K 30    conf:(0.97)
+ 30.  education-num='(-inf-9.5]'  sex=_Female  capital-gain='(-inf-704.5]' 31 ==>  gain=_<=50K 30    conf:(0.97)
+ 31. age='(-inf-31.5]'  sex=_Female 30 ==>  gain=_<=50K 29    conf:(0.97)
+ 32. age='(-inf-31.5]'  education-num='(9.5-12.5]'  capital-gain='(-inf-704.5]'  native-country=_United-States 30 ==>  gain=_<=50K 29    conf:(0.97)
+ 33.  relationship=_Not-in-family  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 29 ==>  gain=_<=50K 28    conf:(0.97)
+ 34.  education-num='(-inf-9.5]'  relationship=_Not-in-family  capital-gain='(-inf-704.5]' 28 ==>  gain=_<=50K 27    conf:(0.96)
+ 35. age='(-inf-31.5]'  hours-per-week='(-inf-39]' 27 ==>  gain=_<=50K 26    conf:(0.96)
+ 36.  education-num='(-inf-9.5]'  hours-per-week='(-inf-39]'  native-country=_United-States 27 ==>  gain=_<=50K 26    conf:(0.96)
+ 37.  education-num='(-inf-9.5]'  sex=_Female  capital-gain='(-inf-704.5]'  native-country=_United-States 27 ==>  gain=_<=50K 26    conf:(0.96)
+ 38.  relationship=_Not-in-family  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 27 ==>  gain=_<=50K 26    conf:(0.96)
+ 39.  education-num='(9.5-12.5]'  sex=_Female 26 ==>  gain=_<=50K 25    conf:(0.96)
+ 40. age='(-inf-31.5]'  sex=_Female  native-country=_United-States 26 ==>  gain=_<=50K 25    conf:(0.96)
+ 41.  sex=_Female  hours-per-week='(-inf-39]'  native-country=_United-States 26 ==>  gain=_<=50K 25    conf:(0.96)
+ 42.  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]'  native-country=_United-States 44 ==>  gain=_<=50K 42    conf:(0.95)
+ 43.  race=_White  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]' 38 ==>  gain=_<=50K 36    conf:(0.95)
+ 44.  race=_White  hours-per-week='(-inf-39]'  native-country=_United-States 36 ==>  gain=_<=50K 34    conf:(0.94)
+ 45. age='(-inf-31.5]'  race=_White  hours-per-week='(39-40.5]' 35 ==>  gain=_<=50K 33    conf:(0.94)
+ 46. age='(-inf-31.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 35 ==>  gain=_<=50K 33    conf:(0.94)
+ 47.  capital-gain='(-inf-704.5]'  hours-per-week='(-inf-39]' 52 ==>  gain=_<=50K 49    conf:(0.94)
+ 48. age='(-inf-31.5]'  education-num='(9.5-12.5]' 33 ==>  gain=_<=50K 31    conf:(0.94)
+ 49. age='(-inf-31.5]'  race=_White  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 33 ==>  gain=_<=50K 31    conf:(0.94)
+ 50. age='(-inf-31.5]'  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 33 ==>  gain=_<=50K 31    conf:(0.94)
+ 51.  relationship=_Not-in-family  hours-per-week='(39-40.5]' 32 ==>  gain=_<=50K 30    conf:(0.94)
+ 52. age='(-inf-31.5]'  education-num='(9.5-12.5]'  capital-gain='(-inf-704.5]' 32 ==>  gain=_<=50K 30    conf:(0.94)
+ 53. age='(-inf-31.5]'  race=_White  hours-per-week='(39-40.5]'  native-country=_United-States 32 ==>  gain=_<=50K 30    conf:(0.94)
+ 54.  education-num='(-inf-9.5]'  relationship=_Not-in-family 30 ==>  gain=_<=50K 28    conf:(0.93)
+ 55.  relationship=_Not-in-family  hours-per-week='(39-40.5]'  native-country=_United-States 30 ==>  gain=_<=50K 28    conf:(0.93)
+ 56. age='(-inf-31.5]'  race=_White  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 30 ==>  gain=_<=50K 28    conf:(0.93)
+ 57. age='(-inf-31.5]'  capital-gain='(-inf-704.5]'  native-country=_United-States 72 ==>  gain=_<=50K 67    conf:(0.93)
+ 58. age='(-inf-31.5]'  hours-per-week='(39-40.5]' 42 ==>  gain=_<=50K 39    conf:(0.93)
+ 59.  race=_White  hours-per-week='(-inf-39]' 42 ==>  gain=_<=50K 39    conf:(0.93)
+ 60.  relationship=_Not-in-family  sex=_Female  capital-gain='(-inf-704.5]' 28 ==>  gain=_<=50K 26    conf:(0.93)
+ 61. age='(-inf-31.5]'  education-num='(9.5-12.5]'  race=_White 27 ==>  gain=_<=50K 25    conf:(0.93)
+ 62.  education-num='(-inf-9.5]'  relationship=_Not-in-family  native-country=_United-States 27 ==>  gain=_<=50K 25    conf:(0.93)
+ 63.  relationship=_Not-in-family  race=_White  hours-per-week='(39-40.5]' 27 ==>  gain=_<=50K 25    conf:(0.93)
+ 64. age='(-inf-31.5]'  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 40 ==>  gain=_<=50K 37    conf:(0.93)
+ 65. age='(-inf-31.5]'  native-country=_United-States 77 ==>  gain=_<=50K 71    conf:(0.92)
+ 66. age='(-inf-31.5]'  race=_White  capital-gain='(-inf-704.5]'  native-country=_United-States 63 ==>  gain=_<=50K 58    conf:(0.92)
+ 67.  sex=_Female  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 37 ==>  gain=_<=50K 34    conf:(0.92)
+ 68.  hours-per-week='(-inf-39]'  native-country=_United-States 49 ==>  gain=_<=50K 45    conf:(0.92)
+ 69.  sex=_Female  capital-gain='(-inf-704.5]'  native-country=_United-States 61 ==>  gain=_<=50K 56    conf:(0.92)
+ 70.  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]'  native-country=_United-States 85 ==>  gain=_<=50K 78    conf:(0.92)
+ 71.  sex=_Female  capital-gain='(-inf-704.5]' 72 ==>  gain=_<=50K 66    conf:(0.92)
+ 72. age='(-inf-31.5]'  capital-gain='(-inf-704.5]' 83 ==>  gain=_<=50K 76    conf:(0.92)
+ 73. age='(-inf-31.5]'  race=_White  capital-gain='(-inf-704.5]' 69 ==>  gain=_<=50K 63    conf:(0.91)
+ 74.  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 46 ==>  gain=_<=50K 42    conf:(0.91)
+ 75.  hours-per-week='(-inf-39]' 57 ==>  gain=_<=50K 52    conf:(0.91)
+ 76. age='(-inf-31.5]'  race=_White  native-country=_United-States 68 ==>  gain=_<=50K 62    conf:(0.91)
+ 77.  education-num='(-inf-9.5]'  sex=_Female 34 ==>  gain=_<=50K 31    conf:(0.91)
+ 78.  education-num='(-inf-9.5]'  sex=_Male  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 34 ==>  gain=_<=50K 31    conf:(0.91)
+ 79.  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]' 100 ==>  gain=_<=50K 91    conf:(0.91)
+ 80. age='(-inf-31.5]' 88 ==>  gain=_<=50K 80    conf:(0.91)
+ 81.  education-num='(-inf-9.5]'  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 55 ==>  gain=_<=50K 50    conf:(0.91)
+ 82.  sex=_Female  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]'  native-country=_United-States 32 ==>  gain=_<=50K 29    conf:(0.91)
+ 83. age='(-inf-31.5]'  race=_White 74 ==>  gain=_<=50K 67    conf:(0.91)
+ 84.  relationship=_Not-in-family  capital-gain='(-inf-704.5]' 63 ==>  gain=_<=50K 57    conf:(0.9)
+ 85.  education-num='(-inf-9.5]'  sex=_Male  capital-gain='(-inf-704.5]'  hours-per-week='(39-40.5]' 42 ==>  gain=_<=50K 38    conf:(0.9)
+ 86.  relationship=_Not-in-family  race=_White  capital-gain='(-inf-704.5]' 52 ==>  gain=_<=50K 47    conf:(0.9)
+ 87.  relationship=_Not-in-family  race=_White  sex=_Male 31 ==>  gain=_<=50K 28    conf:(0.9)
+ 88. age='(-inf-31.5]'  sex=_Male  native-country=_United-States 51 ==>  gain=_<=50K 46    conf:(0.9)
+ 89.  education-num='(-inf-9.5]'  race=_White  capital-gain='(-inf-704.5]'  native-country=_United-States 71 ==>  gain=_<=50K 64    conf:(0.9)
+ 90.  relationship=_Not-in-family  race=_White  capital-gain='(-inf-704.5]'  native-country=_United-States 50 ==>  gain=_<=50K 45    conf:(0.9)
+ 91.  education-num='(-inf-9.5]'  sex=_Female  native-country=_United-States 30 ==>  gain=_<=50K 27    conf:(0.9)
+ 92.  relationship=_Not-in-family  race=_White  sex=_Male  capital-gain='(-inf-704.5]' 30 ==>  gain=_<=50K 27    conf:(0.9)
+ 93.  relationship=_Not-in-family  race=_White  sex=_Male  native-country=_United-States 30 ==>  gain=_<=50K 27    conf:(0.9)
+

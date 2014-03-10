@@ -1,0 +1,251 @@
+#!/usr/bin/perl -w
+
+# Author: Vincent Claveau
+# Contact: vincent.claveau@irisa.fr
+# Last modif date: 22 January 2008
+
+# Purpose: sert a preparer les donnees poker pour Aleph
+
+# Comment: 
+
+# Code :
+
+
+###################################################################
+##                          INITIALISATIONS                      ##
+###################################################################
+
+use strict;
+use locale;
+binmode(STDOUT,':utf8'); # si le terminal est en utf8
+binmode(STDERR,':utf8'); # si le terminal est en utf8
+
+my $unique = $$;
+my $prg = $0;
+if ($0 =~ /.+\/([^\/]+\.[^\.\/]+)$/)
+  { $prg = $1 }
+
+my $verbose = 2;
+
+
+
+##################################################################
+# FICHIERS
+
+my $file_in;
+
+my $prefix = "toto";
+
+##########################################################################
+# FLAG
+
+
+##########################################################################
+# VARIABLES DIVERSES
+
+# A CHANGER SELON VOTRE SITUATION
+
+my $entete = "/home-reseau/lholy/4INFO/AcqCo2/TP2/exemple-poker/entete.pl";
+my $aleph = "/home-reseau/lholy/4INFO/AcqCo2/TP2/aleph.pl";
+
+##########################################################################
+# USAGE
+
+my $usage = "Usage : $prg 
+Mandatory
+argument
+*\t -out        <prefixe des fichiers de sortie>
+*\t -in         <fichier de donnees a transformer>
+
+ \t -h         : aide
+\n";
+
+
+die $usage unless ($#ARGV > -1);
+
+while ($#ARGV > -1 and $ARGV[0] =~ /^-/) {
+  $_ = shift;
+  if (/^-out/)                { $prefix = shift }
+  elsif (/^-in/)              { $file_in = shift }
+
+  elsif (/^-?-he/)            { die $usage }
+
+  else                        { die "unknown option $_!\n $usage\n" }
+}
+
+
+##################################################################################
+##################################################################################
+##                                                                              ##
+##                                   BODY                                       ##
+##                                                                              ##
+##################################################################################
+##################################################################################
+
+open(BK,"> $prefix.b") or die "$prg unable to write $prefix.b $!\n";
+print BK ":- ['$entete'].\n\n";
+
+open(IN,$file_in) or die "$prg unable to read $file_in $!\n";
+open(POS,"> $prefix.f") or die "$prg unable to write $prefix.f $!\n";
+open(NEG,"> $prefix.n") or die "$prg unable to write $prefix.n $!\n";
+my $nb_ex = 0;
+my $ident = '';
+while(<IN>)
+  {
+    if (/^([1-4]),([0-9]+),([1-4]),([0-9]+),([1-4]),([0-9]+),([1-4]),([0-9]+),([1-4]),([0-9]+),([0-9])/)
+      {
+        my $couleur1 = Trans_couleur($1); my $valeur1 = Trans_valeur($2);
+        my $couleur2 = Trans_couleur($3); my $valeur2 = Trans_valeur($4);
+        my $couleur3 = Trans_couleur($5); my $valeur3 = Trans_valeur($6);
+        my $couleur4 = Trans_couleur($7); my $valeur4 = Trans_valeur($8);
+        my $couleur5 = Trans_couleur($9); my $valeur5 = Trans_valeur($10);
+        my $figure = Trans_main($11);
+
+        $nb_ex++;
+        $ident = 'main'.$nb_ex;
+	    
+        # ici completer en inscrivant les exemples (pos et neg) dans les fichiers POS et NEG
+        # et leur description dans le BK,
+
+
+        # il y a beacoup d'exemples negatifs (selon ce que vous définissez comme exemple positif) 
+        # on ne va pas tous les prendre
+        # pour tirer au hasard un element sur 10 : if (int rand 10 == 0)
+
+        # pour la description :
+	# ident sert a identifier l'exemple (comme e1 pour les trains de Michalski)
+	# $nb_ex peut servir a identifier chaque carte (comme car11 pour les trains)
+        # chaque carte a des caracteristiques : couleur, valeur
+
+	# utile :
+        # pour comparer deux chaines : $toto eq "blablabla"
+        # pour ecrire dans un fichier : print POS "blabla\n";
+
+	my $bool_desc = 0 ;
+	if($figure eq 'carre')
+	{
+	    print POS "carre($ident).\n";
+	    $bool_desc = 1 ;
+	}
+	elsif($figure eq 'rien' and int rand 100 == 0) 
+	{
+	    print NEG "carre($ident).\n";
+	    $bool_desc = 1 ;
+	}
+	elsif(int rand 5 == 0 and $figure ne 'rien')
+	{
+	    print NEG "carre($ident).\n";
+	    $bool_desc = 1 ;
+	}
+      	
+	if($bool_desc)
+	{
+	    print BK "a_carte($ident,c1_$nb_ex).\n";
+	    print BK "couleur(c1_$nb_ex,$couleur1).\n";	   
+	    print BK "valeur(c1_$nb_ex,$valeur1).\n";
+
+	    print BK "a_carte($ident,c2_$nb_ex).\n";
+	    print BK "couleur(c2_$nb_ex,$couleur2).\n";	   
+	    print BK "valeur(c2_$nb_ex,$valeur2).\n";
+
+	    print BK "a_carte($ident,c3_$nb_ex).\n";
+	    print BK "couleur(c3_$nb_ex,$couleur3).\n";	   
+	    print BK "valeur(c3_$nb_ex,$valeur3).\n";
+
+	    print BK "a_carte($ident,c4_$nb_ex).\n";
+	    print BK "couleur(c4_$nb_ex,$couleur4).\n";	   
+	    print BK "valeur(c4_$nb_ex,$valeur4).\n";
+
+	    print BK "a_carte($ident,c5_$nb_ex).\n";
+	    print BK "couleur(c5_$nb_ex,$couleur5).\n";	   
+	    print BK "valeur(c5_$nb_ex,$valeur5).\n";
+
+	}
+   
+	$bool_desc = 0;
+
+        # fin de la partie a completer
+      }
+    else { print STDERR "$prg: pb ligne au format inconnu :\n$_\n\n" }
+  }
+close IN;
+close POS;
+print NEG "\n";
+close NEG;
+close BK;
+
+
+# un fichier pour tout lancer sans s'embeter a tout taper
+# il n'y aura plus qu'a faire yap -l xxxx.start
+# et taper 'induce.' ou 'sat(1), reduce.' a l'invite de yap
+open(START,"> $prefix.start") or die "$prg unable to write $prefix.start $!\n";
+print START ":- ['$aleph'].\n";
+print START ":- read_all($prefix).\n";
+print START ":- set(recordfile,'$prefix.res').\n";
+print START ":- set(verbose,0).\n";
+close START;
+
+
+
+
+
+##################################################################################
+##################################################################################
+##                                                                              ##
+##                              PROCEDURES                                      ##
+##                                                                              ##
+##################################################################################
+##################################################################################
+
+
+
+sub Trans_valeur {
+  my $valeur = shift;
+
+  if ($valeur == 1)      { $valeur = "as"}
+  elsif ($valeur == 2)   { $valeur = "deux"}
+  elsif ($valeur == 3)   { $valeur = "trois"}
+  elsif ($valeur == 4)   { $valeur = "quatre"}
+  elsif ($valeur == 5)   { $valeur = "cinq"}
+  elsif ($valeur == 6)   { $valeur = "six"}
+  elsif ($valeur == 7)   { $valeur = "sept"}
+  elsif ($valeur == 8)   { $valeur = "huit"}
+  elsif ($valeur == 9)   { $valeur = "neuf"}
+  elsif ($valeur == 10)  { $valeur = "dix"}
+  elsif ($valeur == 11)  { $valeur = "valet"}
+  elsif ($valeur == 12)  { $valeur = "dame"}
+  elsif ($valeur == 13)  { $valeur = "roi"}
+
+  return $valeur;
+}
+
+
+sub Trans_couleur {
+  # peu importe l'ordre en fait
+  my $valeur = shift;
+
+  if ($valeur == 1)      { $valeur = "coeur"}
+  elsif ($valeur == 2)   { $valeur = "pique"}
+  elsif ($valeur == 3)   { $valeur = "carreau"}
+  elsif ($valeur == 4)   { $valeur = "trefle"}
+
+  return $valeur;
+}
+
+
+sub Trans_main {
+  my $main = shift;
+
+  if ($main == 0)      { $main = "rien" }
+  elsif ($main == 1)   { $main = "paire" }
+  elsif ($main == 2)   { $main = "double_paire" }
+  elsif ($main == 3)   { $main = "brelan" }
+  elsif ($main == 4)   { $main = "suite" }
+  elsif ($main == 5)   { $main = "couleur" }
+  elsif ($main == 6)   { $main = "quinte" }
+  elsif ($main == 7)   { $main = "carre" }
+  elsif ($main == 8)   { $main = "quinte_flush" }
+  elsif ($main == 9)   { $main = "quinte_royale" }
+
+  return $main;
+}
