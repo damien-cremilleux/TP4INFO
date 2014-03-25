@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+
+\title{DS 2013 Parallélisme}
+\author{Damien Crémilleux, Lauriane Holy}
+\date{\today}
+
+\maketitle
+
+\section{Questions de cours}
+
+\subsection{Question 1}
+
+Les compteurs de synchronisation possèdent plusieurs avantages :
+\begin{itemize}
+\item synchronisation moins restrictives que l'exclusion mutuelle (on peut laisser passer plus d'un processus dans la zone protégé)
+\item les variables de synchronisation et les réveils sont gérés automatiquement
+\item leurs spécifications sont plus abstraites et concises (mécanisme de haut niveau)
+\end{itemize}
+
+Ils ont cependant plusieurs inconvénients : 
+\begin{itemize}
+\item difficile à mettre en oeuvre
+\item réévalutions parfois inutiles dans conditions
+\end{itemize}
+
+\subsection{Question 2}
+
+La différence entre les wait/notify Java et les moniteurs de Hoare réside dans le réveil du thread après que celui-ci ait été bloqué. Dans le cas des moniteurs de Hoare, lors de l'instruction reprendre(), le thread faisant l'appel est bloqué pour laisser la place à un processus précédement bloqué. Le processus débloqué est donc sûr que sa condition de réveil est vrai. Au contraire, dans le cas d'un notify() en java, le thread réveillé se contente d'aller dans la queue d'entrée du moniteur. Au moment où il rentrera, la condition d'entrée ne sera plus nécessairement vraie, d'où la nécéssité de mettre le wait() dans une boucle while.
+
+\subsection{Question 3}
+
+La communication par rendez vous n'est pas le moyen de communication le plus rapide dans un programme parallèle exécuté sur un réseau de machine car l'émission et la réception de message sont bloquantes, et il faut attendre la confirmation de réception (principe de l'accusé de réception). Ainsi le premier thread arrivé attend l'autre. Il est possible d'utiliser des buffers de communication pour aller plus vite, et ne plus avoir de réception bloquante. 
+
+\section{Questions de TP}
+
+\subsection{Question 1}
+
+Lors du TP MPI, chaque processeur s'occupe d'une tranche de la plaque. Cependant, comme un processeur a besoin des plaques calculées par ses voisins, il y un recouvrement aux extrémitées. Ces parties sont donc en double, et sont mises à jour au fur et à mesure de l'avancement des threads.
+
+\subsection{Question 2}
+
+On suppose que la matrice possède M ligne et N colonnes. Soit P le nombre de processus, il va donc y avoir nbPlaques =2 * ( N / P ) (arrondi à l'entier supérieur), et (nbPlaques - 1) recouvrements. En proportion, il y a donc (2*(N/P)-1)/N recouvrement.
+
+\section{Problème : Synchronisation}
+
+\lstinputlisting[language=java, frame=single, breaklines=true, basicstyle=\footnotesize, ]{ds2013/Facteur.java}
+
+\end{document}

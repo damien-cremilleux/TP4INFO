@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+\title{DS 2011 Parallélisme}
+\author{Damien Crémilleux}
+\date{\today}
+
+\maketitle
+
+
+\section{Question de cours}
+
+\begin{itemize}
+\item Tout partage de variable impose une synchronisation :
+
+  Vrai, la synchronisation est nécessaire pour lire et écrire de façon cohérente.
+
+\item Les compteurs de synchronisation sont un mécanisme de syncronisation de bas niveau :
+
+  Faux, il s'agit d'un mécanisme de haut niveau. En effet, le réveil est implicite, on ne l'écrit pas.
+
+\item En Java l'attribut private rend une variable locale à un thread et il faut utiliser shared pour indiquer qu'elle est partagée :
+
+  Faux
+
+\item En Java on choisit quel est le thread que l'on réveille avec la méthode notify(Thread) :
+  
+  Faux, on ne choisit pas le thread qui sera réveillé.
+
+\item En Java Notify réveille un thread qui reprend instantanément le contrôle de l'objet partagé :
+  
+  Faux, il faut attendre l'acquisition du verrou (d'où le \textit{while} pour l'attente). C'est donc différent par rapport aux moniteurs de Hoare.
+
+\item Les méthodes \textit{synchronized} s'exécutent en exclusion mutuelle avec toutes les autres méthodes du même objet :
+
+  Faux, les méthodes non-\textit{synchronized} ne sont pas impactées. En outre, les \textit{synchronized} sont réentrants (appel à une méthode \textit{synchronized} dans une méthode déjà \textit{synchronized}).
+
+\item Un programme parallèle va toujours plus vite qu'un programme séquentiel :
+
+  Faux, à cause des synchronizations un programme parallèle peut être plus long qu'un programme séquentiel.
+
+\item Un programme parallèle ne peut s'exécuter que sur une machine parallèle ou multi-coeur :
+  
+  Faux, il suffit que la machine supporte le multi-threading.
+
+\item La communication par rendez-vous est le moyen de communication le plus rapide dans un programme parallèle exécuté sur un réseau de machines :
+  
+  Faux, en effet il faut attendre l'émetteur (principe de l'accusé de réception).
+
+\item MPI utilise la communication par rendez-vous
+  
+  Faux, MPI utilise la communication avec envoi non-bloquant.
+
+\item Les variables globales dans un programme C/MPI sont partagées entre les processus
+
+  Faux, il n'y a pas de variables globales en C/MPI (pas de mémoire partagée non plus).
+
+\item MPI permet le partage de variable
+
+  Faux.
+
+\end{itemize}
+
+\section{Exercice 1 : Synchronisation}
+
+\lstinputlisting[frame=single, language=java, title=\lstname]{Journal.java}
+
+\section{Exercice 2 : MPI}
+
+
+\end{document}

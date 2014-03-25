@@ -1,0 +1,122 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+\title{DS 2012 Parallélisme}
+\author{Damien Crémilleux, Lauriane Holy, Boris Labbé}
+\date{\today}
+
+\maketitle
+
+\section{Problème 1 : Le salon de coiffure et les moniteurs de Hoare}
+
+\subsection{Décrire les processus coiffeur et client}
+
+\begin{lstlisting}[frame=single]
+  Class Client {
+    SalonCoiffure.se_faire_coiffer();
+  }
+
+  Class Coiffeur {
+    while(true) {
+      SalonCoiffure.client_suivant();
+      SalonCoiffure.terminer_coupe();
+    }
+  }   
+\end{lstlisting}
+
+\subsection{Donner le texte du moniteur}
+\begin{lstlisting}[frame=single, breaklines=true]
+  Class SalonCoiffure implements HOARE_Monitor { //Non java - les methodes s'executent toutes en exclusion mutuelle
+    
+    private condition coiffeur_disponible; //declaration de la file (fauteuil) pour le coiffeur
+    private condition fauteil_occupe; //declaration de la file (fauteuil) le client
+    private condition porte_ouverte; //declaration de la file (ouverture de la porte) pour le client
+    private condition client_sorti; //declaration de la file (attente que le client sorte) pour le client
+    
+    public se_faire_coiffer() {
+      coiffeur_disponible.reprendre();
+      fauteuil_occupe.attendre();
+      porte_ouverte.attendre();
+      client_sortie.attendre();
+    }
+    
+    public client_suivant() {
+      coiffeur_disponible.attendre();
+    }
+    
+    public terminer_coupe() {
+      //coiffure du client
+      fauteuil_occupe.reprendre();
+      porte_ouverte.reprendre();
+      client_sortie.reprendre();
+    }
+  }
+  
+\end{lstlisting}
+
+\section{Problème 2 : Simulation de feux tricolores et CSP}
+
+\subsection{Automate élémentaire}
+
+\begin{lstlisting}[breaklines=true, frame=single, basicstyle=\footnotesize]
+  
+  *[true --> [etat = vert --> delay(d1); etat = orange; feu(orange) 
+              |
+              etat = orange --> delay(d2); etat = rouge; feu(rouge) 
+              |
+              etat = rouge --> delay(d3); etat = vert; feu(vert)]
+   ]
+\end{lstlisting}
+
+\subsection{Synchronisation 2 feux}
+
+\begin{lstlisting}[breaklines=true, frame=single, basicstyle=\footnotesize]
+  automate(i) : 0..1
+  int go;
+  [i = 0 --> etat = vert; feu(vert);
+   |
+   i = 1 --> etat = rouge; feu(rouge);
+  ]
+*[true --> [etat = vert --> delay(d1); etat = orange; feu(orange)
+            |
+            etat = orange --> delay(d2); etat = rouge; feu(rouge); automate((i+1)%2)!go 
+            |
+            etat = rouge;automate((i+1)%2)?go--> delay(d3); etat = vert; feu(vert)]
+  ]
+  
+\end{lstlisting}
+
+\subsection{Synchronisation des véhicules}
+
+
+\begin{lstlisting}[breaklines=true, frame=single, basicstyle=\footnotesize]
+  automate(i) : 0..1
+  int go;
+  int j;
+  [i = 0 --> etat = vert; feu(vert); 
+   |
+   i = 1 --> etat = rouge; feu(rouge);
+  ]
+*[true --> [etat = vert --> delay(d1); etat = orange; feu(orange) 
+            |
+            etat = orange --> delay(d2); etat = rouge; feu(rouge); automate((i+1)%2)!go 
+            |
+            etat = rouge;automate((i+1)%2)?go--> delay(d3); etat = vert; feu(vert); (j:1..nb_voiture)voiture(j)!i] //on envoie le numero du feu qui passe au vert a toutes les voitures
+ ]
+
+ borismobile(j) : 1..nb_voiture
+  int feu_attente;
+  int i;
+  int k;
+  *[(k:0..1)automate(k)?i  --> [i = feu_attente --> passe //on regarde que le message envoye provient du bon
+                                | 
+                                i != feu_attente --> stop]
+   ]
+  
+\end{lstlisting}
+
+\end{document}
