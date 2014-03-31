@@ -16,10 +16,10 @@ couleurBateau(blanc).
 
 %%choixCouleur(?CouleurBateau, ?CouleurVoiture) :  rend vrai si les couleurs choisies pour le bateau et la voiture sont identiques et font partie des choix existants.
 choixCouleur(Couleur,Couleur) :-
-	couleurVoiture(Couleur),
-	couleurBateau(Couleur).
+        couleurVoiture(Couleur),
+        couleurBateau(Couleur).
 
-	
+
 %% Question 1.2
 %%%%%%%%%%%%%%%
 
@@ -32,9 +32,9 @@ choixCouleur(Couleur,Couleur) :-
 isBetween(Min,Min,_).
 
 isBetween(Var,Min,Max) :-
-	Min2 is Min+1,
-	Min2 =< Max,
-	isBetween(Var,Min2,Max).
+        Min2 is Min+1,
+        Min2 =< Max,
+        isBetween(Var,Min2,Max).
 
 
 %% Question 1.4
@@ -42,9 +42,9 @@ isBetween(Var,Min,Max) :-
 
 %commande(-NbResistance, -NbCondensateur)  fixe le nombre de résistances et de condensateurs à commander pour respecter (entre 500 et 1000 resistances et entre 9000 et 20000 condensateurs).
 commande(NbResistance,NbCondensateur) :-
-	isBetween(NbResistance,5000,10000),
-	isBetween(NbCondensateur,9000,20000),
-	NbResistance >= NbCondensateur.
+        isBetween(NbResistance,5000,10000),
+        isBetween(NbCondensateur,9000,20000),
+        NbResistance >= NbCondensateur.
 
 
 %% Question 1.5
@@ -71,19 +71,19 @@ commande(NbResistance,NbCondensateur) :-
 %%%%%%%%%%%%%%%
 %% commande(-NbResistance, -NbCondensateur) rajout des contraintes
 commandeCont(NbResistance,NbCondensateur) :-
-	NbResistance #:: 5000..10000,
-	NbCondensateur #:: 9000..20000,
-	NbResistance #>= NbCondensateur.
+        NbResistance #:: 5000..10000,
+        NbCondensateur #:: 9000..20000,
+        NbResistance #>= NbCondensateur.
 
 
 %% Question 1.8
 %%%%%%%%%%%%%%%
 %% commande(-NbResistance, -NbCondensateur) rajout du labeling
 commandeContLabel(NbResistance,NbCondensateur) :-
-	NbResistance #:: 5000..10000,
-	NbCondensateur #:: 9000..20000,
-	NbResistance #>= NbCondensateur,
-	labeling([NbResistance,NbCondensateur]).
+        NbResistance #:: 5000..10000,
+        NbCondensateur #:: 9000..20000,
+        NbResistance #>= NbCondensateur,
+        labeling([NbResistance,NbCondensateur]).
 
 
 %% Question 1.9
@@ -91,12 +91,12 @@ commandeContLabel(NbResistance,NbCondensateur) :-
 %%chapie(-Chat, -Pies ,-Pattes,-Tetes) liaison des contraintes du problème
 
 chapie(Chats,Pies,Pattes,Tetes):-
-	Chats #:: 0..inf,
-	Pies #:: 0..inf,
-	Pattes #:: 0..inf,
-	Tetes #:: 0..inf,
-	Pattes #= 4*Chats + 2*Pies,
-	Tetes #= Chats + Pies.
+        Chats #:: 0..inf,
+        Pies #:: 0..inf,
+        Pattes #:: 0..inf,
+        Tetes #:: 0..inf,
+        Pattes #= 4*Chats + 2*Pies,
+        Tetes #= Chats + Pies.
 
 
 %% Question 1.10
@@ -104,13 +104,13 @@ chapie(Chats,Pies,Pattes,Tetes):-
 %%chapie_10(-Chat, -Pies ,-Pattes,-Tetes) rend combien de chat il faut pour avoir 3 fois plus de pattes que de têtes
 
 chapie1_10(Chats,Pies,Pattes,Tetes):-
-	chapie(Chats,Pies,Pattes,Tetes),
-	Chats #<10000,
-	Pies #<10000,
-	Pattes #<10000,
-	Tetes #<10000,
-	Pattes #= 3* Tetes,
-	labeling([Chats,Pies,Pattes,Tetes]).
+        chapie(Chats,Pies,Pattes,Tetes),
+        Chats #<10000,
+        Pies #<10000,
+        Pattes #<10000,
+        Tetes #<10000,
+        Pattes #= 3* Tetes,
+        labeling([Chats,Pies,Pattes,Tetes]).
 
 
 %% Question 1.11
@@ -119,22 +119,22 @@ chapie1_10(Chats,Pies,Pattes,Tetes):-
 %% vabs(?Val, ?AbsVal) ValAbs est la valeur absolue de l'entier relatif Val
 %% Version avec un point de choix Prolog 
 vabs(Val,AbsVal) :-
-	AbsVal #:: 0..inf,
-	contVabs(Val,AbsVal),
-	labeling([Val,AbsVal]).
+        AbsVal #:: 0..inf,
+        contVabs(Val,AbsVal),
+        labeling([Val,AbsVal]).
 
 contVabs(Val,AbsVal) :-
-	Val #= AbsVal.
+        Val #= AbsVal.
 
 contVabs(Val,AbsVal) :-
-	Val #= -AbsVal.
+        Val #= -AbsVal.
 
 %% Version avec l'opérateur de disjonction or de ic
 vabs2(Val,AbsVal) :-
-	AbsVal #:: 0..1000,
-	Val #:: -1000..1000,
-	(Val #= AbsVal) or (Val #= -AbsVal),
-	labeling([Val,AbsVal]).
+        AbsVal #:: 0..1000,
+        Val #:: -1000..1000,
+        (Val #= AbsVal) or (Val #= -AbsVal),
+        labeling([Val,AbsVal]).
 
 
 %% Question 1.12
@@ -159,23 +159,23 @@ vabs2(Val,AbsVal) :-
 
 %% faitListe(?ListVar, ?Taille, +Min, +Max)  ListVar est une liste de taille Taille dont les éléments sont dans le domaine Min..Max
 faitListe(ListVar,Taille,Min,Max) :-
-	length(ListVar,Taille),
-	ListVar #:: Min..Max.
+        length(ListVar,Taille),
+        ListVar #:: Min..Max.
 
 
 %% Question 1.14
 %%%%%%%%%%%%%%%%
 %% suite(?ListVar) prend une liste en paramètre et contraint les éléments de cette liste à être des termes successifs de la suite.
 verif_suite(X1,X2,X3) :-
-	vabs(X2,AbsX2),
-	X3 #= AbsX2 -X1.
+        vabs(X2,AbsX2),
+        X3 #= AbsX2 -X1.
 
 suite([X1,X2,X3]) :-
-	verif_suite(X1,X2,X3).
+        verif_suite(X1,X2,X3).
 
 suite([X1,X2,X3|Reste]) :-
-	verif_suite(X1,X2,X3),
-	suite([X2,X3|Reste]).
+        verif_suite(X1,X2,X3),
+        suite([X2,X3|Reste]).
 
 
 %% Question 1.15

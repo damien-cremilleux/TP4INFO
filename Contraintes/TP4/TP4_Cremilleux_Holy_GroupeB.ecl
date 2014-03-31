@@ -9,11 +9,11 @@
 %% getData(?TailleEquipes, ?NbEquipes, ?CapaBateaux, ?NbBateaux, ? NbConf) : unifie les variables passées en paramètres avec les données du problème
 
 getData(TailleEquipes, NbEquipes, CapaBateaux, NbBateaux, NbConf):-
-	TailleEquipes = [](5,5,2,1),
-	CapaBateaux= [](7,6,5),
-	dim(TailleEquipes, [NbEquipes]),
-	dim(CapaBateaux,[NbBateaux]),
-	NbConf is 3.
+        TailleEquipes = [](5,5,2,1),
+        CapaBateaux= [](7,6,5),
+        dim(TailleEquipes, [NbEquipes]),
+        dim(CapaBateaux,[NbBateaux]),
+        NbConf is 3.
 
 
 %% Question 4.2
@@ -21,50 +21,50 @@ getData(TailleEquipes, NbEquipes, CapaBateaux, NbBateaux, NbConf):-
 %% defineVars(?T, +NbEquipes, +NbConf, +NbBateaux) : unifie T au tableau des variables et contraint le domaine des variables
 
 defineVars(T, NbEquipes, NbConf, NbBateaux):-
-	dim(T, [NbEquipes, NbConf]),
-	T #:: 1..NbBateaux.
+        dim(T, [NbEquipes, NbConf]),
+        T #:: 1..NbBateaux.
 
 %% Question 4.3
 %%%%%%%%%%%%%%%
 %% getVarList(+T, ?L) : construit la liste L des variables contenues dans le tableau T.
 
 getVarList(T, L) :-
-	dim(T,[NbEquipes,NbConf]),
-	(multifor([I,J],[NbConf,NbEquipes],[1,1],[-1,-1]),
-	param(T),
-fromto([], In, Out, L)
-do
-(V is T[J,I],
-	Out = [V|In]
-    )   
-).
-	
+        dim(T,[NbEquipes,NbConf]),
+        (multifor([I,J],[NbConf,NbEquipes],[1,1],[-1,-1]),
+         param(T),
+         fromto([], In, Out, L)
+         do
+            (V is T[J,I],
+             Out = [V|In]
+            )   
+        ).
+
 
 %% Question 4.4
 %%%%%%%%%%%%%%%
 %% solve(?T) : resolution du problème avec les contraintes de domaine/
 
 solve(T):-
-	getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
-	defineVars(T, NbEquipes, NbConf, NbBateaux),
-	getVarList(T,L),
-	labeling(L).
+        getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
+        defineVars(T, NbEquipes, NbConf, NbBateaux),
+        getVarList(T,L),
+        labeling(L).
 
 %% Question 4.5
 %%%%%%%%%%%%%%%
 %% pasMemeBateaux(+T, +NbEquipes, +NbConf) : une même équipe ne peut pas se retrouver deux fois sur le meme bateau
 
 pasMemeBateaux(T,_NbEquipes, _NbConf):-
-	foreacharg(Ligne, T) do
-	alldifferent(Ligne).
+        foreacharg(Ligne, T) do
+            alldifferent(Ligne).
 
 
 solve2(T):-
-	getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
-	defineVars(T, NbEquipes, NbConf, NbBateaux),
-	getVarList(T,L),
-	pasMemeBateaux(T,NbEquipes,NbConf),
-	labeling(L).
+        getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
+        defineVars(T, NbEquipes, NbConf, NbBateaux),
+        getVarList(T,L),
+        pasMemeBateaux(T,NbEquipes,NbConf),
+        labeling(L).
 
 
 % Question 4.6
@@ -72,27 +72,27 @@ solve2(T):-
 %% pasMemePartenaires(+T, +NbEquipes, +NbConf) : une meme équipe ne se retrouve pas deux fois avec la meme équipe
 
 pasMemePartenaires(T, NbEquipes, NbConf):-
-	(for(E1,1,NbEquipes), param(T,NbConf, NbEquipes)
-    do
-(for(E2,E1+1, NbEquipes), param(T, NbConf, E1)
-do
-(for(C1,1,NbConf), param(T, E1, E2, NbConf)
-do
-(for(C2, C1+1, NbConf), param(T, E1, E2, C1)
-do
-(T[E1,C1] #= T[E2,C1]) => (T[E1,C2] #\= T[E2,C2])
-)
-)
-)
-).
+        (for(E1,1,NbEquipes), param(T,NbConf, NbEquipes)
+        do
+            (for(E2,E1+1, NbEquipes), param(T, NbConf, E1)
+                                      do
+                (for(C1,1,NbConf), param(T, E1, E2, NbConf)
+                                   do
+                    (for(C2, C1+1, NbConf), param(T, E1, E2, C1)
+                                            do
+                        (T[E1,C1] #= T[E2,C1]) => (T[E1,C2] #\= T[E2,C2])
+                    )
+                )
+            )
+        ).
 
 solve3(T):-
-	getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
-	defineVars(T, NbEquipes, NbConf, NbBateaux),
-	getVarList(T,L),
-	pasMemeBateaux(T,NbEquipes,NbConf),
-	pasMemePartenaires(T, NbEquipes, NbConf),
-	labeling(L).	
+        getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
+        defineVars(T, NbEquipes, NbConf, NbBateaux),
+        getVarList(T,L),
+        pasMemeBateaux(T,NbEquipes,NbConf),
+        pasMemePartenaires(T, NbEquipes, NbConf),
+        labeling(L).	
 
 
 
@@ -100,52 +100,52 @@ solve3(T):-
 %%%%%%%%%%%%%%%
 %% capaBateaux(+T, +TailleEquipes, +NbEquipes, +CapaBateaux, +NbBateaux, +NbConf)  
 capaBateaux(T,_TailleEquipes, NbEquipes,_CapaBateaux, NbBateaux, NbConf) :-
-	(multifor([I,J],[1,1],[NbConf,NbBateaux]), param(NbEquipes, T) do
-    capaBateauxConfrontation(T, NbEquipes, I, Liste),
-	sommeCapa(Liste, J, 1, Res),
-	tailleBateau(J, Taille),
-	Res #=< Taille
-).
+        (multifor([I,J],[1,1],[NbConf,NbBateaux]), param(NbEquipes, T) do
+            capaBateauxConfrontation(T, NbEquipes, I, Liste),
+            sommeCapa(Liste, J, 1, Res),
+            tailleBateau(J, Taille),
+            Res #=< Taille
+        ).
 
 %% Renvoie la liste des bateaux pour une confrontation (la colonne correpondant à la confrontation)
 capaBateauxConfrontation(T, NbEquipes, NumConfrontation, L) :-
- 	(for(I,1,NbEquipes),
-	fromto([], In, Out, L), param(T,NumConfrontation)
-do
-Elem is T[I,NumConfrontation],
-	append(In,[Elem],Out)
- ).
+        (for(I,1,NbEquipes),
+         fromto([], In, Out, L), param(T,NumConfrontation)
+                                 do
+            Elem is T[I,NumConfrontation],
+            append(In,[Elem],Out)
+        ).
 
 %% sommeCapa(+ListeBateau, +NumBateau, +NumEquipe, -Res) : renvoie pour un bateau le nombre de personne à bord
 sommeCapa([],_NumBateau,_NumEquipe,0).
 sommeCapa([NumBateau|Reste],NumBateau,NumEquipe,Res) :-
-	!,
-	tailleEquipe(NumEquipe,ResTemp),
-	NumEquipe2 is NumEquipe + 1,
-	sommeCapa(Reste,NumBateau,NumEquipe2,ResTemp2),
-	Res is ResTemp + ResTemp2.
-	
+        !,
+        tailleEquipe(NumEquipe,ResTemp),
+        NumEquipe2 is NumEquipe + 1,
+        sommeCapa(Reste,NumBateau,NumEquipe2,ResTemp2),
+        Res is ResTemp + ResTemp2.
+
 sommeCapa([_NumBateau2|Reste],NumBateau,NumEquipe,Res) :-
-	NumEquipe2 is NumEquipe + 1,
-	sommeCapa(Reste,NumBateau,NumEquipe2,Res).
+        NumEquipe2 is NumEquipe + 1,
+        sommeCapa(Reste,NumBateau,NumEquipe2,Res).
 
 %% tailleEquipe(+NumEquipe,-Capacite) : indique le nombre de personnes d'une équipe 
 tailleEquipe(NumEquipe, Taille) :-
-	getData(TailleEquipes, _NbEquipes, _CapaBateaux, _NbBateaux, _NbConf),
-	Taille is TailleEquipes[NumEquipe].
+        getData(TailleEquipes, _NbEquipes, _CapaBateaux, _NbBateaux, _NbConf),
+        Taille is TailleEquipes[NumEquipe].
 
 tailleBateau(NumBateau, Taille) :-
-	getData(_TailleEquipes, _NbEquipes, CapaBateaux, _NbBateaux, _NbConf),
-	Taille is CapaBateaux[NumBateau].
+        getData(_TailleEquipes, _NbEquipes, CapaBateaux, _NbBateaux, _NbConf),
+        Taille is CapaBateaux[NumBateau].
 
 solve4(T):-
-	getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
-	defineVars(T, NbEquipes, NbConf, NbBateaux),
-	getVarList(T,L),
-	pasMemeBateaux(T,NbEquipes,NbConf),
-	pasMemePartenaires(T, NbEquipes, NbConf),
-	labeling(L),
-	capaBateaux(T, _TailleEquipes, NbEquipes, _CapaBateaux, NbBateaux, NbConf).
+        getData(_TailleEquipes,NbEquipes,_CapaBateaux,NbBateaux,NbConf),
+        defineVars(T, NbEquipes, NbConf, NbBateaux),
+        getVarList(T,L),
+        pasMemeBateaux(T,NbEquipes,NbConf),
+        pasMemePartenaires(T, NbEquipes, NbConf),
+        labeling(L),
+        capaBateaux(T, _TailleEquipes, NbEquipes, _CapaBateaux, NbBateaux, NbConf).
 
 
 %% Question 4.8

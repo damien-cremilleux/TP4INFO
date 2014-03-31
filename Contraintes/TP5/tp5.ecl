@@ -12,75 +12,75 @@ getQuantite([](140,130,60,95,70,85,100,30,45)).
 getBenefice([](4,5,8,5,6,4,7,10,11)).
 
 getFabriquer(Fabriquer):-
-	dim(Fabriquer,[9]),
-	Fabriquer #:: 0..1.
+        dim(Fabriquer,[9]),
+        Fabriquer #:: 0..1.
 
 
 %% Question 5.2
 %%%%%%%%%%%%%%%
 %% prodVecteur(+V1,+V2,-VRes) : renvoie [a*d, b*e, c*f] avec V1=[a,b,c] et V2=[d, e,f]
 produitVecteur(V1, V2, VRes) :-
-	dim(V1, Dim),
-	dim(VRes,Dim),
-	(foreacharg(X, V1), foreacharg(Y, V2), foreacharg(Z, VRes) do
-	Z #=  X * Y).
+        dim(V1, Dim),
+        dim(VRes,Dim),
+        (foreacharg(X, V1), foreacharg(Y, V2), foreacharg(Z, VRes) do
+            Z #=  X * Y).
 
 %% sommeVecteur(+V,-VRes) : renvoie la somme des éléments du vecteur
 sommeVecteur(V,Res) :-
-	(foreacharg(X,V), fromto(0, In, Out, Res) do
-    Out #= X + In
-).
+        (foreacharg(X,V), fromto(0, In, Out, Res) do
+            Out #= X + In
+        ).
 
 %% produit scalaire
 produitScalaire(V1,V2,Res) :-
-	produitVecteur(V1, V2, VRes),
-	sommeVecteur(VRes,Res).
-	
+        produitVecteur(V1, V2, VRes),
+        sommeVecteur(VRes,Res).
+
 %% Transforme un tableau en liste
 %%arrayToList(Array,List) :-
 %%	Array =.. [_|List].
 
- %% nombreTotalOuvrierNecessaire(+VectQuantite,-Res) nombre Total d'Ouvrier Necessaire 
+%% nombreTotalOuvrierNecessaire(+VectQuantite,-Res) nombre Total d'Ouvrier Necessaire 
 nombreTotalOuvrierNecessaire(VectFabriquer, Res) :- 
- 	getTechniciens(VectTechniciens),
- 	produitScalaire(VectTechniciens, VectFabriquer, Res).
-		
+        getTechniciens(VectTechniciens),
+        produitScalaire(VectTechniciens, VectFabriquer, Res).
+
 %% beneficeParTelephone(VectRes) : le vecteur benefice oar sorte de téléphone
 beneficeParTelephone(VectFabriquer, VectRes) :- 
- 	getBenefice(VectBenefice), 
-	getQuantite(VectQuantite),
-	produitVecteur(VectBenefice,VectQuantite,VectTemp),
-	produitVecteur(VectTemp, VectFabriquer, VectRes).
- 
+        getBenefice(VectBenefice), 
+        getQuantite(VectQuantite),
+        produitVecteur(VectBenefice,VectQuantite,VectTemp),
+        produitVecteur(VectTemp, VectFabriquer, VectRes).
+
 %% profitTotal(-Res) : Le profit total
 profitTotal(VectFabriquer,Res) :-
-	beneficeParTelephone(VectFabriquer, VectRes),
-	sommeVecteur(VectRes,Res).
-	
+        beneficeParTelephone(VectFabriquer, VectRes),
+        sommeVecteur(VectRes,Res).
+
 %% Question 5.3
 %%%%%%%%%%%%%%%
 %% pose_contraintes(?Fabriquer, ?NbTechniciensTotal, ?Profit) : pose les contraintes 
 
 pose_contraintes(_Fabriquer, NbTechniciensTotal,Profit):-
-	NbTechniciensTotal #=< 22,
-	Profit #> 2600.
+        NbTechniciensTotal #=< 22,
+        Profit #> 2600.
 
 solve(Fabriquer,Profit):-
-	getFabriquer(Fabriquer),
-	nombreTotalOuvrierNecessaire(Fabriquer, NbTechniciensTotal),
-	profitTotal(Fabriquer,Profit),
-	pose_contraintes(Fabriquer, NbTechniciensTotal, Profit),
-	labeling(Fabriquer).
+        getFabriquer(Fabriquer),
+        nombreTotalOuvrierNecessaire(Fabriquer, NbTechniciensTotal),
+        profitTotal(Fabriquer,Profit),
+        pose_contraintes(Fabriquer, NbTechniciensTotal, Profit),
+        labeling(Fabriquer).
 
 
 %% Question 5.4
 %%%%%%%%%%%%%%%
 %% Exemple pour minimize
 test(X) :-
-	[X,Y,Z,W] #:: [0..10],
-	X #= Z+Y+2*W,
-	X #\= Z+Y+W,
-	labeling([X]).
+        [X,Y,Z,W] #:: [0..10],
+        X #= Z+Y+2*W,
+        X #\= Z+Y+W,
+        labeling([X]).
 
 
 %% [eclipse 11]: minimize(test(X), X).
@@ -117,15 +117,15 @@ test(X) :-
 %%%%%%%%%%%%%%%
 
 pose_contraintes2(_Fabriquer, NbTechniciensTotal,Profit):-
-	NbTechniciensTotal #=< 22,
-	Profit #>= 1000.
+        NbTechniciensTotal #=< 22,
+        Profit #>= 1000.
 
 solve2(Fabriquer,Profit,NbTechniciensTotal):-
-	getFabriquer(Fabriquer),
-	nombreTotalOuvrierNecessaire(Fabriquer, NbTechniciensTotal),
-	profitTotal(Fabriquer,Profit),
-	pose_contraintes2(Fabriquer, NbTechniciensTotal, Profit),
-	labeling(Fabriquer).
+        getFabriquer(Fabriquer),
+        nombreTotalOuvrierNecessaire(Fabriquer, NbTechniciensTotal),
+        profitTotal(Fabriquer,Profit),
+        pose_contraintes2(Fabriquer, NbTechniciensTotal, Profit),
+        labeling(Fabriquer).
 
 
 
