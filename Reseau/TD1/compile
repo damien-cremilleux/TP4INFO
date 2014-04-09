@@ -1,0 +1,1 @@
+javac -classpath ./classes -d ./classes -sourcepath ./src src/chatNonMultiThread/*.java

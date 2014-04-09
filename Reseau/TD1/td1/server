@@ -1,0 +1,2 @@
+java -classpath classes chat.ChatServerImpl rmi:///simpleChatServer
+

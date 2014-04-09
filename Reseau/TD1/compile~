@@ -1,0 +1,4 @@
+javac -classpath ./classes -d ./classes -sourcepath ./src src/chat/*.java
+cd classes
+rmic chat.ChatServerImpl
+cd ..
