@@ -1,0 +1,95 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+\title{DS 2012 Réseau et architectures orientées services}
+\author{Damien Crémilleux}
+\date{\today}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+\maketitle
+
+
+\section{Question de cours}
+
+\paragraph{Doit-on connaître l'implémentation d'un Web Service pour l'appeler ?}
+Il n'y a pas besoin de connaitre l'implémentation d'un Web Service pour l'appeler, il suffit de connaitre sa description (avec l'aide du protocole WSDL par exemple, \textit{Web Services Description Language}).
+
+\paragraph{Peut-on passer un paramètre par référence à un Web Service ?}
+Non.
+
+\paragraph{Qu'est un \textit{BPEL} Process''}
+BPEL signifie \textit{Business Process Execution Language}, c'est un langage de programmation destiné à l'exécution des procédures d'entreprises. Un BPEL process est un containeur qui permet de décrire le processus, c'est-à-direnotamment les relations avec les partenaires extérieurs, les données, les activitées, le nom et l'espace de nommage.
+
+C'est un programme qui décrit l'enchainement des appels à un Web Service, qui rassemble des web services, decrit la logique des interactions et des appels à ces services, coordonne (orchestre) les interactions entre les services web.
+
+\paragraph{Qu'est SOAP ?}
+SOAP est un protocole pour réaliser des appels à distance, construit par dessus HTTP. Son avantage est qu’il supporte plusieurs plate-forme et langages, et est indépendant du protocole de communication.
+
+SOAP (ancien acronyme de Simple Object Access Protocol) est un protocole de RPC orienté objet bâti sur XML.
+Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer des méthodes d'objets physiquement situés sur un autre serveur. Le transfert se fait le plus souvent à l'aide du protocole HTTP, mais peut également se faire par un autre protocole, comme SMTP. Le protocole SOAP est composé de deux parties :
+\begin{itemize}
+\item une enveloppe, contenant des informations sur le message lui-même afin de permettre son acheminement et son traitement,
+\item un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre.
+\end{itemize}
+SOAP a été initialement défini par Microsoft et IBM1, mais est devenu une référence depuis une recommandation du W3C, utilisée notamment dans le cadre d'architectures de type SOA (Service Oriented Architecture) pour les Services Web WS-*. Le protocole SOAP emploie des métadonnées. SOAP n'est plus un acronyme depuis la version 1.2. En effet, SOAP v1.2 a été réécrit en termes d'infosets XML, et non plus sous forme de sérialisations <?xml....?> comme il l'était en v1.1. La notion d'objet (spécifiée dans Simple Object Access Protocol) devient donc obsolète.
+
+\paragraph{Quel est l'avantage des Web Services sur le RMI Java ?}
+L'avantage des \textit{Web Services} sur le RMI Java est le support de multiples langages (et donc non pas exclusivment du Java). En outre l'utilisation de RMI Java ne permet pas forcément de passer les firewall.
+
+\paragraph{Quelles sont les différences et les similitudes entre un appel de méthodes classiques et un appel RMI ?}
+Le similitudes entre un appel de méthodes classiques et un appel RMI sont la syntaxe de l'appel. Les différences portent sur :
+\begin{itemize}
+\item l'objet doit être \textit{remote} et la méthode décrite dans une \textit{remote interface} ;
+\item les paramètres peuvent être passés soir par référence (objet \textit{remote}), soit par valeur (en cas de sérialisation) ;
+\item la gestion d'exception spécifiques aux appels à distance.
+\end{itemize}
+
+Par défaut, l'objet est en copie.
+
+\paragraph{Expliquez la différence entre UDP et TCP}
+UDP est un protocole orienté "non connexion", le flux est unidirectionnel. Le destinataire reçoit les données sans effectuer d'accusé de réception vers l'émetteur. Contrairement à l'UDP, le TCP est orienté "connexion". Le destinataire témoigne de la bonne réception de ces données par un accusé de réception.
+
+\paragraph{Comparez l'utilisation des sockets TCP et du RMI Java}
+Les sockets permettent une communication de bas niveau entre plusieurs machines. Les sockets sont utilisés pour transmettre des données. Quant-à lui, RMI est une API pour effectuer des appels sur des objets à distance en Java. Le niveau d'abstraction est donc plus haut dans ce cas (RMI repose ainsi sur des sockets TCP). RMI signifie l'utilisation de Java des deux côtés, contrairement aux sockets.
+
+\paragraph{Qu'est ce qu'un RFC ?}
+Les \textit{requests for comments (RFC)}, littéralement « demande de commentaires », sont une série numérotée de documents officiels décrivant les aspects techniques d'Internet, ou de différents matériels informatiques (routeurs, serveur DHCP), comme les protocoles. Ainsi le protocole SNMP est décrit dans la RFC 768. Peu de RFC sont des standards, mais tous les documents publiés par l'IETF sont des RFC.
+
+C'est donc une description complète d’un protocole de communication avec un exemple d’implementation
+
+\paragraph{Mode passif de FTP}
+En mode passif, le serveur FTP détermine lui-même le port de connexion à utiliser pour permettre le transfert des données (data connexion) et le communique au client. L'avantage de ce mode est que le serveur FTP n'initialise aucune connexion. Ce mode fonctionne sans problèmes avec des clients derrière une passerelle NAT.
+
+\section{Exercice 1: Sockets}
+
+\lstinputlisting[language=Java, frame=single, breaklines=true, basicstyle=\footnotesize]{messagerie/Server.java}
+
+\section{Exercice 2 : Java RMI}
+
+\section{Exercice 3 : Web Services}
+
+L'entreprise dispose de plusieurs solutions pour son système informatique :
+\begin{itemize}
+\item logiciels non interopérables répartis sur les agences avec utilisation de copies de fichier.
+Cette solution, même si elle fonctionne, présente plusieurs désavantages. Tout d'abord le coût des différents logiciels, renforcé par le fait que ceux-ci ne sont pas interopérables et engendreront donc des problèmes à la prochaine évolution. En outre cela nécessite de former le personnel à ces logiciels spécifiques. L'utilisation d'une solution reposant sur la copie de fichier implique de plus de  pas connaitre l'état du stock en temps réel (d'où un risque sur les délais). Enfin, cette solution peut aboutir sur le développement de logiciel spécifique à la copie afin de tenir compte des conversions de format. Cependant, cette solution devrait éviter les risques d'inconsistence.
+\item Utilisation d'une solution Java avec communication par RMI. Cette solution est elle aussi fonctionnelle et permet de prévenir les risques d'inconsistence. En outre, le choix de cette technologie permet d'unifier les différentes agences et donc de ne pas avoir à gérer un parc d'application hétérogène. Cette solution impose le choix du langage Java, ce qui est à double tranchant (il n'y a plus qu'une seule technologie à connaitre, mais application non compatible avec autre chose que du Java). L'efficacité et la réactivité du système sont améliorés par rapport à la précédente solution, car Java RMI permet un accès directe aux bases de données et peut égalment gérer les accès concurrentiels.
+\item Utilisation de Web Services. L'utilisation des Web Services présente les avantages de la solution Java RMI, c'est-à-dire l'efficacité et la réactivité, tout en évitant de s'enfermer dans les  technologies Java. L'évolutivité de cette solution est donc meilleure que les deux autres, et permettra de facilement rajouter des services au coeur du système informatique. En outre, grâce à des outils comme BPEL, il est possible pour des non informaticien de comprendre l'architecture du système d'information de l'entreprise.
+\end{itemize}
+
+
+\end{document}
