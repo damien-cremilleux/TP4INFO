@@ -1,0 +1,58 @@
+Note sur l'utilisation de MPI au département Informatique de l'INSA de Rennes
+-------------------------------------------------------------
+Jean-Louis Pazat 10 mars 2010
+
+Choix de la "bonne version" de MPICH
+-------------------------------
+Plusieurs versions de MPICH sont installées au département.
+Pour les TPs il faut utiliser la version MPICH2-1.2.1p1
+cette version est installée sous /etu/linux/stow/mpich2-1.2.1p1
+
+pour l'utiliser, mettre vos PATH et LD_LIBRARY_PATH a jour
+soit sous bash :
+
+export PATH=/etu/linux/stow/mpich2-1.2.1p1/bin:$PATH
+export LD_LIBRARY_PATH=/etu/linux/stow/mpich2-1.2.1p1/lib:$LD_LIBRARY_PATH
+
+
+Utilisation des ports libres
+---------------------
+Pour des raisons de sécurité, certains ports sont bloqués.
+Il faut obliger MPI a utiliser des ports libres. Pour cela il faut une variable d'environnement
+MPICH_PORT_RANGE
+
+sous bash export MPICH_PORT_RANGE=50000:50099
+
+Configuration du système de communication
+------------------------------------
+dans votre répertoire principal il vous faut un fichier .mpd.conf
+qui contient la configuration des demons mpd
+ce fichier est en rwpour vous et sans accès pour les autres
+contenu du fichier
+
+MPD_SECRETWORD=unmot
+MPD_PORT_RANGE=50000:50099
+
+Il vous faut également un fichier .machines dans votre répertoire principal
+qui contienne le nom des machines a utiliser
+
+Compilation d'un programme
+-----------------------
+mpicc -o monprog monprog.c
+
+Exécution d'un programme
+---------------------
+Sous mpich2 il faut d'abord lancer les démons de communication puis le programme
+
+la séquence à suivre est la suivante:
+(pour utiliser 2 machines du fichier .machines pour executer monprog)
+
+mpdboot -n 2 -f .machines
+mpiexec -machinefile .machines -n 2 monprog
+mpdallexit
+
+--------------------
+Notes
+si vous avez encore des problemes de communication, ca peut aussi venir de la configuration ssh
+vous devez avoir généré votre paire de clés avec ssh-keygen dans les fichiers (par defaut) 
+.hh/id_rsa et id_rsa.pub et recopié votre clé publique depuis .ssh/id_rsa.pub dans  .ssh/authorized_keys
