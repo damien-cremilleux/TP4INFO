@@ -1,0 +1,41 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+\title{DS 2012 Systèmes avancés}
+\author{Damien Crémilleux}
+\date{\today}
+
+\maketitle
+
+\section{Questions courtes}
+
+\subsection{Mémoire virtuellement partagée}
+
+\paragraph{Dans le cas d'une gestion de mémoire avec invalidation ; que se passe-t-il lorsque deux processus situés sur des processeurs différents accèdent régulièrement à une même variable ? Que peut-on faire pour améliorer l'efficacité dans ce cas ?}
+Lorsque deux processus situés sur des processeurs différents accèdent à une même page, cela va provoquer un défaut de page pour le processus arrivant en deuxième. Si cela arrive régulièrement, les performances peuvent donc être dégradée. Afin de ne pas avoir ce problème et de garder une mémoire cohérente, il est possible de mettre en place le \textit{multiple-writer protocol}. Ce protocole permet à plusieurs processus d'écrire en même temps sur une même page, si les modifications ont des localisations différentes.
+
+\section{Exercice 1 : Interblocage}
+
+Ce document représente la politique de priorité du robot \textit{Mars PathFinder}, qui a atterri sur Mars le 4 juillet 1997. Seulement, quelques jours après le début de sa mission, le robot fît de façon répété des \textit{reset}, empêchant le bon déroulement de sa mission.
+
+On peut constater sur le document que \textit{Mars Pathfinder} contient un bus d'information (\textit{Task bcdist}) qui permet de transmettre des informations entre différents composants du robot. La priorité associé à cette tâche est la plus élevé. En outre, l'accès à ce bus est synchronisé à l'aide d'une exclusion mutuelle (mutex).
+
+La récupération des données météorologiques (\textit{Task ASI/MET}) est effectuée avec un thread de priorité basse. Quand les données doivent être envoyées, le thread utilisa le bus d'information. Pour cela, il acquiert un mutex, envoie les informationes sur le bus et relâche le mutex. Si jamais le thread se fait interrompre avant la fin de la communication, cela bloque le mutex jusqu'à ce que le thread reprenne et libère le mutex. On voit aussi que \textit{Mars PathFinder} contient d'autres thread, de priorité intermédiaire.
+
+Il est donc possible qu'une interruption arrive lorsque la tâche
+
+\begin{lstlisting}[frame=single, breaklines=true, ]
+
+Pathfinder contained an "information bus", which you can think of as a shared memory area used for passing information between different components of the spacecraft. A bus management task ran frequently with high priority to move certain kinds of data in and out of the information bus. Access to the bus was synchronized with mutual exclusion locks (mutexes).
+
+The meteorological data gathering task ran as an infrequent, low priority thread, and used the information bus to publish its data. When publishing its data, it would acquire a mutex, do writes to the bus, and release the mutex. If an interrupt caused the information bus thread to be scheduled while this mutex was held, and if the information bus thread then attempted to acquire this same mutex in order to retrieve published data, this would cause it to block on the mutex, waiting until the meteorological thread released the mutex before it could continue. The spacecraft also contained a communications task that ran with medium priority.
+
+Most of the time this combination worked fine. However, very infrequently it was possible for an interrupt to occur that caused the (medium priority) communications task to be scheduled during the short interval while the (high priority) information bus thread was blocked waiting for the (low priority) meteorological data thread. In this case, the long-running communications task, having higher priority than the meteorological task, would prevent it from running, consequently preventing the blocked information bus task from running. After some time had passed, a watchdog timer would go off, notice that the data bus task had not been executed for some time, conclude that something had gone drastically wrong, and initiate a total system reset.
+
+\section{Exercice 2 : MPI}
+
+\end{document}
