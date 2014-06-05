@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\begin{document}
+\title{DS 2013 Programmation par contraintes}
+\author{Damien Crémilleux}
+\date{\today}
+
+\maketitle
+
+
+\section{Question de cours}
+
+\subsection{Question 1.1}
+En Prolog les contraintes sont passives. En effet, il est possible d'exprimer une contrainte (comme X<Y), mais Prolog ne pourra pas déduire de valeur à partir de cette contrainte (par exemple si l'on a (X or Y, Y=0) Prolog ne pourra pas inférer X=1). La contrainte exprimée servira uniquement à tester les réponses obtenues par la suite (comme X=2,Y=1, X>Y). Ainsi, on ne peut pas inférer de valeur à l'aide de contrainte passive, d'où la nécessité d'utiliser des solveurs avec la propagation des contraintes.
+
+\subsection{Question 1.2}
+Dans un solveur de contraintes, la propagation et le labeling s'alternent. La propagation consiste à appliquer les contraintes et le labeling consiste à énumérer les valeurs pour une variables. Ainsi le solveur va propager les contraintes pour éliminer les valeurs incohérentes, puis on donne une valeur à une variable, et on boucle ainsi pour générer les solutions du problème.
+
+\subsection{Question 1.3}
+Les algorithmes de propagation dits d'\textit{hyper arc consistency} sont sont NP-complets et donc très couteux. Les algorithmes de bornes sont plus efficaces car ils se rapprochent de la solution par une propagation rapide (on n'enlève pas toutes les valeurs incohérentes, mais cela permet de gérer des intervalles). La suppression des valeurs incohérentes est ensuite réalisée à l'aide du labeling.
+
+\subsection{Question 1.4}
+L'approche \textit{generate and test} consiste à énumérer toutes les solutions possibles, et à vérifier que les contraintes sont vérifiées. Cette méthode peut être très lourde (l'arbre de recherche est immense) lorqu'il y a beacoup de variables. En outre, cette méthode est lente lorsque l'on cherche toutes les solutions ou lorsque l'on cherche à prouver qu'il n'existe pas de solution. L'utilisation de cette méthodes est donc valable pour les problèmes de petite taille.
+L'approche \textit{constrain and generate} consiste à propager les contraintes, puis à effectuer le labeling sur les valeurs restantes. Cette approche permet de résoudre des problèmes plus gros et d'effectuer plusieurs tactiques pour trouver les solutions satisfaisantes. Elle recquiert un solveur de contrainte.
+
+\subsection{Question 1.5}
+La génération d'un emplois du temps est un problème de contrainte. En effet, il n'existe pas d'algorithme ou de méthodes pour résoudre ce problème. En outre, différentes stratégies et heuristiques (comme placer d'abord les cours avec le plus d'élèves, etc) peuvent être mises en place pour aboutir à un résultat. Enfin, les contraintes sont omniprésentes dans ce problème (les élèves ne peuvent pas être à deux endroits en même temps, un seul prof par matière, etc).
+
+\section{Problème}
+
+\subsection{Question 2.1}
+\lstinputlisting[language=Prolog]{probleme_21.ecl}
+
+\subsection{Question 2.2}
+
+\subsection{Question 2.3}
+Lors du TP de Prolog, la solution obtenue était plus longue du point de vue temps d'exécution. En effet la solution en Prolog repose sur l'approche \textit{generate and test} car Prolog n'a que des contraintes passives. En outre, il est plus facile d'exprimer les contraintes et donc de programmer ce problèmes en CLP. Enfin, le code obtenu est plus lisble.
+
+\subsection{Question 2.4}
+À cause de la proposition 4, on constate une symétrie dans le tableau : case[i,j] = case[j,i].
+On peut donc poser une contrainte supplémentaire afin d'éliminer cette symétrie et d'accélérer la recherche de solution.
+%\lstinputlisting[language=Prolog]{probleme_24.ecl}
+
+\subsection{Question 2.5}
+
+
+\subsection{Question 2.6}
+Ici, il n'y a pas de raison de raffiner le labeling.
+
+
+\end{document}
